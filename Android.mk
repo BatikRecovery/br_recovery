@@ -41,11 +41,19 @@ TWHTCD_PATH := $(TWRES_PATH)htcd/
 
 TARGET_RECOVERY_GUI := true
 
-ifneq ($(TW_DEVICE_VERSION),)
-    LOCAL_CFLAGS += -DTW_DEVICE_VERSION='"-$(TW_DEVICE_VERSION)"'
+ifeq ($(BR_OFFICIAL),true)
+    LOCAL_CFLAGS += -DTW_DEVICE_VERSION='"-B-1.3-OFFICIAL"'
 else
-    LOCAL_CFLAGS += -DTW_DEVICE_VERSION='"-0"'
+    LOCAL_CFLAGS += -DTW_DEVICE_VERSION='"-B-1.3-UNOFFICIAL"'
 endif
+
+ifneq ($(BR_MAINTAINER),)
+    LOCAL_CFLAGS += -DBR_MAINTAINER='"$(BR_MAINTAINER)"'
+else
+    LOCAL_CFLAGS += -DBR_MAINTAINER='"ZHANtech™"'
+endif
+
+
 
 LOCAL_SRC_FILES := \
     twrp.cpp \
@@ -379,6 +387,8 @@ LOCAL_REQUIRED_MODULES += \
     fsck.fat \
     fatlabel \
     mkfs.fat \
+    mkbootimg \
+    unpackbootimg \
     permissive.sh \
     simg2img_twrp \
     libbootloader_message_twrp \
