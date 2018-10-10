@@ -747,6 +747,12 @@ extern "C" int gui_init(void)
 	gr_init();
 	TWFunc::Set_Brightness(DataManager::GetStrValue("tw_brightness"));
 
+#ifdef TW_SCREEN_BLANK_ON_BOOT
+        printf("TW_SCREEN_BLANK_ON_BOOT := true\n");
+        blankTimer.blank();
+        blankTimer.resetTimerAndUnblank();
+#endif
+
 	// load and show splash screen
 	if (PageManager::LoadPackage("splash", TWRES "splash.xml", "splash")) {
 		LOGERR("Failed to load splash screen XML.\n");
@@ -800,7 +806,7 @@ extern "C" int gui_loadResources(void)
 			}
 		}
 
-		theme_path += "/TWRP/theme/ui.zip";
+		theme_path += "/batik/theme/ui.zip";
 		if (check || PageManager::LoadPackage("TWRP", theme_path, "main"))
 		{
 #endif // ifndef TW_OEM_BUILD
@@ -834,7 +840,7 @@ extern "C" int gui_loadCustomResources(void)
 	}
 
 	std::string theme_path = DataManager::GetSettingsStoragePath();
-	theme_path += "/TWRP/theme/ui.zip";
+	theme_path += "/batik/theme/ui.zip";
 	// Check for a custom theme
 	if (TWFunc::Path_Exists(theme_path)) {
 		// There is a custom theme, try to load it

@@ -1,4 +1,5 @@
 # Copyright (C) 2007 The Android Open Source Project
+# Copyright (C) 2018 ATG Droid  
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -42,9 +43,9 @@ TWHTCD_PATH := $(TWRES_PATH)htcd/
 TARGET_RECOVERY_GUI := true
 
 ifeq ($(BR_OFFICIAL),true)
-    LOCAL_CFLAGS += -DTW_DEVICE_VERSION='"-B-1.3-OFFICIAL"'
+    LOCAL_CFLAGS += -DTW_DEVICE_VERSION='"-S-1.4-OFFICIAL"'
 else
-    LOCAL_CFLAGS += -DTW_DEVICE_VERSION='"-B-1.3-UNOFFICIAL"'
+    LOCAL_CFLAGS += -DTW_DEVICE_VERSION='"-S-1.4-UNOFFICIAL"'
 endif
 
 ifneq ($(BR_MAINTAINER),)
@@ -53,7 +54,11 @@ else
     LOCAL_CFLAGS += -DBR_MAINTAINER='"ZHANtech™"'
 endif
 
+DEVICE := $(subst omni_,,$(TARGET_PRODUCT))
 
+ifeq ($(BR_DEVICE_MODEL),)
+    LOCAL_CFLAGS += -DBR_DEVICE_MODEL='"$(DEVICE)"'
+endif
 
 LOCAL_SRC_FILES := \
     twrp.cpp \
@@ -393,7 +398,8 @@ LOCAL_REQUIRED_MODULES += \
     simg2img_twrp \
     libbootloader_message_twrp \
     init.recovery.hlthchrg.rc \
-    init.recovery.service.rc
+    init.recovery.service.rc \
+    parted
 
 ifneq ($(TARGET_ARCH), arm64)
     ifneq ($(TARGET_ARCH), x86_64)

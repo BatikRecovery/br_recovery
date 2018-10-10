@@ -335,7 +335,6 @@ protected:
 	int refreshsizes(std::string arg);
 	int nandroid(std::string arg);
 	int fixcontexts(std::string arg);
-	int resetdm(std::string arg);
 	int fixpermissions(std::string arg);
 	int dd(std::string arg);
 	int partitionsd(std::string arg);
@@ -368,10 +367,8 @@ protected:
 	int twcmd(std::string arg);
 	int setbootslot(std::string arg);
 	int installapp(std::string arg);
-	int wlfx(std::string arg);
-	int wlfw(std::string arg);
-
-
+	int unpack(std::string arg);
+        int repack(std::string arg);
 	int simulate;
 };
 

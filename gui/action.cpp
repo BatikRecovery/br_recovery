@@ -197,6 +197,7 @@ GUIAction::GUIAction(xml_node<>* node)
 		ADD_ACTION(checkpartitionlifetimewrites);
 		ADD_ACTION(mountsystemtoggle);
 		ADD_ACTION(setlanguage);
+		ADD_ACTION(checkforapp);
 		ADD_ACTION(togglebacklight);
 
 		// remember actions that run in the caller thread
@@ -209,7 +210,6 @@ GUIAction::GUIAction(xml_node<>* node)
 		ADD_ACTION(refreshsizes);
 		ADD_ACTION(nandroid);
 		ADD_ACTION(fixcontexts);
-		ADD_ACTION(resetdm);
 		ADD_ACTION(fixpermissions);
 		ADD_ACTION(dd);
 		ADD_ACTION(partitionsd);
@@ -230,9 +230,9 @@ GUIAction::GUIAction(xml_node<>* node)
 		ADD_ACTION(flashimage);
 		ADD_ACTION(twcmd);
 		ADD_ACTION(setbootslot);
-		ADD_ACTION(wlfw);
-		ADD_ACTION(wlfx);
-
+		ADD_ACTION(installapp);
+                ADD_ACTION(unpack);
+                ADD_ACTION(repack);
 	}
 
 	// First, get the action
@@ -846,7 +846,8 @@ int GUIAction::checkpartitionlist(std::string arg)
 		while (end_pos != string::npos && start_pos < List.size()) {
 			part_path = List.substr(start_pos, end_pos - start_pos);
 			LOGINFO("checkpartitionlist part_path '%s'\n", part_path.c_str());
-			if (part_path == "/and-sec" || part_path == "DALVIK" || part_path == "INTERNAL" || part_path == "SUBSTRATUM") {
+			if (part_path == "/and-sec" || part_path == "DALVIK" || part_path == "INTERNAL" || part_path == "SUBSTRATUM")
+ {
 				// Do nothing
 			} else {
 				count++;
@@ -875,7 +876,8 @@ int GUIAction::getpartitiondetails(std::string arg)
 		while (end_pos != string::npos && start_pos < List.size()) {
 			part_path = List.substr(start_pos, end_pos - start_pos);
 			LOGINFO("getpartitiondetails part_path '%s'\n", part_path.c_str());
-			if (part_path == "/and-sec" || part_path == "DALVIK" || part_path == "INTERNAL" || part_path == "SUBSTRATUM") {
+			if (part_path == "/and-sec" || part_path == "DALVIK" || part_path == "INTERNAL" || part_path == "SUBSTRATUM")
+ {
 				// Do nothing
 			} else {
 				DataManager::SetValue("tw_partition_path", part_path);
@@ -957,7 +959,7 @@ int GUIAction::screenshot(std::string arg __unused)
 	tm = time(NULL);
 	path_len = strlen(path);
 
-	// Screenshot_batik_2018-08-12-18-21-38.png
+	// Screenshot_batik_2014-01-01-18-21-38.png
 	strftime(path+path_len, sizeof(path)-path_len, "Screenshot_batik_%Y-%m-%d-%H-%M-%S.png", localtime(&tm));
 
 	int res = gr_save_screenshot(path);
@@ -1044,8 +1046,14 @@ int GUIAction::flash(std::string arg)
 		gui_msg("zip_wipe_cache=One or more zip requested a cache wipe -- Wiping cache now.");
 		PartitionManager.Wipe_By_Path("/cache");
 	}
+		if (DataManager::GetIntValue(BR_INSTALL_PREBUILT_ZIP) != 1) {
+                 if (DataManager::GetIntValue(BR_CALL_DEACTIVATION) != 0) {
+		 TWFunc::Deactivation_Process();
+			}
+		DataManager::SetValue(BR_CALL_DEACTIVATION, 0);
+		}
 
-	reinject_after_flash();
+         reinject_after_flash();
 	PartitionManager.Update_System_Details();
 	operation_end(ret_val);
 	// This needs to be after the operation_end call so we change pages before we change variables that we display on the screen
@@ -1118,36 +1126,22 @@ int GUIAction::wipe(std::string arg)
 							skip = true;
 						}
 						
+					}	else if (wipe_path == "SUBSTRATUM")
+					{
+					  if (!PartitionManager.Wipe_Substratum_Overlays())
+					{
+					  gui_err
+						("br_substratum_wipe_err=Failed to wipe substratum overlays");
+					  ret_val = false;
+					  break;
+					}
+					  else
+					{
+					  skip = true;
 					}
 						
-					  else if (wipe_path == "SUBSTRATUM")
-
-					    {
-
-					      if (!PartitionManager.Wipe_Substratum_Overlays())
-
-						{
-
-						  gui_err
-
-						    ("br_substratum_wipe_err=Failed to wipe substratum overlays");
-
-						  ret_val = false;
-
-						  break;
-
-						}
-
-					      else
-
-						{
-
-						  skip = true;
-
-						}
-
-					    }
-					else if (wipe_path == "INTERNAL") {
+						
+					} else if (wipe_path == "INTERNAL") {
 						if (!PartitionManager.Wipe_Media_From_Data()) {
 							ret_val = false;
 							break;
@@ -1189,6 +1183,7 @@ int GUIAction::wipe(std::string arg)
 #endif
 	}
 	PartitionManager.Update_System_Details();
+	PartitionManager.UnMount_By_Path (PartitionManager.Get_Android_Root_Path(), false);
 	if (ret_val)
 		ret_val = 0; // 0 is success
 	else
@@ -1300,24 +1295,6 @@ int GUIAction::fixcontexts(std::string arg __unused)
 	}
 	operation_end(op_status);
 	return 0;
-}
-
-int GUIAction::resetdm(std::string arg __unused)
-{
-	int op_status = 0;
-	operation_start("No dm-verity");
-	if (simulate) {
-		simulate_progress_bar();
-	} else {
-		string cmd = "sh /nov/start.sh";
-		op_status = TWFunc::Exec_Cmd(cmd);
-	}
-	operation_end(op_status);
-	if (op_status != 0)
-	       LOGINFO("reset dm: Removing dm/pattern... Failed:  result=%d\n", op_status);
-	else
-	       LOGINFO("reset dm: Removing dm/pattern... Success: result=%d\n", op_status);
-	return op_status;
 }
 
 int GUIAction::fixpermissions(std::string arg)
@@ -1799,18 +1776,25 @@ int GUIAction::stopmtp(std::string arg __unused)
 
 int GUIAction::flashimage(std::string arg __unused)
 {
+	DataManager::SetValue("ui_progress", 0);
 	int op_status = 0;
 
 	operation_start("Flash Image");
 	string path, filename;
 	DataManager::GetValue("tw_zip_location", path);
 	DataManager::GetValue("tw_file", filename);
+	if (simulate) {
+		simulate_progress_bar();
+	} else {
 	if (PartitionManager.Flash_Image(path, filename))
 		op_status = 0; // success
 	else
 		op_status = 1; // fail
+	}
 
 	operation_end(op_status);
+	DataManager::SetValue("ui_progress", 100);
+	DataManager::SetValue("ui_progress", 0);
 	return 0;
 }
 
@@ -1869,14 +1853,14 @@ int GUIAction::checkpartitionlifetimewrites(std::string arg)
 int GUIAction::mountsystemtoggle(std::string arg)
 {
 	int op_status = 0;
-	bool remount_system = PartitionManager.Is_Mounted_By_Path("/system");
+	bool remount_system = PartitionManager.Is_Mounted_By_Path(PartitionManager.Get_Android_Root_Path());
 	bool remount_vendor = PartitionManager.Is_Mounted_By_Path("/vendor");
 
 	operation_start("Toggle System Mount");
-	if (!PartitionManager.UnMount_By_Path("/system", true)) {
+	if (!PartitionManager.UnMount_By_Path(PartitionManager.Get_Android_Root_Path(), true)) {
 		op_status = 1; // fail
 	} else {
-		TWPartition* Part = PartitionManager.Find_Partition_By_Path("/system");
+		TWPartition* Part = PartitionManager.Find_Partition_By_Path(PartitionManager.Get_Android_Root_Path());
 		if (Part) {
 			if (arg == "0") {
 				DataManager::SetValue("tw_mount_system_ro", 0);
@@ -1942,35 +1926,184 @@ int GUIAction::setbootslot(std::string arg)
 	return 0;
 }
 
-int GUIAction::wlfw(std::string arg __unused)
+int GUIAction::checkforapp(std::string arg __unused)
 {
-  operation_start("WLFW");
-  if (simulate)
-    {
-      simulate_progress_bar();
-    }
-  else
-    {
-      //TWFunc::Dumwolf(true, false);
-      TWFunc::Unpack_Image("/recovery");
-    }
-  operation_end(0);
-  return 0;
+	operation_start("Check for TWRP App");
+	if (!simulate)
+	{
+		string sdkverstr = TWFunc::System_Property_Get("ro.build.version.sdk");
+		int sdkver = 0;
+		if (!sdkverstr.empty()) {
+			sdkver = atoi(sdkverstr.c_str());
+		}
+		if (sdkver <= 13) {
+			if (sdkver == 0)
+				LOGINFO("Unable to read sdk version from build prop\n");
+			else
+				LOGINFO("SDK version too low for TWRP app (%i < 14)\n", sdkver);
+			DataManager::SetValue("tw_app_install_status", 1); // 0 = no status, 1 = not installed, 2 = already installed or do not install
+			goto exit;
+		}
+		if (PartitionManager.Mount_By_Path(PartitionManager.Get_Android_Root_Path(), false)) {
+			string base_path = PartitionManager.Get_Android_Root_Path();
+			if (TWFunc::Path_Exists(PartitionManager.Get_Android_Root_Path() + "/system"))
+				base_path += "/system"; // For devices with system as a root file system (e.g. Pixel)
+			string install_path = base_path + "/priv-app";
+			if (!TWFunc::Path_Exists(install_path))
+				install_path = base_path + "/app";
+			install_path += "/twrpapp";
+			if (TWFunc::Path_Exists(install_path)) {
+				LOGINFO("App found at '%s'\n", install_path.c_str());
+				DataManager::SetValue("tw_app_install_status", 2); // 0 = no status, 1 = not installed, 2 = already installed or do not install
+				goto exit;
+			}
+		}
+		if (PartitionManager.Mount_By_Path("/data", false)) {
+			const char parent_path[] = "/data/app";
+			const char app_prefix[] = "me.twrp.twrpapp-";
+			DIR *d = opendir(parent_path);
+			if (d) {
+				struct dirent *p;
+				while ((p = readdir(d))) {
+					if (p->d_type != DT_DIR || strlen(p->d_name) < strlen(app_prefix) || strncmp(p->d_name, app_prefix, strlen(app_prefix)))
+						continue;
+					closedir(d);
+					LOGINFO("App found at '%s/%s'\n", parent_path, p->d_name);
+					DataManager::SetValue("tw_app_install_status", 2); // 0 = no status, 1 = not installed, 2 = already installed or do not install
+					goto exit;
+				}
+				closedir(d);
+			}
+		} else {
+			LOGINFO("Data partition cannot be mounted during app check\n");
+			DataManager::SetValue("tw_app_install_status", 2); // 0 = no status, 1 = not installed, 2 = already installed or do not install
+		}
+	} else
+		simulate_progress_bar();
+	LOGINFO("App not installed\n");
+	DataManager::SetValue("tw_app_install_status", 1); // 0 = no status, 1 = not installed, 2 = already installed
+exit:
+	operation_end(0);
+	return 0;
 }
 
-int GUIAction::wlfx(std::string arg __unused)
+int GUIAction::installapp(std::string arg __unused)
 {
-  operation_start("WLFX");
-  if (simulate)
-    {
-      simulate_progress_bar();
-    }
-  else
-    {
-      //TWFunc::Dumwolf(false, false);
-      TWFunc::Repack_Image("/recovery");
-    }
-  operation_end(0);
-  return 0;
+	int op_status = 1;
+	operation_start("Install TWRP App");
+	if (!simulate)
+	{
+		if (DataManager::GetIntValue("tw_mount_system_ro") > 0 || DataManager::GetIntValue("tw_app_install_system") == 0) {
+			if (PartitionManager.Mount_By_Path("/data", true)) {
+				string install_path = "/data/app";
+				string context = "u:object_r:apk_data_file:s0";
+				if (!TWFunc::Path_Exists(install_path)) {
+					if (mkdir(install_path.c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH)) {
+						LOGERR("Error making %s directory: %s\n", install_path.c_str(), strerror(errno));
+						goto exit;
+					}
+					if (chown(install_path.c_str(), 1000, 1000)) {
+						LOGERR("chown %s error: %s\n", install_path.c_str(), strerror(errno));
+						goto exit;
+					}
+					if (setfilecon(install_path.c_str(), (security_context_t)context.c_str()) < 0) {
+						LOGERR("setfilecon %s error: %s\n", install_path.c_str(), strerror(errno));
+						goto exit;
+					}
+				}
+				install_path += "/me.twrp.twrpapp-1";
+				if (mkdir(install_path.c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH)) {
+					LOGERR("Error making %s directory: %s\n", install_path.c_str(), strerror(errno));
+					goto exit;
+				}
+				if (chown(install_path.c_str(), 1000, 1000)) {
+					LOGERR("chown %s error: %s\n", install_path.c_str(), strerror(errno));
+					goto exit;
+				}
+				if (setfilecon(install_path.c_str(), (security_context_t)context.c_str()) < 0) {
+					LOGERR("setfilecon %s error: %s\n", install_path.c_str(), strerror(errno));
+					goto exit;
+				}
+				install_path += "/base.apk";
+				if (TWFunc::copy_file("/sbin/me.twrp.twrpapp.apk", install_path, 0644)) {
+					LOGERR("Error copying apk file\n");
+					goto exit;
+				}
+				if (chown(install_path.c_str(), 1000, 1000)) {
+					LOGERR("chown %s error: %s\n", install_path.c_str(), strerror(errno));
+					goto exit;
+				}
+				if (setfilecon(install_path.c_str(), (security_context_t)context.c_str()) < 0) {
+					LOGERR("setfilecon %s error: %s\n", install_path.c_str(), strerror(errno));
+					goto exit;
+				}
+				sync();
+				sync();
+			}
+		} else {
+			if (PartitionManager.Mount_By_Path(PartitionManager.Get_Android_Root_Path(), true)) {
+				string base_path = PartitionManager.Get_Android_Root_Path();
+				if (TWFunc::Path_Exists(PartitionManager.Get_Android_Root_Path() + "/system"))
+					base_path += "/system"; // For devices with system as a root file system (e.g. Pixel)
+				string install_path = base_path + "/priv-app";
+				string context = "u:object_r:system_file:s0";
+				if (!TWFunc::Path_Exists(install_path))
+					install_path = base_path + "/app";
+				if (TWFunc::Path_Exists(install_path)) {
+					install_path += "/twrpapp";
+					LOGINFO("Installing app to '%s'\n", install_path.c_str());
+					if (mkdir(install_path.c_str(), S_IRWXU | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH) == 0) {
+						if (setfilecon(install_path.c_str(), (security_context_t)context.c_str()) < 0) {
+							LOGERR("setfilecon %s error: %s\n", install_path.c_str(), strerror(errno));
+							goto exit;
+						}
+						install_path += "/me.twrp.twrpapp.apk";
+						if (TWFunc::copy_file("/sbin/me.twrp.twrpapp.apk", install_path, 0644)) {
+							LOGERR("Error copying apk file\n");
+							goto exit;
+						}
+						if (setfilecon(install_path.c_str(), (security_context_t)context.c_str()) < 0) {
+							LOGERR("setfilecon %s error: %s\n", install_path.c_str(), strerror(errno));
+							goto exit;
+						}
+						sync();
+						sync();
+						PartitionManager.UnMount_By_Path(PartitionManager.Get_Android_Root_Path(), true);
+						op_status = 0;
+					} else {
+						LOGERR("Error making app directory '%s': %s\n", strerror(errno));
+					}
+				}
+			}
+		}
+	} else
+		simulate_progress_bar();
+exit:
+	operation_end(0);
+	return 0;
+}
+
+int GUIAction::unpack(std::string arg __unused)
+{
+	operation_start("Prepartion to unpack");
+	if (simulate) {
+        simulate_progress_bar();
+         } else {
+		TWFunc::Unpack_Image("/recovery");
+	}
+	operation_end(0);
+	return 0;
+}
+
+int GUIAction::repack(std::string arg __unused)
+{
+	operation_start("Repacking done");
+	if (simulate) {
+        simulate_progress_bar();
+         } else {
+		TWFunc::Repack_Image("/recovery");
+	}
+	operation_end(0);
+	return 0;
 }
 

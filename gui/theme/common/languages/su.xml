@@ -755,6 +755,8 @@
 		<string name="br_prev">KEMBALI</string>
 		<string name="br">Batik Recovery</string>
 		<string name="console">Perintah</string>
+		<string name="br_wipe_substratum_overlays">Lapisan Substratum</string>
+		<string name="substratum_done">-- Lapisan Substratum Selesai Dibersihkan!</string>
 
 		<!-- Welcome -->
 		<string name="batik_msg1">**************************</string>
@@ -762,6 +764,45 @@
 		<string name="batik_msg3">[VERSI]: {1}</string>
 		<string name="batik_msg4">[BUILD]: {1}</string>
 		<string name="batik_msg5">**************************</string>
+		
+		<!-- OTA -->
+		<string name="br_support_miui_ota_chk">Dukung MIUI Incremental OTA</string>
+		<string name="br_incremental_ota_status_enabled">Status dukungan paket MIUI Incremental : Aktif</string>
+		<string name="br_incremental_ota_status_disabled">Status dukungan paket MIUI Incremental : Dimatikan</string>
+		<string name="br_incremental_package_detected">Paket Incremental terdeteksi '{1}'</string>
+		<string name="br_survival_does_not_exist">OTA Survival tidak ada! Instalasi mungkin gagal!</string>
+		<string name="br_install_detecting">Mendeteksi Paket Saat Ini</string>
+		<string name="br_install_standard_detected">- Paket Standar Terdeteksi</string>
+		<string name="br_install_miui_detected">- Paket Pembaruan MIUI Terdeteksi</string>
+        <string name="br_install_miui_oreo_detected">- Paket Pembaruan MIUI Treble Terdeteksi</string>
+		<string name="br_install_miui_10_detected">- Paket Pembaruan MIUI 10 Non-Treble Terdeteksi</string>
+		<string name="br_disable_boot_chk">Matikan pemeriksaan boot</string>
+		<string name="br_include_system_survival_chk">Sertakan sistem dalam Survival OTA</string>
+		<string name="br_verify_incremental_ota_signature_chk">Verifikasi signature Incremental OTA</string>
+		<string name="br_incremental_ota_compatibility_chk">Memverifikasi Signature Paket Incremental...</string>
+		<string name="br_incremental_ota_compatibility_false">Paket incremental tidak cocok dengan ROM ini!</string>
+		<string name="br_incremental_ota_compatibility_true">Paket incremental cocok</string>
+		<string name="br_zip_have_bootloader">Peringatan: Mendeteksi memasang kembali bootloader didalam berkas '{1}'.</string>
+		<string name="br_no_space_ota_survival">Tidak cukup ruang kosong pada penyimpanan internal untuk membuat OTA Survival.</string>
+
+		<string name="br_incremental_ota_res">OTA_RES -- selesai!</string>		
+		<string name="br_incremental_ota_res_run">Proses OTA_RES...</string>
+		<string name="br_incremental_ota_bak_run">Proses OTA_BAK...</string>
+		<string name="br_incremental_ota_bak">OTA_BAK -- selesai!</string>
+		<string name="br_advanced_stock_recovery">Penonaktifan stok recovery secara agresif</string>
+		<string name="br_reboot_dont_disable_stock_recovery_chk">Jangan matikan pergantian stock recovery</string>
+		<string name="br_dmverity_chk">Matikan DM-Verity</string>
+		<string name="br_forced_encryption_chk">Matikan Enkripsi paksa</string>
+		<string name="br_run_process">Proses '{1}' Mulai</string>
+		<string name="br_run_process_fail">Proses '{1}' tidak bisa selesai</string>
+		<string name="br_run_process_done">Proses '{1}' selesai</string>
+		<string name="br_encryption">Sukses menerapkan enkripsi paksa</string>
+		<string name="br_encryption_off">Enkripsi paksa tidak diaktifkan</string>
+		<string name="br_fstab">Deteksi fstab: '{1}'</string>
+		<string name="br_dm_verity">Sukses menerapkan DM-Verity</string>
+		<string name="br_dm_verity_off">DM-Verity tidak diaktifkan</string>
+		<string name="show_free_sdmb">Tampilkan Memory Bebas</string>
+
 
 </resources>
 </language>

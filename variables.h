@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2007 The Android Open Source Project
+ * Copyright (C) 2018 ATG Droid
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,21 +25,14 @@
 #define TW_DEVICE_VERSION	   "OFFICIAL"
 #endif
 
-#define BR_BUILD                "B 1.3"
-#define BR_VERSION_VAR          "br_version"
-#define BR_DEVICE               BR_DEVICE_MODEL
-#define BR_MAINTAINER_STR       "br_maintainer"
-#define BR_ACTUAL_BUILD_VAR     "br_actual_build"
-
-
 #define TW_USE_COMPRESSION_VAR      "tw_use_compression"
 #define TW_FILENAME                 "tw_filename"
 #define TW_ZIP_INDEX                "tw_zip_index"
-#define TW_ZIP_QUEUE_COUNT          "tw_zip_queue_count"
+#define TW_ZIP_QUEUE_COUNT       "tw_zip_queue_count"
 
 #define MAX_BACKUP_NAME_LEN 64
 #define TW_BACKUP_TEXT              "tw_backup_text"
-#define TW_BACKUP_NAME		          "tw_backup_name"
+#define TW_BACKUP_NAME		        "tw_backup_name"
 #define TW_BACKUP_SYSTEM_VAR        "tw_backup_system"
 #define TW_BACKUP_DATA_VAR          "tw_backup_data"
 #define TW_BACKUP_BOOT_VAR          "tw_backup_boot"
@@ -151,19 +145,44 @@
 #define TW_USE_SHA2                 "tw_use_sha2"
 #define TW_NO_SHA2                  "tw_no_sha2"
 
-// BATIK RECOVERY
-#define ICONSTYLE                   "iconstyle"
-#define AROMAFM                     "aromafm"
-#define DISABLE_DM_VERITY           "dm_verity_check"
+// Batik Variables
+#define BR_BUILD                "S 1.4"
+#define BR_VERSION_VAR          "br_version"
+#define BR_DEVICE               BR_DEVICE_MODEL
+#define BR_MAINTAINER_STR       "br_maintainer"
+#define BR_ACTUAL_BUILD_VAR 	"br_actual_build"
+#define BR_VERSION              TW_MAIN_VERSION_STR
 
-// *** BATIK - Variables ** //
-#include <stdio.h>
-#include <stdlib.h>
-#include <string>
-#include <unistd.h>
-static const std::string batik_Tmp = "/tmp";
-static const std::string batik_tmp_dir = batik_Tmp + "/batik";
-static const std::string epoch_drift_file = "/persist/.batik_epoch_drift.cfg"; // to cater for any saved epoch_drifts
+#define BR_SURVIVAL_BACKUP          "OTA"
+#define BR_SURVIVAL_BACKUP_NAME       "br_survival_backup_folder_name"
+#define BR_SURVIVAL_FOLDER      "/sdcard/BR"
+#define BR_SURVIVAL_BACKUP       "OTA"
+#define BR_FILES_BACKUPS_FOLDER_VAR       "br_files_backup_folder_var"
+#define BR_DISABLE_BOOT_CHK       "br_disable_boot_check"
+#define BR_DO_SYSTEM_ON_OTA       "br_include_system_survival"
+#define BR_ACTUAL_BUILD_VAR              "br_actual_build"
+#define BR_INCREMENTAL_PACKAGE          "br_support_miui_ota"
+#define BR_MIUI_ZIP_TMP                    "br_miui_zip_tmp"
+#define BR_LOADED_FINGERPRINT                    "br_loaded_singature"
+#define BR_INCREMENTAL_OTA_FAIL                 "br_ota_fail"
+#define BR_RUN_SURVIVAL_BACKUP                 "br_run_survival_backup"
+#define BR_METADATA_PRE_BUILD                 "br_pre_build"
+#define BR_INSTALL_PREBUILT_ZIP       "br_install_built_in_zip"
+#define BR_CALL_DEACTIVATION         "br_call_deactivation_process"
+#define BR_MIN_EXPECTED_FP_SIZE 30
+#define BR_DISABLE_SECURE_BOOT           "br_reboot_disable_secure_boot"
+#define BR_DISABLE_FORCED_ENCRYPTION           "br_reboot_forced_encryption_check"
+#define BR_DISABLE_DM_VERITY           "br_reboot_dm_verity_check"
+#define BR_SURVIVAL_FOLDER_VAR      "br_survival_backup_folder_path"
+#define BR_TMP_SCRIPT_DIR       "br_tmp_script_directory"
+#define BR_COMPATIBILITY_DEVICE         "br_compatibility_pb_device"
+#define BR_ADVANCED_STOCK_REPLACE           "br_reboot_advanced_stock_recovery_check"
+#define BR_DISABLE_FORCED_ENCRYPTION           "br_reboot_forced_encryption_check"
+#define TRB_EN "0"
+#define STD "0"
+#define NON_STD "0"
+#define ICONSTYLE                   "iconstyle"
+#define AROMAFM 					"aromafm"
 
 // Also used:
 //   tw_boot_is_mountable

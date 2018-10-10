@@ -1,3 +1,4 @@
-**Team Win Recovery Project (TWRP)**
+**Batik Recovery Project <br>**
+**Based on TWRP**
 
-You can find a compiling guide [here](http://forum.xda-developers.com/showthread.php?t=1943625 "Guide").
+You can find a compiling guide [here](https://github.com/BatikRecovery/br_manifest "Guide").

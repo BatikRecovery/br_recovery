@@ -2,6 +2,9 @@
 	Copyright 2012 to 2016 bigbiff/Dees_Troy TeamWin
 	This file is part of TWRP/TeamWin Recovery Project.
 
+	Copyright 2018 ATG Droid  
+	This file is part of RWRP/RedWolf Recovery Project
+
 	TWRP is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
 	the Free Software Foundation, either version 3 of the License, or
@@ -575,11 +578,11 @@ void DataManager::SetDefaultValues()
 
 	mConst.SetValue("true", "1");
 	mConst.SetValue("false", "0");
-
 	mConst.SetValue(BR_VERSION_VAR, TW_VERSION_STR);
 	mConst.SetValue(BR_ACTUAL_BUILD_VAR, BR_BUILD);
 	mConst.SetValue(BR_MAINTAINER_STR, BR_MAINTAINER);
 	mConst.SetValue(TW_VERSION_VAR, TW_MAIN_VERSION_STR);
+	
 	mPersist.SetValue("tw_button_vibrate", "80");
 	mPersist.SetValue("tw_keyboard_vibrate", "40");
 	mPersist.SetValue("tw_action_vibrate", "160");
@@ -727,6 +730,28 @@ void DataManager::SetDefaultValues()
 	mConst.SetValue(TW_MIN_SYSTEM_VAR, TW_MIN_SYSTEM_SIZE);
 	mData.SetValue(TW_BACKUP_NAME, "(Auto Generate)");
 
+     	mData.SetValue(BR_RUN_SURVIVAL_BACKUP, "0");
+	mData.SetValue(BR_METADATA_PRE_BUILD, "0");
+	mData.SetValue(BR_INCREMENTAL_OTA_FAIL, "0");
+	mData.SetValue(BR_LOADED_FINGERPRINT, "0");
+        mData.SetValue(BR_MIUI_ZIP_TMP, "0");
+	mPersist.SetValue(BR_DISABLE_BOOT_CHK, "0");
+	mPersist.SetValue(BR_DO_SYSTEM_ON_OTA, "1");
+	mPersist.SetValue("br_verify_incremental_ota_signature", "1");
+	mPersist.SetValue(BR_INCREMENTAL_PACKAGE, "0");
+	mPersist.SetValue(BR_DISABLE_FORCED_ENCRYPTION, "1");  
+	mPersist.SetValue(BR_DISABLE_DM_VERITY, "1");
+	mConst.SetValue(BR_SURVIVAL_FOLDER_VAR, BR_SURVIVAL_FOLDER);
+     	mConst.SetValue(BR_SURVIVAL_BACKUP_NAME, BR_SURVIVAL_BACKUP);
+     	mConst.SetValue(BR_ACTUAL_BUILD_VAR, BR_BUILD);
+    	mConst.SetValue(BR_TMP_SCRIPT_DIR, "/tmp/br");  
+	mConst.SetValue(BR_COMPATIBILITY_DEVICE, BR_DEVICE); 
+	mData.SetValue(BR_INSTALL_PREBUILT_ZIP, "0");
+	mData.SetValue(BR_CALL_DEACTIVATION, "0");
+	mPersist.SetValue(BR_DISABLE_SECURE_BOOT, "0");
+	mPersist.SetValue(BR_ADVANCED_STOCK_REPLACE, "1");
+	mPersist.SetValue(BR_DISABLE_FORCED_ENCRYPTION, "1");
+
 	mPersist.SetValue(TW_INSTALL_REBOOT_VAR, "0");
 	mPersist.SetValue(TW_SIGNED_ZIP_VERIFY_VAR, "0");
 	mPersist.SetValue(TW_DISABLE_FREE_SPACE_VAR, "0");
@@ -757,7 +782,7 @@ void DataManager::SetDefaultValues()
 	mData.SetValue("tw_terminal_state", "0");
 	mData.SetValue("tw_background_thread_running", "0");
 	mData.SetValue(TW_RESTORE_FILE_DATE, "0");
-	mPersist.SetValue("tw_military_time", "0");
+	mPersist.SetValue("tw_military_time", "1");
 
 #ifdef TW_INCLUDE_CRYPTO
 	mConst.SetValue(TW_USE_SHA2, "1");
@@ -767,7 +792,8 @@ void DataManager::SetDefaultValues()
 	mConst.SetValue(TW_NO_SHA2, "1");
 	mConst.SetValue(TW_MILITARY_TIME, "0");
 #endif
-
+        mPersist.SetValue(TRB_EN, "0");
+        mPersist.SetValue(STD, "0");
 #ifdef TW_NO_SCREEN_TIMEOUT
 	mConst.SetValue("tw_screen_timeout_secs", "0");
 	mConst.SetValue("tw_no_screen_timeout", "1");
@@ -895,8 +921,8 @@ void DataManager::SetDefaultValues()
 	mConst.SetValue("tw_oem_build", "1");
 #else
 	mConst.SetValue("tw_oem_build", "0");
-	mPersist.SetValue("tw_app_prompt", "1");
-	mPersist.SetValue("tw_app_install_system", "1");
+	mPersist.SetValue("tw_app_prompt", "0");
+	mPersist.SetValue("tw_app_install_system", "0");
 	mData.SetValue("tw_app_install_status", "0"); // 0 = no status, 1 = not installed, 2 = already installed
 #endif
 

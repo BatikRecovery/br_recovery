@@ -83,6 +83,10 @@
 			<image resource="tab_donation"/>
 		</style>
 		
+		<style name="ota">
+			<image resource="ota"/>
+		</style>
+		
 		<style name="bn_install">
 			<highlight color="%highlight_color%"/>
 			<image resource="bn_install"/>
@@ -540,6 +544,7 @@
 				<listitem name="Costa Nostra"/>
 				<listitem name="ali_tea"/>
 				<listitem name="Sagar Makhar"/>
+				<listitem name="Mohd Faraz"/>				
 				<listitem name="Rizky Benggolo"/>
 				<listitem name="Mifans Indonesia"/>
 		</listbox>
@@ -587,6 +592,12 @@
 				<listitem name="Update Magisk 17.2"/>
 				<listitem name="Add Mount Magisk (Tools)"/>
 				<listitem name="Merge September Security Patch (android-8.1.0_r46)"/>	
+				<listitem name=""/>
+				<listitem name="~ S 1.4 ~"/>			
+				<listitem name="Add Wipe Substratum on Page Wipe"/>
+				<listitem name="Add Automatic Disable DM-Verity"/>
+				<listitem name="Add OTA MIUI Support"/>
+				<listitem name="Update Magisk 17.3"/>
 		</listbox>
 		
 		</page>
@@ -3716,15 +3727,15 @@
 				<actions>
 					<action function="set">iconstyle=1</action>
 					<action function="set">tw_busy=1</action>
-					<action function="wlfw"/>
+					<action function="unpack"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "images/style/circle.png" "images/style.png";
-					rm -rf "/tmp/batik/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
+					rm -rf "/tmp/br/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="wlfx"/>
+					<action function="repack"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3736,15 +3747,15 @@
 				<actions>
 					<action function="set">iconstyle=1</action>
 					<action function="set">tw_busy=1</action>
-					<action function="wlfw"/>
+					<action function="unpack"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "images/style/square.png" "images/style.png";
-					rm -rf "/tmp/batik/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
+					rm -rf "/tmp/br/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="wlfx"/>
+					<action function="repack"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3756,15 +3767,15 @@
 				<actions>
 					<action function="set">iconstyle=1</action>
 					<action function="set">tw_busy=1</action>
-					<action function="wlfw"/>
+					<action function="unpack"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "images/style/batik.png" "images/style.png";
-					rm -rf "/tmp/batik/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
+					rm -rf "/tmp/br/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="wlfx"/>
+					<action function="repack"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3794,15 +3805,15 @@
 				<placement x="60" y="%row17a_y%" w="150" h="75"/>
 				<actions>
 					<action function="set">tw_busy=1</action>
-					<action function="wlfw"/>
+					<action function="unpack"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/blue.xml" "colors.xml";
-					rm -rf "/tmp/batik/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
+					rm -rf "/tmp/br/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="wlfx"/>
+					<action function="repack"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3812,15 +3823,15 @@
 				<placement x="260" y="%row17a_y%" w="150" h="75"/>
 				<actions>
 					<action function="set">tw_busy=1</action>
-					<action function="wlfw"/>
+					<action function="unpack"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/teal.xml" "colors.xml";
-					rm -rf "/tmp/batik/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
+					rm -rf "/tmp/br/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="wlfx"/>
+					<action function="repack"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3830,15 +3841,15 @@
 				<placement x="460" y="%row17a_y%" w="150" h="75"/>
 				<actions>
 					<action function="set">tw_busy=1</action>
-					<action function="wlfw"/>
+					<action function="unpack"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/brown.xml" "colors.xml";
-					rm -rf "/tmp/batik/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
+					rm -rf "/tmp/br/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="wlfx"/>
+					<action function="repack"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3848,15 +3859,15 @@
 				<placement x="660" y="%row17a_y%" w="150" h="75"/>
 				<actions>
 					<action function="set">tw_busy=1</action>
-					<action function="wlfw"/>
+					<action function="unpack"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/gray.xml" "colors.xml";
-					rm -rf "/tmp/batik/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
+					rm -rf "/tmp/br/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="wlfx"/>
+					<action function="repack"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3866,15 +3877,15 @@
 				<placement x="860" y="%row17a_y%" w="150" h="75"/>
 				<actions>
 					<action function="set">tw_busy=1</action>
-					<action function="wlfw"/>
+					<action function="unpack"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/black.xml" "colors.xml";
-					rm -rf "/tmp/batik/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
+					rm -rf "/tmp/br/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="wlfx"/>
+					<action function="repack"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3888,7 +3899,7 @@
 					<action function="set">black=1</action>
 					<action function="set">tw_samsung_navbar=0</action>
 					<action function="set">tw_tab_icons=0</action>
-					<action function="set">aromafm=1</action>
+					<action function="set">aromafm=0</action>
 					<action function="set">iconstyle=1</action>
 					<action function="set">tw_military_time=1</action>
 				</actions>
@@ -4453,6 +4464,88 @@
 
 			<action>
 				<touch key="back"/>
+				<action function="page">main</action>
+			</action>
+		</page>
+		
+		<page name="ota">
+			<template name="page"/>
+			
+			<text style="text_l">
+				<placement x="%col1_x_header%" y="%row3_header_y%"/>
+				<text>MIUI OTA</text>
+			</text>
+			
+			<text style="text_s">
+				<placement x="%col1_x_header%" y="%row4_header_y%"/>
+				<text>Batik Recovery</text>
+			</text>
+			
+			<listbox style="scrolllist">
+				<placement x="%indent%" y="%row2a_y%" w="%content_width%" h="600"/>
+				<icon selected="checkbox_true" unselected="checkbox_false"/>
+               <listitem name="{@br_verify_incremental_ota_signature_chk=Incremental OTA signature verification}">
+					<data variable="br_verify_incremental_ota_signature"/>
+				</listitem>
+				<listitem name="{@br_include_system_survival_chk=Include system in OTA survival}">
+					<data variable="br_include_system_survival"/>
+					</listitem>
+				<listitem name="{@br_support_miui_ota_chk=Support MIUI Incremental OTA}">
+					<data variable="br_support_miui_ota"/>
+				</listitem>
+				<listitem name="{@br_advanced_stock_recovery=Simulate failure for actions}">
+					<data variable="br_reboot_advanced_stock_recovery_check"/>
+				</listitem>
+				<listitem name="{@br_reboot_dont_disable_stock_recovery_chk=}">
+					<condition var1="tw_mount_system_ro" op="!=" var2="0"/>
+					<data variable="br_reboot_dont_disable_stock_recovery"/>
+				</listitem>
+				<listitem name="{@br_dmverity_chk=Zip signature verification}">
+					<data variable="br_reboot_dm_verity_check"/>
+				</listitem>
+			</listbox>
+			
+			<listbox style="about">
+				<placement x="%indent%" y="%row11_y%" w="%content_width%" h="680"/>
+				<listitem name="*   Please make your internal space 5GB"/>
+				<listitem name=""/>
+				<listitem name="*   Reboot to BATIK then Checklist incremental"/>
+				<listitem name="     OTA signature verification, include system in OTA"/>
+				<listitem name="     survival, support MIUI incremental OTA,"/>
+				<listitem name="     aggresive stock recovery deactivation,"/>
+				<listitem name="     disable DM Verity"/>
+				<listitem name=""/>
+				<listitem name="*   Install full rom MIUI, it will automatic backup"/>
+				<listitem name="     boot and system for the OTA survival."/>
+				<listitem name="     example miui 8.3.15"/>
+				<listitem name=""/>
+				<listitem name="*   Check OTA survival in folder BR internal storage"/>
+				<listitem name="     you can found boot and system"/>
+				<listitem name=""/>
+				<listitem name="*   Open updater app and when update releases,"/>
+				<listitem name="     download it and press update. example miui"/>
+				<listitem name="     8.3.15 - 8.3.29 Automatically device will"/>
+				<listitem name="     reboot to BATIK then OTA flashing will start,"/>
+				<listitem name="     this time the backed up boot and system"/>
+				<listitem name="     will be flashed and thus patching"/>
+				<listitem name="     will happen and your device will be updated"/>
+				<listitem name=""/>
+				<listitem name="!    Pre-requisite unlock bootloader"/>
+				<listitem name=""/>
+				<listitem name=""/>
+				<listitem name="?   Note: for those who do not use OTA,"/>
+                <listitem name="     please checklist aggressive stock recovery"/>                                                                                                       
+                <listitem name="     deactivation and disable dm verity,"/>
+                <listitem name="     thus preventing recovery returning to stock."/>
+			</listbox>
+			
+			<action>
+				<touch key="back"/>
+				<action function="page">main</action>
+			</action>
+
+			<action>
+				<touch key="home"/>
 				<action function="page">main</action>
 			</action>
 		</page>
@@ -5353,6 +5446,7 @@
 				<listitem name="ali_tea"/>
 				<listitem name="Sagar Makhar"/>
 				<listitem name="Rizky Benggolo"/>
+				<listitem name="Mohd Faraz"/>	
 				<listitem name="Mifans Indonesia"/>
 		</listbox>
 		
@@ -5448,6 +5542,12 @@
 				<listitem name="Update Magisk 17.2"/>
 				<listitem name="Add Mount Magisk (Tools)"/>
 				<listitem name="Merge September Security Patch (android-8.1.0_r46)"/>	
+				<listitem name=""/>
+				<listitem name="~ S 1.4 ~"/>			
+				<listitem name="Add Wipe Substratum on Page Wipe"/>
+				<listitem name="Add Automatic Disable DM-Verity"/>
+				<listitem name="Add OTA MIUI Support"/>
+				<listitem name="Update Magisk 17.3"/>
 		</listbox>
 		
 			<text style="text_l">

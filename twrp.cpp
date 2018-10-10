@@ -1,4 +1,7 @@
 /*
+		Copyright 2018 ATG Droid  
+		This file is part of RWRP/RedWolf Recovery Project
+
 		TWRP is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
 		the Free Software Foundation, either version 3 of the License, or
@@ -164,15 +167,13 @@ int main(int argc, char **argv) {
 			free(contexts);
 			gui_msg("full_selinux=Full SELinux support is present.");
 		}
-		
 	}
-	
+
 	gui_msg("batik_msg1=**************************");
   	gui_msg("batik_msg2=[BATIK]: Welcome! ^_^");
   	gui_msg(Msg("batik_msg3=[VERSION]: '{1}'") (TW_MAIN_VERSION_STR));
   	gui_msg(Msg("batik_msg4=[BUILD]: {1}") (BR_BUILD));
-  	gui_msg("batik_msg5=**************************");
-
+	gui_msg("batik_msg5=**************************");
 
 	PartitionManager.Mount_By_Path("/cache", false);
 
@@ -264,8 +265,8 @@ int main(int argc, char **argv) {
 	}
 
 	// Check for and run startup script if script exists
-	TWFunc::check_and_run_script("/sbin/runatboot.sh", "boot");
-	TWFunc::check_and_run_script("/sbin/postrecoveryboot.sh", "boot");
+	// TWFunc::check_and_run_script("/sbin/runatboot.sh", "boot");
+	// TWFunc::check_and_run_script("/sbin/postrecoveryboot.sh", "boot"); 
 
 #ifdef TW_INCLUDE_INJECTTWRP
 	// Back up TWRP Ramdisk if needed:
@@ -341,7 +342,7 @@ int main(int argc, char **argv) {
 
 #ifndef TW_OEM_BUILD
 	// Check if system has never been changed
-	TWPartition* sys = PartitionManager.Find_Partition_By_Path("/system");
+	TWPartition* sys = PartitionManager.Find_Partition_By_Path(PartitionManager.Get_Android_Root_Path());
 	TWPartition* ven = PartitionManager.Find_Partition_By_Path("/vendor");
 
 	if (sys) {
