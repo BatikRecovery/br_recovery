@@ -598,6 +598,7 @@
 				<listitem name="Add Automatic Disable DM-Verity"/>
 				<listitem name="Add OTA MIUI Support"/>
 				<listitem name="Update Magisk 17.3"/>
+				<listitem name="Update October Security Patch"/>
 		</listbox>
 		
 		</page>
@@ -5548,6 +5549,7 @@
 				<listitem name="Add Automatic Disable DM-Verity"/>
 				<listitem name="Add OTA MIUI Support"/>
 				<listitem name="Update Magisk 17.3"/>
+				<listitem name="Update October Security Patch"/>
 		</listbox>
 		
 			<text style="text_l">
