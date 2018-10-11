@@ -591,7 +591,13 @@
 				<listitem name="Change Themes without Reboot"/>
 				<listitem name="Update Magisk 17.2"/>
 				<listitem name="Add Mount Magisk (Tools)"/>
-				<listitem name="Merge September Security Patch (android-8.1.0_r46)"/>	
+				<listitem name="Merge September Security Patch (android-8.1.0_r46)"/>
+				<listitem name=""/>
+				<listitem name="~ S 1.4 ~"/>			
+				<listitem name="Update Kernel"/>
+				<listitem name="Update Magisk 17.3"/>
+				<listitem name="Fix Overlay on Menu Reboot"/>
+				<listitem name="Merge October Security Patch (android-8.1.0_r47)"/>	
 		</listbox>
 		
 		</page>
@@ -5446,13 +5452,19 @@
 				<listitem name="Full Backup / Restore Partition"/>
 				<listitem name="Further ensure TWRP is not replaced by stock recovery"/>
 				<listitem name=""/>
-				<listitem name="~ B 1.3 ~"/>
+				<listitem name="~ B 1.3 ~"/>			
 				<listitem name="Add Square Style, Circle Style Icon"/>
 				<listitem name="Add Change Color Theme (Header & Navbar)"/>
 				<listitem name="Change Themes without Reboot"/>
 				<listitem name="Update Magisk 17.2"/>
 				<listitem name="Add Mount Magisk (Tools)"/>
-				<listitem name="Merge September Security Patch (android-8.1.0_r46)"/>	
+				<listitem name="Merge September Security Patch (android-8.1.0_r46)"/>
+				<listitem name=""/>
+				<listitem name="~ S 1.4 ~"/>			
+				<listitem name="Update Kernel"/>
+				<listitem name="Update Magisk 17.3"/>
+				<listitem name="Fix Overlay on Menu Reboot"/>
+				<listitem name="Merge October Security Patch (android-8.1.0_r47)"/>	
 		</listbox>
 		
 			<text style="text_l">
