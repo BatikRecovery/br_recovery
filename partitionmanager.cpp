@@ -1872,7 +1872,7 @@ TWPartitionManager::Wipe_Media_From_Data (void)
   TWPartition *dat = Find_Partition_By_Path ("/data");
   string o_file, c_file, src, src_t, dest_t, src_ar_m, dst_ar_m, dest =
     "/tmp/br/backup_wip";
-  src = "/sdcard/BRRP";
+  src = "/sdcard/batik";
   src_t = src + "/tools";
   src_ar_m = src_t + "/aromafm";
   dest_t = dest + "/tools";
@@ -1889,8 +1889,8 @@ TWPartitionManager::Wipe_Media_From_Data (void)
 	return false;
       gui_msg ("wiping_datamedia=Wiping internal storage -- /data/media...");
       Remove_MTP_Storage (dat->MTP_Storage_ID);
-      if (TWFunc::Path_Exists ("/sdcard/BRRP")
-	  && TWFunc::Path_Exists ("/sdcard/BRRP/tools"))
+      if (TWFunc::Path_Exists ("/sdcard/batik")
+	  && TWFunc::Path_Exists ("/sdcard/batik/tools"))
 	{
 	    gui_msg ("br_bk=Creating Backup of BR Files -- /tmp/br/backup_wip...");
 	  if (TWFunc::Path_Exists (dest))
@@ -1935,7 +1935,7 @@ TWPartitionManager::Wipe_Media_From_Data (void)
       else
 	{
 	  gui_msg
-	    ("br_bk_no=No Tools of BRRP are detecting reflash the BRRP Package");
+	    ("br_bk_no=No Tools of batik are detecting reflash the batik Package");
 	}
       TWFunc::removeDir ("/data/media", false);
       dat->Recreate_Media_Folder ();
@@ -2823,7 +2823,7 @@ TWPartitionManager::Partition_SDCard (void)
   // recreate TWRP folder and rewrite settings - these will be gone after sdcard is partitioned
   if (SDCard->Mount (true))
     {
-      string TWRP_Folder = SDCard->Mount_Point + "/BRRP";
+      string TWRP_Folder = SDCard->Mount_Point + "/batik";
       mkdir (TWRP_Folder.c_str (), 0777);
       DataManager::Flush ();
     }
