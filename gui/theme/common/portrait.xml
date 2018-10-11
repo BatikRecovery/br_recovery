@@ -873,7 +873,7 @@
 				<text>Decrypt</text>
 				<actions>
 					<action function="set">tw_back=flash_done</action>
-					<action function="set">tw_filename=/sdcard/batik/tools1/decrypt.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/decrypt.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4431,7 +4431,7 @@
 				<text>Aroma FM</text>
 				<actions>
 					<action function="set">tw_back=advanced2</action>
-					<action function="set">tw_filename=/sdcard/batik/tools1/aroma.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/aroma.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4558,7 +4558,7 @@
 				<placement x="%bn_x1%" y="%row2_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools2/ramdiskcleaner.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/ramdiskcleaner.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4575,7 +4575,7 @@
 				<placement x="%bn_x2%" y="%row2_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools2/enablehal3.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/enablehal3.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4592,7 +4592,7 @@
 				<placement x="%bn_x3%" y="%row2_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools2/disablehal3.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/disablehal3.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4609,7 +4609,7 @@
 				<placement x="%bn_x1%" y="%row6a_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools2/appdel.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/appdel.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4626,7 +4626,7 @@
 				<placement x="%bn_x2%" y="%row6a_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools2/nb.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/nb.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4643,7 +4643,7 @@
 				<placement x="%bn_x3%" y="%row6a_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools2/unnb.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/unnb.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4660,7 +4660,7 @@
 				<placement x="%bn_x1%" y="%row11_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools2/subs.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/subs.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4677,7 +4677,7 @@
 				<placement x="%bn_x2%" y="%row11_y%"/>
 				<actions>
 					<action function="set">tw_back=flash_done</action>
-					<action function="set">tw_filename=/sdcard/batik/tools1/decrypt.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/decrypt.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4694,7 +4694,7 @@
 				<placement x="%bn_x3%" y="%row11_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools1/rmpass.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/rmpass.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4711,7 +4711,7 @@
 				<placement x="%bn_x1%" y="%row15a_y%"/>
 					<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools1/magisk.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/magisk.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4728,7 +4728,7 @@
 				<placement x="%bn_x2%" y="%row15a_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools1/unrootmagisk.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/unrootmagisk.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4745,7 +4745,7 @@
 				<placement x="%bn_x3%" y="%row15a_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools1/mountmagisk.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/mountmagisk.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4836,7 +4836,7 @@
 				<text>{@Ramdisk_Cleaner_btn=Ramdisk Cleaner}</text>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools2/ramdiskcleaner.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/ramdiskcleaner.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4855,7 +4855,7 @@
 				<text>{@Enable_HAL3_btn=Enabled HAL3}</text>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools2/enablehal3.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/enablehal3.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4874,7 +4874,7 @@
 				<text>Disable HAL3</text>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools2/disablehal3.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/disablehal3.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4892,7 +4892,7 @@
 				<text>{@App_Delete_btn=App Delete}</text>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools2/appdel.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/appdel.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4910,7 +4910,7 @@
 				<text>Enable Navbar</text>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools2/nb.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/nb.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4928,7 +4928,7 @@
 				<text>Disable Navbar</text>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools2/unnb.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/unnb.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4946,7 +4946,7 @@
 				<text>Del Subs Overlay</text>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools2/subs.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/subs.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4964,7 +4964,7 @@
 				<text>Decrypt</text>
 				<actions>
 					<action function="set">tw_back=flash_done</action>
-					<action function="set">tw_filename=/sdcard/batik/tools1/decrypt.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/decrypt.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -4982,7 +4982,7 @@
 				<text>{@Reset_Password_btn=Reset Password}</text>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools1/rmpass.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/rmpass.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -5000,7 +5000,7 @@
 				<text>Mount Magisk</text>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools1/mountmagisk.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/mountmagisk.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -5018,7 +5018,7 @@
 				<text>Root Magisk</text>
 					<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools1/magisk.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/magisk.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
@@ -5036,7 +5036,7 @@
 				<text>{@Unroot_Magisk_btn=Unroot Magisk}</text>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools1/unrootmagisk.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/unrootmagisk.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
