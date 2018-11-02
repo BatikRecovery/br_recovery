@@ -24,7 +24,7 @@
 #define TW_DEVICE_VERSION	   "OFFICIAL"
 #endif
 
-#define BR_BUILD                "S 1.4"
+#define BR_BUILD                "S 1.4.2"
 #define BR_VERSION_VAR          "br_version"
 #define BR_DEVICE               BR_DEVICE_MODEL
 #define BR_MAINTAINER_STR       "br_maintainer"
