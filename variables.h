@@ -146,7 +146,7 @@
 #define TW_NO_SHA2                  "tw_no_sha2"
 
 // Batik Variables
-#define BR_BUILD                "S 1.4"
+#define BR_BUILD                "S-1.4.2"
 #define BR_VERSION_VAR          "br_version"
 #define BR_DEVICE               BR_DEVICE_MODEL
 #define BR_MAINTAINER_STR       "br_maintainer"

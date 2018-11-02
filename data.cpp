@@ -739,7 +739,7 @@ void DataManager::SetDefaultValues()
 	mPersist.SetValue(BR_DO_SYSTEM_ON_OTA, "1");
 	mPersist.SetValue("br_verify_incremental_ota_signature", "1");
 	mPersist.SetValue(BR_INCREMENTAL_PACKAGE, "0");
-	mPersist.SetValue(BR_DISABLE_FORCED_ENCRYPTION, "1");  
+	mPersist.SetValue(BR_DISABLE_FORCED_ENCRYPTION, "0");  
 	mPersist.SetValue(BR_DISABLE_DM_VERITY, "1");
 	mConst.SetValue(BR_SURVIVAL_FOLDER_VAR, BR_SURVIVAL_FOLDER);
      	mConst.SetValue(BR_SURVIVAL_BACKUP_NAME, BR_SURVIVAL_BACKUP);

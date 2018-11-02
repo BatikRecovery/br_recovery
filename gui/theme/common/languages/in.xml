@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 
 <language>
-	<!-- Diterjemahkan oleh/This translation made by Arya Ramadhani -->
-	<display>Bahasa Indonesia</display>
+	<display>Indonesia</display>
 
 	<resources>
 		<!-- Font overrides - only change these if your language requires special characters -->
@@ -30,6 +29,7 @@
 		<string name="sdext">SD-EXT</string>
 		<string name="adopted_data">Data Adopsi</string>
 		<string name="adopted_storage">Penyimpanan Adopsi</string>
+		<string name="autostorage">Penyimpanan</string>
 
 		<!-- GUI XML strings -->
 		<string name="twrp_header">Team Win Recovery Project</string>
@@ -75,8 +75,8 @@
 		<string name="queue_hdr">Antrian</string>
 		<string name="zip_queue_count">%tw_zip_queue_count% dari maks 10 File antrian</string>
 		<string name="zip_queue_count_s">File %tw_zip_queue_count% dari 10:</string>
-		<string name="zip_warn1">Operasi ini mungkin dapat mengakibatkan pemasangan tidak kompatibel</string>
-		<string name="zip_warn2">perangkat lunak dan render perangkat Anda tidak dapat digunakan.</string>
+		<string name="zip_warn1">Operasi ini mungkin mengakibatkan pemasangan tidak kompatibel</string>
+		<string name="zip_warn2">perangkat lunak dan render Anda tak dapat digunakan.</string>
 		<string name="zip_back_cancel">Tekan kembali untuk membatalkan penambahan zip ini.</string>
 		<string name="zip_back_clear">Tekan tombol kembali untuk membersihkan antrian.</string>
 		<string name="folder">Folder:</string>
@@ -676,73 +676,98 @@
 		<string name="adbbackup_control_error">Tidak dapat menulis ke saluran kontrol adb</string>
 		<string name="twrp_adbbu_option">Opsi --twrp dibutuhkan untuk mengaktifkan cadangan adb twrp</string>
 		<string name="partition_not_found">lokasi: {1} tidak ditemukan dalam daftar partisi</string>
-
-		<!--mod tools-->
-		<string name="SuperSU_btn">SuperSU</string>
-		<string name="SuperSU_text">SuperSU akan di pasang.</string>
-		<string name="SuperSU_confirm">Coba untuk memasang?</string>
-		<string name="Lazy_Flasher_btn">Lazy Flasher</string>
-		<string name="Lazy_Flasher_text">Lazy Flasher akan di pasang.</string>
-		<string name="Lazy_Flasher_confirm">Coba untuk memasang?</string>
-		<string name="Unroot_SuperSU_btn">Unroot SuperSU</string>
-		<string name="Unroot_SuperSU_text">SuperSU akan di unroot.</string>
-		<string name="Unroot_SuperSU_confirm">Yakin untuk di unroot?</string>
-		<string name="Magisk_btn">Magisk</string>
-		<string name="Magisk_text">Magisk akan di pasang.</string>
-		<string name="Magisk_confirm">Coba untuk memasang?</string>
-		<string name="Unroot_Magisk_btn">Unroot Magisk</string>
-		<string name="Unroot_Magisk_text">Magisk akan di unroot.</string>
-		<string name="Unroot_Magisk_confirm">Yakin untuk di unroot?</string>
-		<string name="Reset_Password_btn">Reset Password</string>
-		<string name="Reset_Password_text">Password akan di reset.</string>
-		<string name="Reset_Password_confirm">Yakin untuk di reset?</string>
-		
-		<!--mod tools2-->
-		<string name="Enable_HAL3_btn">Enable HAL3</string>
-		<string name="Enable_HAL3_text">Aktifkan HAL3.</string>
-		<string name="Enable_HAL3_confirm">Coba untuk mengaktifkan?</string>
-		<string name="App_Delete_btn">App Delete</string>
-		<string name="App_Delete_text">Hapus aplikasi.</string>
-		<string name="App_Delete_confirm">Yakin ingin menghapus?</string>
-		<string name="Ramdisk_Cleaner_btn">Ramdisk Cleaner</string>
-		<string name="Ramdisk_Cleaner_text">Ramdisk Cleaner akan di pasang.</string>
-		<string name="Ramdisk_Cleaner_confirm">Coba untuk memasang?</string>
-		
-		<!--md about-->
-		<string name="about_hdr">Tentang</string>
+		<string name="copy_kernel_log">Kernel log disalin ke {1}</string>
+		<string name="include_kernel_log">Termasuk Kernel Log</string>
+		<string name="sha2_chk">Gunakan SHA2 untuk hashing</string>
+		<string name="unable_set_boot_slot">Kesalahan saat mengubah bootloader boot slot ke {1}</string>
+		<!-- New Included String -->
 		<string name="about">Tentang</string>	
-		<string name="changelog">Perubahan</string>
+		<string name="changelog">Changelog</string>
 		<string name="tools">Alat</string>
 		<string name="overview">Ikhtisar</string>
+		<string name="infocredit">Info dan Kredit</string>
 		<string name="info">Info</string>
-		<string name="infocredit">Info dan Kredit</string>	
-		<string name="thanksto">Terima Kasih</string>
+		<string name="credit">Kredit</string>		
+		<string name="thanksto">Terima Kasih Kepada</string>
 		<string name="donation">Donasi</string>
+		<string name="translator">Penterjemah</string>
 		<string name="overview_text_1">Batik Recovery adalah Project Recovery yang Dikembangkan oleh</string>
-		<string name="overview_text_2">Batik Recovery Teamwork dari Indonesia, basis TWRP %tw_version%</string>				
-		<string name="author">Pencipta</string>	
+		<string name="overview_text_2">Batik Recovery Teamwork dari Indonesia, turunan TWRP %tw_version%</string>						
+		<string name="author">Penulis</string>	
 		<string name="contact">Kontak</string>
 		<string name="maintainer">Pengelola</string>	
-		<string name="credit">Kredit</string>
-		<string name="donation_text_1">Jika Anda merasa puas dengan Batik Recovery dan ingin</string>
-		<string name="donation_text_2">mendukung Batik Recovery agar bisa berkembang, silahkan</string>
-		<string name="donation_text_3">donasi melalui rekening BRI dengan nomor rekening</string>
-		<string name="donation_text_4">"3112-01-019706-53-4" atas nama "Muhammad Rifa'i Aziz"</string>
-
+		<string name="circle">Gaya Lingkaran</string>
+		<string name="square">Gaya Persegi</string>
+		<string name="batik">Gaya Batik</string>
+		<string name="ota_1">*    Siapkan internal anda sebanyak 5GB</string>
+		<string name="ota_2">*    Muat Ulang BATIK kemudian centang Verifikasi</string>
+		<string name="ota_3">     tanda tangan OTA tambahan, Sertakan sistem dalam</string>
+		<string name="ota_4">     OTA survival, Dukungan MIUI OTA tambahan,</string>
+		<string name="ota_5">     penonaktifan pemulihan bawaan agresif, penonaktifan</string>
+		<string name="ota_6">     DM-Verity</string>
+		<string name="ota_7">*    Menginstal penuh rom MIUI, itu akan otomatis</string>
+		<string name="ota_8">     mencadangkan boot dan sistem untuk survival OTA.</string>
+		<string name="ota_9">     contoh MIUI 8.3.15</string>
+		<string name="ota_10">*    Periksa survival OTA difolder penyimpanan internal</string>
+		<string name="ota_11">     BR anda dapat menemukan boot dan sistem</string>
+		<string name="ota_12">*    Buka aplikasi updater dan ketika pembaruan rilis,</string>
+		<string name="ota_13">     unduh dan tekan memperbarui. contoh MIUI 8.3.15</string>
+		<string name="ota_14">     - 8.3.29 otomatis perangkat akan memuat ulang ke</string>
+		<string name="ota_15">     BATIK lalu OTA akan memulai flashing, kali ini</string>
+		<string name="ota_16">     boot dan sistem yang dicadangkan akan flashed dan</string>
+		<string name="ota_17">     dengan demikian patching akan terjadi dan perangkat</string>
+		<string name="ota_18">     Anda akan diperbarui</string>
+		<string name="ota_19">!    Pra-syarat membuka bootloader</string>
+		<string name="ota_20">?    Catatan: Untuk yang tidak menggunakan OTA, silakan</string>
+		<string name="ota_21">     periksa daftar pemulihan stok yang agresif penonaktifan</string>                                                                                                       
+		<string name="ota_22">     dan nonaktifkan dm verity, sehingga mencegah pemulihan</string>
+		<string name="ota_23">     kembali ke bawaan.</string>
+		
+		<!--mod tools-->
+		<string name="SuperSU_btn">SuperSU</string>
+		<string name="SuperSU_text">SuperSU akan dipasang.</string>
+		<string name="SuperSU_confirm">Mencoba untuk memasangnya?</string>
+		<string name="Lazy_Flasher_btn">Lazy Flasher</string>
+		<string name="Lazy_Flasher_text">Lazy Flasher akan dipasang.</string>
+		<string name="Lazy_Flasher_confirm">Mencoba untuk memasangnya?</string>
+		<string name="Unroot_SuperSU_btn">Unroot SuperSU</string>
+		<string name="Unroot_SuperSU_text">Unroot SuperSU akan dipasang.</string>
+		<string name="Unroot_SuperSU_confirm">Mencoba untuk memasangnya?</string>
+		<string name="Magisk_btn">Magisk</string>
+		<string name="Magisk_text">Magisk akan dipasang.</string>
+		<string name="Magisk_confirm">Mencoba untuk memasangnya?</string>
+		<string name="Unroot_Magisk_btn">Unroot Magisk</string>
+		<string name="Unroot_Magisk_text">Unroot Magisk akan dipasang.</string>
+		<string name="Unroot_Magisk_confirm">Mencoba untuk memasangnya?</string>
+		<string name="Reset_Password_btn">Hapus Sandi</string>
+		<string name="Reset_Password_text">Hapus Sandi dilakukan.</string>
+		<string name="Reset_Password_confirm">Mencoba untuk memasangnya?</string>
+		
+		<!--mod tools2-->
+		<string name="Enable_HAL3_btn">Hidupkan HAL3</string>
+		<string name="Enable_HAL3_text">Menghidupkan HAL3 dilakukan.</string>
+		<string name="Enable_HAL3_confirm">Mencoba untuk memasangnya?</string>
+		<string name="App_Delete_btn">Hapus Aplikasi</string>
+		<string name="App_Delete_text">Hapus Aplikasi akan dipasang.</string>
+		<string name="App_Delete_confirm">Mencoba untuk memasangnya?</string>
+		<string name="Ramdisk_Cleaner_btn">Pembersih Ramdisk</string>
+		<string name="Ramdisk_Cleaner_text">Pembersih Ramdisk akan dipasang.</string>
+		<string name="Ramdisk_Cleaner_confirm">Mencoba untuk memasangnya?</string>
+		
 		<!-- New Included String2 -->
 		<string name="storage">Penyimpanan Internal</string>
-		<string name="sdcard1">Kartu SD</string>
+		<string name="sdcard1">Mikro SD</string>
 		<string name="usb-otg">USB OTG</string>
 		<string name="use_aromafm">Gunakan Aroma File Manager</string>
-		<string name="br_next">LANJUT</string>
-		<string name="br_prev">KEMBALI</string>
+		<string name="br_next">BERIKUTNYA</string>
+		<string name="br_prev">SEBELUMNYA</string>
 		<string name="br">Batik Recovery</string>
 		<string name="console">Perintah</string>
 		<string name="unlock">BUKA KUNCI</string>
 		<string name="more_features">Fitur Lainnya</string>
 		<string name="br_wipe_substratum_overlays">Lapisan Substratum</string>
-		<string name="substratum_done">-- Lapisan Substratum Selesai Dibersihkan!</string>
-
+		<string name="substratum_done">-- Menghapus Semua Lapisan Substratum Selesai!</string>
+		
 		<!-- Welcome -->
 		<string name="batik_msg1">**************************</string>
 		<string name="batik_msg2">[BATIK]: Selamat Datang!</string>
@@ -750,43 +775,45 @@
 		<string name="batik_msg4">[BUILD]: {1}</string>
 		<string name="batik_msg5">**************************</string>
 		
-		<!-- OTA -->
-		<string name="br_support_miui_ota_chk">Dukung MIUI Incremental OTA</string>
-		<string name="br_incremental_ota_status_enabled">Status dukungan paket MIUI Incremental : Aktif</string>
-		<string name="br_incremental_ota_status_disabled">Status dukungan paket MIUI Incremental : Dimatikan</string>
-		<string name="br_incremental_package_detected">Paket Incremental terdeteksi '{1}'</string>
-		<string name="br_survival_does_not_exist">OTA Survival tidak ada! Instalasi mungkin gagal!</string>
+		<!-- Ota Survival -->
+		<string name="br_support_miui_ota_chk">Dukungan MIUI OTA tambahan</string>
+		<string name="br_incremental_ota_status_enabled">Mendukung status paket MIUI tambahan: Aktifkan</string>
+		<string name="br_incremental_ota_status_disabled">Mendukung status paket MIUI tambahan: Nonaktif</string>
+		<string name="br_incremental_package_detected">Terdeteksi tambahan paket '{1} '</string>
+		<string name="br_survival_does_not_exist">Survival OTA tidak ada! Harap menginstall ROM penuh terlebih dahulu!</string>
 		<string name="br_install_detecting">Mendeteksi Paket Saat Ini</string>
 		<string name="br_install_standard_detected">- Paket Standar Terdeteksi</string>
 		<string name="br_install_miui_detected">- Paket Pembaruan MIUI Terdeteksi</string>
-        <string name="br_install_miui_oreo_detected">- Paket Pembaruan MIUI Treble Terdeteksi</string>
-		<string name="br_install_miui_10_detected">- Paket Pembaruan MIUI 10 Non-Treble Terdeteksi</string>
-		<string name="br_disable_boot_chk">Matikan pemeriksaan boot</string>
-		<string name="br_include_system_survival_chk">Sertakan sistem dalam Survival OTA</string>
-		<string name="br_verify_incremental_ota_signature_chk">Verifikasi signature Incremental OTA</string>
-		<string name="br_incremental_ota_compatibility_chk">Memverifikasi Signature Paket Incremental...</string>
-		<string name="br_incremental_ota_compatibility_false">Paket incremental tidak cocok dengan ROM ini!</string>
-		<string name="br_incremental_ota_compatibility_true">Paket incremental cocok</string>
-		<string name="br_zip_have_bootloader">Peringatan: Mendeteksi memasang kembali bootloader didalam berkas '{1}'.</string>
-		<string name="br_no_space_ota_survival">Tidak cukup ruang kosong pada penyimpanan internal untuk membuat OTA Survival.</string>
+        <string name="br_install_miui_oreo_detected">- Paket Pembaruan MIUI Terdeteksi Treble</string>
+		<string name="br_install_miui_10_detected">- Terdeteksi MIUI 10 Paket Pembaruan Non-Treble</string>
+		<string name="br_install_patch_detected">- Terdeteksi Apakah sebuah Patch atau Perbaiki Paket</string>
+		<string name="br_disable_boot_chk">Nonaktifkan pemeriksaan boot</string>
+		<string name="br_include_system_survival_chk">Sertakan sistem dalam survival OTA</string>
+		<string name="br_verify_incremental_ota_signature_chk">Verifikasi tanda tangan OTA tambahan</string>
+		<string name="br_incremental_ota_compatibility_chk">Memverifikasi Penandatanganan Paket tambahan...</string>
+		<string name="br_incremental_ota_compatibility_false">Paket tambahan tidak kompatibel dengan ROM ini!</string>
+		<string name="br_incremental_ota_compatibility_true">Paket tambahan kompatibel</string>
+		<string name="br_zip_have_bootloader">Peringatan: Instalasi ulang terdeteksi dari bootloader yang disebut oleh '{1} '.</string>
+		<string name="br_no_space_ota_survival">Memori penyimpanan tidak cukup untuk membuat OTA survival.</string>
 
 		<string name="br_incremental_ota_res">OTA_RES -- selesai!</string>		
-		<string name="br_incremental_ota_res_run">Proses OTA_RES...</string>
-		<string name="br_incremental_ota_bak_run">Proses OTA_BAK...</string>
+		<string name="br_incremental_ota_res_run">Menjalankan proses OTA_RES...</string>
+		<string name="br_incremental_ota_bak_run">Menjalankan proses OTA_BAK...</string>
 		<string name="br_incremental_ota_bak">OTA_BAK -- selesai!</string>
-		<string name="br_advanced_stock_recovery">Penonaktifan stok recovery secara agresif</string>
-		<string name="br_reboot_dont_disable_stock_recovery_chk">Jangan matikan pergantian stock recovery</string>
-		<string name="br_dmverity_chk">Matikan DM-Verity</string>
-		<string name="br_forced_encryption_chk">Matikan Enkripsi paksa</string>
-		<string name="br_run_process">Proses '{1}' Mulai</string>
-		<string name="br_run_process_fail">Proses '{1}' tidak bisa selesai</string>
-		<string name="br_run_process_done">Proses '{1}' selesai</string>
-		<string name="br_encryption">Sukses menerapkan enkripsi paksa</string>
-		<string name="br_encryption_off">Enkripsi paksa tidak diaktifkan</string>
-		<string name="br_fstab">Deteksi fstab: '{1}'</string>
-		<string name="br_dm_verity">Sukses menerapkan DM-Verity</string>
+		<string name="br_advanced_stock_recovery">Penonaktifan pemulihan bawaan agresif</string>
+		<string name="br_reboot_dont_disable_stock_recovery_chk">Tidak menonaktifkan ganti pemulihan bawaan</string>
+		<string name="br_dmverity_chk">Penonaktifan DM-Verity</string>
+		<string name="br_forced_encryption_chk">Menonaktifkan paksa enkripsi</string>
+		<string name="br_run_process">Mulai proses '{1}'</string>
+		<string name="br_run_process_fail">Tidak dapat menyelesaikan proses '{1}'</string>
+		<string name="br_run_process_done">Proses selesai '{1}'</string>
+		<string name="br_encryption">Berhasil paksa enkripsi</string>
+		<string name="br_encryption_off">Paksa enkripsi tidak diaktifkan</string>
+		<string name="br_fstab">Terdeteksi fstab: '{1} '</string>
+		<string name="br_dm_verity">DM-Verity berhasil</string>
 		<string name="br_dm_verity_off">DM-Verity tidak diaktifkan</string>
-		<string name="show_free_sdmb">Tampilkan Memory Bebas</string>
-
-</resources>
+		<string name="br_bk">Membuat cadangan file BR -- /tmp/br/backup_wip...</string>
+		<string name="br_bk_no">Tidak ada alat BATIK terdeteksi Flash Ulang paket BATIK</string>
+		<string name="show_free_sdmb">Tampilkan Mb SD Bebas</string>		
+	</resources>
 </language>
