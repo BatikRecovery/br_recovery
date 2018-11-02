@@ -198,11 +198,6 @@
 			<image resource="bn_delsubs"/>
 		</style>
 		
-		<style name="bn_lazyflasher">
-			<highlight color="%highlight_color%"/>
-			<image resource="bn_lazyflasher"/>
-		</style>
-		
 		<style name="bn_decrypt">
 			<highlight color="%highlight_color%"/>
 			<image resource="bn_decrypt"/>
@@ -378,247 +373,27 @@
 		<page name="main2">
 			<template name="page"/>
 			<template name="main-menu"/>
-			<template name="tab_about"/>
 			
-			<text style="text_l">
-				<condition var1="iconstyle" var2="1"/>
-				<placement x="%menu_x1%" y="%row19_y%"/>
-				<text>* {@overview=Overview}</text>
-			</text>
+			<image>
+				<image resource="navbar"/>
+				<placement x="0" y="%row18_y%"/>
+			</image>
 			
-			<text style="text_s">
-				<condition var1="iconstyle" var2="1"/>
-				<placement x="%center_x%" y="%row20a_y%" placement="5"/>
-				<text>{@overview_text_1=Batik Recovery is Recovery Project Developed by Batik Recovery}</text>
-			</text>
-			
-			<text style="text_s">
-				<condition var1="iconstyle" var2="1"/>
-				<placement x="%center_x%" y="%row21a_y%" placement="5"/>
-				<text>{@overview_text_2=Teamwork from Indonesia. Batik Recovery base TWRP %tw_version%}</text>
-			</text>
-			
-			<fill color="%text_color%">
-				<condition var1="iconstyle" var2="0"/>
-				<placement x="0" y="%row17a_y%" w="%screen_width%" h="%navbar_height1%"/>
+			<fill color="%background_color%">
+				<placement x="300" y="%row17a_y%" w="480" h="130"/>
 			</fill>
 			
-			<text style="text_l">
-				<condition var1="iconstyle" var2="0"/>
-				<placement x="%menu_x1%" y="%row19_y%"/>
-				<text>* {@overview=Overview}</text>
-			</text>
-			
-			<text style="text_s">
-				<condition var1="iconstyle" var2="0"/>
-				<placement x="%center_x%" y="%row20a_y%" placement="5"/>
-				<text>{@overview_text_1=Batik Recovery is Recovery Project Developed by Batik Recovery}</text>
-			</text>
-			
-			<text style="text_s">
-				<condition var1="iconstyle" var2="0"/>
-				<placement x="%center_x%" y="%row21a_y%" placement="5"/>
-				<text>{@overview_text_2=Teamwork from Indonesia. Batik Recovery base TWRP %tw_version%}</text>
-			</text>
-			
-		</page>
-		
-		<page name="info">
-			
-			<template name="page"/>
-			<template name="main-menu"/>
-			<template name="tab_about"/>
-			
-			<text style="text_l">
-				<condition var1="iconstyle" var2="1"/>
-				<placement x="%menu_x1%" y="%row19_y%"/>
-				<text>* {@info=Info}</text>
-			</text>
-			
-			<text style="text_s">
-				<placement x="%menu_x1%" y="%row20a_y%"/>
-				<text>{@author=Author}</text>
-			</text>
-			
-			<text style="text_s">
-				<placement x="%info_x2%" y="%row20a_y%"/>
-				<text>:   ZHANtech™</text>
-			</text>
-			
-			<text style="text_s">
-				<placement x="%menu_x1%" y="%row21a_y%"/>
-				<text>{@contact=Contact}</text>
-			</text>
-			
-			<text style="text_s">
-				<placement x="%info_x2%" y="%row21a_y%"/>
-				<text>:   @zhantech (Telegram)</text>
-			</text>
-			
-			<text style="text_s">
-				<placement x="%menu_x1%" y="%row22a_y%"/>
-				<text>{@maintainer=Maintainer}</text>
-			</text>
-			
-			<text style="text_s">
-				<placement x="%info_x2%" y="%row22a_y%"/>
-				<text>:   %br_maintainer%</text>
-			</text>
-		
-		</page>
-		
-		<page name="credit">
-			
-			<template name="page"/>
-			<template name="main-menu"/>
-			<template name="tab_about"/>
-			
-			<text style="text_l">
-				<condition var1="iconstyle" var2="1"/>
-				<placement x="%menu_x1%" y="%row19_y%"/>
-				<text>* {@credit=Credit}</text>
-			</text>
-			
-		<listbox style="about">
-			<placement x="%menu_x1%" y="%row20a_y%" w="950" h="180"/>
-				<listitem name="Github for source code"/>
-				<listitem name="Teamwin Recovery Project"/>
-				<listitem name="Dark Recovery"/>
-				<listitem name="Pitchblack Recovery Project"/>
-				<listitem name="Orangefox Recovery Project"/>
-				<listitem name="SuperSu by Chainfire"/>
-				<listitem name="Magisk for topjohnwu"/>
-				<listitem name="Lazyflasher by jcadduono"/>
-				<listitem name="Cam2API Enabler(HAL3) by helmiau"/>
-				<listitem name="Password Remover by Magua"/>
-				<listitem name="Aroma File Manager by amarullz"/>
-				<listitem name="App Deleter by THE_pirate_predator"/>
-		</listbox>
-		
-		</page>
-		
-		<page name="thanksto">
-			
-			<template name="page"/>
-			<template name="main-menu"/>
-			<template name="tab_about"/>
-			
-			<text style="text_l">
-				<condition var1="iconstyle" var2="1"/>
-				<placement x="%menu_x1%" y="%row19_y%"/>
-				<text>* {@thanksto=Thanks To}</text>
-			</text>
-			
-		<listbox style="about">
-			<placement x="%menu_x1%" y="%row20a_y%" w="950" h="180"/>
-				<listitem name="Allah Ta'ala"/>
-				<listitem name="Rasulullah"/>
-				<listitem name="My Family"/>
-				<listitem name="Dees-Troy"/>
-				<listitem name="Innu Ghifary Dev"/>
-				<listitem name="Helmi Amirudin"/>
-				<listitem name="Santy Safitri"/>
-				<listitem name="Anik Khan"/>
-				<listitem name="Albert I"/>
-				<listitem name="ATG Droid"/>
-				<listitem name="Manish4586"/>
-				<listitem name="Imranpopz"/>
-				<listitem name="Ahmad Sa'id Mabruri"/>
-				<listitem name="Zaeni Loverz"/>
-				<listitem name="Abhishek Aggarwal"/>
-				<listitem name="Louis Lee Encrypted"/>
-				<listitem name="Yashpal Joshi"/>
-				<listitem name="Rajesh Rajput"/>
-				<listitem name="Joker (Whyred)"/>
-				<listitem name="Balo 1000"/>
-				<listitem name="osmOsis"/>
-				<listitem name="Reza Adi"/>
-				<listitem name="Mr Yacha"/>
-				<listitem name="DarthJabba9"/>
-				<listitem name="Tris Faizal"/>
-				<listitem name="Muhajaya"/>
-				<listitem name="Vickry"/>
-				<listitem name="Ahmad-farid007"/>
-				<listitem name="Rivv"/>
-				<listitem name="Rizak"/>
-				<listitem name="#nTu21"/>
-				<listitem name="Costa Nostra"/>
-				<listitem name="ali_tea"/>
-				<listitem name="Sagar Makhar"/>
-				<listitem name="Rizky Benggolo"/>
-				<listitem name="Mifans Indonesia"/>
-		</listbox>
-		
-		</page>
-		
-		<page name="changelog">
-			
-			<template name="page"/>
-			<template name="main-menu"/>
-			<template name="tab_about"/>
-			
-			<text style="text_l">
-				<condition var1="iconstyle" var2="1"/>
-				<placement x="%menu_x1%" y="%row19_y%"/>
-				<text>* {@changelog=Changelog}</text>
-			</text>
-			
-		<listbox style="about">
-			<placement x="%menu_x1%" y="%row20a_y%" w="950" h="180"/>
-				<listitem name="~ Alpha-01 ~"/>
-				<listitem name="Initial Build"/>
-				<listitem name=""/>
-				<listitem name="~ Alpha-02 ~"/>
-				<listitem name="Add Fitured"/>
-				<listitem name=""/>
-				<listitem name="~ B v1.1 ~"/>
-				<listitem name="Upstreamed base TWRP 3.2.3-0"/>
-				<listitem name="Update Batik Theme v1.1"/>
-				<listitem name="Update Magisk 16.71"/>
-				<listitem name="Add Indonesia, Sunda Language"/>
-				<listitem name=""/>
-				<listitem name="~ B 1.2 ~"/>
-				<listitem name="Overlay Reboot Menu"/>
-				<listitem name="Add some icon style"/>
-				<listitem name="Update Magisk 17.1"/>
-				<listitem name="Add Jowo Language"/>
-				<listitem name="Full Backup / Restore Partition"/>
-				<listitem name="Further ensure TWRP is not replaced by stock recovery"/>
-				<listitem name=""/>
-				<listitem name="~ B 1.3 ~"/>			
-				<listitem name="Add Square Style, Circle Style Icon"/>
-				<listitem name="Add Change Color Theme (Header & Navbar)"/>
-				<listitem name="Change Themes without Reboot"/>
-				<listitem name="Update Magisk 17.2"/>
-				<listitem name="Add Mount Magisk (Tools)"/>
-				<listitem name="Merge September Security Patch (android-8.1.0_r46)"/>
-				<listitem name=""/>
-				<listitem name="~ S 1.4 ~"/>			
-				<listitem name="Update Kernel"/>
-				<listitem name="Update Magisk 17.3"/>
-				<listitem name="Fix Overlay on Menu Reboot"/>
-				<listitem name="Merge October Security Patch (android-8.1.0_r47)"/>	
-		</listbox>
-		
-		</page>
-		
-		<page name="donation">
-			
-			<template name="page"/>
-			<template name="main-menu"/>
-			<template name="tab_about"/>
-			
-			<text style="text_l">
-				<condition var1="iconstyle" var2="1"/>
-				<placement x="%menu_x1%" y="%row19_y%"/>
-				<text>* {@donation=Donation}</text>
-			</text>
+			<button style="main_button_half_height">
+				<placement x="%center_x%" y="%row18a_y%" placement="4"/>
+				<text>{@about=About}</text>
+				<action function="page">about</action>
+			</button>
 			
 			<image>
 				<image resource="donate-id"/>
-				<placement x="100" y="%row20a_y%"/>
+				<placement x="100" y="%row20_y%"/>
 			</image>
-		
+			
 		</page>
 
 		<page name="install">
@@ -878,8 +653,8 @@
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
 					<action function="set">tw_action2_param=flash_zip</action>
-					<action function="set">tw_text1=</action>
-					<action function="set">tw_text2=</action>
+					<action function="set">tw_text1={@Lazy_Flasher_text=Lazy Flasher will be installed.}</action>
+					<action function="set">tw_text2={@Lazy_Flasher_confirm=Try to Lazy Flasher Device?}</action>
 					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
 					<action function="page">confirm_action</action>
 				</actions>
@@ -3723,19 +3498,19 @@
 			<button style="main_button_half_height">
 				<condition var1="iconstyle" var2="1"/>
 				<placement x="%indent%" y="%row19_y%"/>
-				<text>Circle Style</text>
+				<text>{@circle=Circle Style}</text>
 				<actions>
 					<action function="set">iconstyle=1</action>
 					<action function="set">tw_busy=1</action>
-					<action function="wlfw"/>
+					<action function="unpack"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "images/style/circle.png" "images/style.png";
-					rm -rf "/tmp/batik/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
+					rm -rf "/tmp/br/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="wlfx"/>
+					<action function="repack"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3743,19 +3518,19 @@
 			<button style="main_button_half_height">
 				<condition var1="iconstyle" var2="1"/>
 				<placement x="%center_x%" y="%row19_y%"/>
-				<text>Square Style</text>
+				<text>{@square=Square Style}</text>
 				<actions>
 					<action function="set">iconstyle=1</action>
 					<action function="set">tw_busy=1</action>
-					<action function="wlfw"/>
+					<action function="unpack"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "images/style/square.png" "images/style.png";
-					rm -rf "/tmp/batik/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
+					rm -rf "/tmp/br/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="wlfx"/>
+					<action function="repack"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3763,19 +3538,19 @@
 			<button style="main_button_half_height">
 				<condition var1="iconstyle" var2="1"/>
 				<placement x="%indent%" y="%row21a_y%"/>
-				<text>Batik Style</text>
+				<text>{@batik=Batik Style}</text>
 				<actions>
 					<action function="set">iconstyle=1</action>
 					<action function="set">tw_busy=1</action>
-					<action function="wlfw"/>
+					<action function="unpack"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "images/style/batik.png" "images/style.png";
-					rm -rf "/tmp/batik/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
+					rm -rf "/tmp/br/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="wlfx"/>
+					<action function="repack"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3805,15 +3580,15 @@
 				<placement x="60" y="%row17a_y%" w="150" h="75"/>
 				<actions>
 					<action function="set">tw_busy=1</action>
-					<action function="wlfw"/>
+					<action function="unpack"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/blue.xml" "colors.xml";
-					rm -rf "/tmp/batik/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
+					rm -rf "/tmp/br/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="wlfx"/>
+					<action function="repack"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3823,15 +3598,15 @@
 				<placement x="260" y="%row17a_y%" w="150" h="75"/>
 				<actions>
 					<action function="set">tw_busy=1</action>
-					<action function="wlfw"/>
+					<action function="unpack"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/teal.xml" "colors.xml";
-					rm -rf "/tmp/batik/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
+					rm -rf "/tmp/br/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="wlfx"/>
+					<action function="repack"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3841,15 +3616,15 @@
 				<placement x="460" y="%row17a_y%" w="150" h="75"/>
 				<actions>
 					<action function="set">tw_busy=1</action>
-					<action function="wlfw"/>
+					<action function="unpack"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/brown.xml" "colors.xml";
-					rm -rf "/tmp/batik/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
+					rm -rf "/tmp/br/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="wlfx"/>
+					<action function="repack"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3859,15 +3634,15 @@
 				<placement x="660" y="%row17a_y%" w="150" h="75"/>
 				<actions>
 					<action function="set">tw_busy=1</action>
-					<action function="wlfw"/>
+					<action function="unpack"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/gray.xml" "colors.xml";
-					rm -rf "/tmp/batik/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
+					rm -rf "/tmp/br/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="wlfx"/>
+					<action function="repack"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3877,15 +3652,15 @@
 				<placement x="860" y="%row17a_y%" w="150" h="75"/>
 				<actions>
 					<action function="set">tw_busy=1</action>
-					<action function="wlfw"/>
+					<action function="unpack"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/black.xml" "colors.xml";
-					rm -rf "/tmp/batik/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
+					rm -rf "/tmp/br/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="wlfx"/>
+					<action function="repack"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3899,7 +3674,7 @@
 					<action function="set">black=1</action>
 					<action function="set">tw_samsung_navbar=0</action>
 					<action function="set">tw_tab_icons=0</action>
-					<action function="set">aromafm=1</action>
+					<action function="set">aromafm=0</action>
 					<action function="set">iconstyle=1</action>
 					<action function="set">tw_military_time=1</action>
 				</actions>
@@ -4168,7 +3943,7 @@
 			</fill>
 
 			<listbox>
-				<placement x="%indent%" y="%row3_y%" w="%content_width%" h="%listbox_settings_height%"/>
+				<placement x="%indent%" y="%row3_y%" w="%content_width%" h="%row15_y%"/>
 				<text>{@select_language=Select Language:}</text>
 				<icon selected="radio_true" unselected="radio_false" />
 				<data name="tw_language" />
@@ -4241,51 +4016,51 @@
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row2_y%"/>
+				<placement x="%bn_x1%" y="%row3_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row2_y%"/>
+				<placement x="%bn_x2%" y="%row3_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row2_y%"/>
+				<placement x="%bn_x3%" y="%row3_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row6a_y%"/>
+				<placement x="%bn_x1%" y="%row7a_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row6a_y%"/>
+				<placement x="%bn_x2%" y="%row7a_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row6a_y%"/>
+				<placement x="%bn_x3%" y="%row7a_y%"/>
 			</image>
 
 			<button style="bn_copylog">
-				<placement x="%bn_x1%" y="%row2_y%"/>
+				<placement x="%bn_x1%" y="%row3_y%"/>
 				<action function="page">copylog</action>
 			</button>
 
 			<button style="bn_fix">
-				<placement x="%bn_x2%" y="%row2_y%"/>
+				<placement x="%bn_x2%" y="%row3_y%"/>
 				<action function="page">fixcontexts</action>
 			</button>
 
 			<button style="bn_partition">
-				<placement x="%bn_x3%" y="%row2_y%"/>
+				<placement x="%bn_x3%" y="%row3_y%"/>
 				<actions>
 					<action function="set">partitionlisterror=0</action>
 					<action function="page">partsdcardsel</action>
@@ -4293,47 +4068,47 @@
 			</button>
 
 			<button style="bn_terminal">
-				<placement x="%bn_x1%" y="%row6a_y%"/>
+				<placement x="%bn_x1%" y="%row7a_y%"/>
 				<action function="page">terminalcommand</action>
 			</button>
 
 			<button style="bn_tools">
-				<placement x="%bn_x2%" y="%row6a_y%"/>
+				<placement x="%bn_x2%" y="%row7a_y%"/>
 				<action function="page">tools</action>
 			</button>
 
 			<button style="bn_adb">
-				<placement x="%bn_x3%" y="%row6a_y%"/>
+				<placement x="%bn_x3%" y="%row7a_y%"/>
 				<action function="page">sideload</action>
 			</button>
 			
 			<button style="text_tx">
-				<placement x="%tx_x1%" y="%row5_y%"/>
+				<placement x="%tx_x1%" y="%row6_y%"/>
 				<text>{@copy_log_btn=Copy Log}</text>
 			</button>
 			
 			<button style="text_tx">
-				<placement x="%tx_x2%" y="%row5_y%"/>
+				<placement x="%tx_x2%" y="%row6_y%"/>
 				<text>{@fix_context_btn=Fix Contexts}</text>
 			</button>
 			
 			<button style="text_tx">
-				<placement x="%tx_x3%" y="%row5_y%"/>
+				<placement x="%tx_x3%" y="%row6_y%"/>
 				<text>{@part_sd_btn=Partition SD Card}</text>
 			</button>
 			
 			<button style="text_tx">
-				<placement x="%tx_x1%" y="%row9a_y%"/>
+				<placement x="%tx_x1%" y="%row10a_y%"/>
 				<text>{@terminal_btn=Terminal}</text>
 			</button>
 			
 			<button style="text_tx">
-				<placement x="%tx_x2%" y="%row9a_y%"/>
+				<placement x="%tx_x2%" y="%row10a_y%"/>
 				<text>{@tools=Tools}</text>
 			</button>
 			
 			<button style="text_tx">
-				<placement x="%tx_x3%" y="%row9a_y%"/>
+				<placement x="%tx_x3%" y="%row10a_y%"/>
 				<text>{@adb_sideload_btn=ADB Sideload}</text>
 			</button>
 
@@ -4484,78 +4259,78 @@
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row2_y%"/>
+				<placement x="%bn_x1%" y="%row3_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row2_y%"/>
+				<placement x="%bn_x2%" y="%row3_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row2_y%"/>
+				<placement x="%bn_x3%" y="%row3_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row6a_y%"/>
+				<placement x="%bn_x1%" y="%row7a_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row6a_y%"/>
+				<placement x="%bn_x2%" y="%row7a_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row6a_y%"/>
+				<placement x="%bn_x3%" y="%row7a_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row11_y%"/>
+				<placement x="%bn_x1%" y="%row12_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row11_y%"/>
+				<placement x="%bn_x2%" y="%row12_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row11_y%"/>
+				<placement x="%bn_x3%" y="%row12_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row15a_y%"/>
+				<placement x="%bn_x1%" y="%row16a_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row15a_y%"/>
+				<placement x="%bn_x2%" y="%row16a_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row15a_y%"/>
+				<placement x="%bn_x3%" y="%row16a_y%"/>
 			</image>
 
 			<button style="bn_ramdisk">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row2_y%"/>
+				<placement x="%bn_x1%" y="%row3_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/ramdiskcleaner.zip</action>
@@ -4572,7 +4347,7 @@
 
 			<button style="bn_e_hal3">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row2_y%"/>
+				<placement x="%bn_x2%" y="%row3_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/enablehal3.zip</action>
@@ -4589,7 +4364,7 @@
 
 			<button style="bn_d_hal3">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row2_y%"/>
+				<placement x="%bn_x3%" y="%row3_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/disablehal3.zip</action>
@@ -4606,7 +4381,7 @@
 
 			<button style="bn_appdelete">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row6a_y%"/>
+				<placement x="%bn_x1%" y="%row7a_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/appdel.zip</action>
@@ -4623,7 +4398,7 @@
 
 			<button style="bn_e_navbar">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row6a_y%"/>
+				<placement x="%bn_x2%" y="%row7a_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/nb.zip</action>
@@ -4640,7 +4415,7 @@
 
 			<button style="bn_d_navbar">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row6a_y%"/>
+				<placement x="%bn_x3%" y="%row7a_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/unnb.zip</action>
@@ -4657,7 +4432,7 @@
 
 			<button style="bn_delsubs">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row11_y%"/>
+				<placement x="%bn_x1%" y="%row12_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/subs.zip</action>
@@ -4674,16 +4449,16 @@
 
 			<button style="bn_decrypt">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row11_y%"/>
+				<placement x="%bn_x2%" y="%row12_y%"/>
 				<actions>
-					<action function="set">tw_back=flash_done</action>
+					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/decrypt.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
 					<action function="set">tw_action2_param=flash_zip</action>
-					<action function="set">tw_text1=</action>
-					<action function="set">tw_text2=</action>
+					<action function="set">tw_text1={@Lazy_Flasher_text=Lazy Flasher will be installed.}</action>
+					<action function="set">tw_text2={@Lazy_Flasher_confirm=Try to Lazy Flasher Device?}</action>
 					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
 					<action function="page">confirm_action</action>
 				</actions>
@@ -4691,7 +4466,7 @@
 			
 			<button style="bn_reset_pass">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row11_y%"/>
+				<placement x="%bn_x3%" y="%row12_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/rmpass.zip</action>
@@ -4708,7 +4483,7 @@
 
 			<button style="bn_i_magisk">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row15a_y%"/>
+				<placement x="%bn_x1%" y="%row16a_y%"/>
 					<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/magisk.zip</action>
@@ -4725,7 +4500,7 @@
 			
 			<button style="bn_u_magisk">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row15a_y%"/>
+				<placement x="%bn_x2%" y="%row16a_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/unrootmagisk.zip</action>
@@ -4742,7 +4517,7 @@
 			
 			<button style="bn_i_magisk">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row15a_y%"/>
+				<placement x="%bn_x3%" y="%row16a_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/mountmagisk.zip</action>
@@ -4759,73 +4534,73 @@
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x1%" y="%row5_y%"/>
+				<placement x="%tx_x1%" y="%row6_y%"/>
 				<text>{@Ramdisk_Cleaner_btn=Ramdisk Cleaner}</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x2%" y="%row5_y%"/>
+				<placement x="%tx_x2%" y="%row6_y%"/>
 				<text>{@Enable_HAL3_btn=Enabled HAL3}</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x3%" y="%row5_y%"/>
+				<placement x="%tx_x3%" y="%row6_y%"/>
 				<text>Disable HAL3</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x1%" y="%row9a_y%"/>
+				<placement x="%tx_x1%" y="%row10a_y%"/>
 				<text>{@App_Delete_btn=App Delete}</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x2%" y="%row9a_y%"/>
+				<placement x="%tx_x2%" y="%row10a_y%"/>
 				<text>Enable Navbar</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x3%" y="%row9a_y%"/>
+				<placement x="%tx_x3%" y="%row10a_y%"/>
 				<text>Disable Navbar</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x1%" y="%row14_y%"/>
+				<placement x="%tx_x1%" y="%row15_y%"/>
 				<text>Del Subs Overlay</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x2%" y="%row14_y%"/>
+				<placement x="%tx_x2%" y="%row15_y%"/>
 				<text>Decrypt</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x3%" y="%row14_y%"/>
+				<placement x="%tx_x3%" y="%row15_y%"/>
 				<text>{@Reset_Password_btn=Reset Password}</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x1%" y="%row18a_y%"/>
+				<placement x="%tx_x1%" y="%row19a_y%"/>
 				<text>Root Magisk</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x2%" y="%row18a_y%"/>
+				<placement x="%tx_x2%" y="%row19a_y%"/>
 				<text>{@Unroot_Magisk_btn=Unroot Magisk}</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x3%" y="%row18a_y%"/>
+				<placement x="%tx_x3%" y="%row19a_y%"/>
 				<text>Mount Magisk</text>
 			</button>
 			
@@ -4963,14 +4738,14 @@
 				<placement x="%menu_x2%" y="%row13_y%"/>
 				<text>Decrypt</text>
 				<actions>
-					<action function="set">tw_back=flash_done</action>
+					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/decrypt.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
 					<action function="set">tw_action2_param=flash_zip</action>
-					<action function="set">tw_text1=</action>
-					<action function="set">tw_text2=</action>
+					<action function="set">tw_text1={@Lazy_Flasher_text=Lazy Flasher will be installed.}</action>
+					<action function="set">tw_text2={@Lazy_Flasher_confirm=Try to Lazy Flasher Device?}</action>
 					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
 					<action function="page">confirm_action</action>
 				</actions>
@@ -5239,7 +5014,7 @@
 		
 		<page name="about">
 			<template name="page"/>
-
+			<template name="about"/>	
 			<text style="text_l">
 				<placement x="%col1_x_header%" y="%row3_header_y%"/>
 				<text>{@about=about}</text>
@@ -5250,128 +5025,34 @@
 				<text>{@br=Batik Recovery}</text>
 			</text>
 			
-			<text style="text_l">
-				<placement x="%menu_x1%" y="%row2_y%"/>
-				<text>* {@overview=Overview}</text>
-			</text>
+			<image>
+				<image resource="navbar"/>
+				<placement x="0" y="%row12a_y%"/>
+			</image>
+			
+			<fill color="%background_color%">
+				<placement x="300" y="%row12_y%" w="480" h="130"/>
+			</fill>
+			
+			<button style="main_button_half_height">
+				<placement x="%center_x%" y="%row13_y%" placement="4"/>
+				<text>{@overview=Overview}</text>
+			</button>
 			
 			<text style="text_s">
-				<placement x="%center_x%" y="%row3a_y%" placement="5"/>
+				<placement x="%center_x%" y="%row15_y%" placement="5"/>
 				<text>{@overview_text_1=Batik Recovery is Recovery Project Developed by Batik Recovery}</text>
 			</text>
 			
 			<text style="text_s">
-				<placement x="%center_x%" y="%row4a_y%" placement="5"/>
+				<placement x="%center_x%" y="%row16_y%" placement="5"/>
 				<text>{@overview_text_2=Teamwork from Indonesia. Batik Recovery base TWRP}</text>
 			</text>
 			
-			<text style="text_l">
-				<placement x="%menu_x1%" y="%row6_y%"/>
-				<text>* {@info=Info}</text>
-			</text>
-			
-			<text style="text_s">
-				<placement x="%menu_x1%" y="%row7a_y%"/>
-				<text>{@author=Author}</text>
-			</text>
-			
-			<text style="text_s">
-				<placement x="%info_x2%" y="%row7a_y%"/>
-				<text>:   ZHANtech™</text>
-			</text>
-			
-			<text style="text_s">
-				<placement x="%menu_x1%" y="%row8a_y%"/>
-				<text>{@contact=Contact}</text>
-			</text>
-			
-			<text style="text_s">
-				<placement x="%info_x2%" y="%row8a_y%"/>
-				<text>:   @zhantech (Telegram)</text>
-			</text>
-			
-			<text style="text_s">
-				<placement x="%menu_x1%" y="%row9a_y%"/>
-				<text>{@maintainer=Maintainer}</text>
-			</text>
-			
-			<text style="text_s">
-				<placement x="%info_x2%" y="%row9a_y%"/>
-				<text>:   %br_maintainer%</text>
-			</text>
-
-			
-			<text style="text_l">
-				<placement x="%menu_x1%" y="%row11_y%"/>
-				<text>* {@credit=Credit}</text>
-			</text>
-			
-		<listbox style="about">
-			<placement x="%menu_x1%" y="%row12a_y%" w="950" h="180"/>
-				<listitem name="Github for source code"/>
-				<listitem name="Teamwin Recovery Project"/>
-				<listitem name="Dark Recovery"/>
-				<listitem name="Pitchblack Recovery Project"/>
-				<listitem name="Orangefox Recovery Project"/>
-				<listitem name="SuperSu by Chainfire"/>
-				<listitem name="Magisk for topjohnwu"/>
-				<listitem name="Lazyflasher by jcadduono"/>
-				<listitem name="Cam2API Enabler(HAL3) by helmiau"/>
-				<listitem name="Password Remover by Magua"/>
-				<listitem name="Aroma File Manager by amarullz"/>
-				<listitem name="App Deleter by THE_pirate_predator"/>
-		</listbox>
-		
-			<text style="text_l">
-				<placement x="%menu_x1%" y="%row16_y%"/>
-				<text>* {@thanksto=Thanks To}</text>
-			</text>
-			
-		<listbox style="about">
-			<placement x="%menu_x1%" y="%row17a_y%" w="950" h="180"/>
-				<listitem name="Allah Ta'ala"/>
-				<listitem name="Rasulullah"/>
-				<listitem name="My Family"/>
-				<listitem name="Dees-Troy"/>
-				<listitem name="Innu Ghifary Dev"/>
-				<listitem name="Helmi Amirudin"/>
-				<listitem name="Santy Safitri"/>
-				<listitem name="Anik Khan"/>
-				<listitem name="Albert I"/>
-				<listitem name="ATG Droid"/>
-				<listitem name="Manish4586"/>
-				<listitem name="Imranpopz"/>
-				<listitem name="Ahmad Sa'id Mabruri"/>
-				<listitem name="Zaeni Loverz"/>
-				<listitem name="Abhishek Aggarwal"/>
-				<listitem name="Louis Lee Encrypted"/>
-				<listitem name="Yashpal Joshi"/>
-				<listitem name="Rajesh Rajput"/>
-				<listitem name="Joker (Whyred)"/>
-				<listitem name="Balo 1000"/>
-				<listitem name="osmOsis"/>
-				<listitem name="Reza Adi"/>
-				<listitem name="Mr Yacha"/>
-				<listitem name="DarthJabba9"/>
-				<listitem name="Tris Faizal"/>
-				<listitem name="Muhajaya"/>
-				<listitem name="Vickry"/>
-				<listitem name="Ahmad-farid007"/>
-				<listitem name="Rivv"/>
-				<listitem name="Rizak"/>
-				<listitem name="#nTu21"/>
-				<listitem name="Costa Nostra"/>
-				<listitem name="ali_tea"/>
-				<listitem name="Sagar Makhar"/>
-				<listitem name="Rizky Benggolo"/>
-				<listitem name="Mifans Indonesia"/>
-		</listbox>
-		
-			<button style="main_button_half_height">
-				<placement x="%center_x%" y="%row21_y%"/>
-				<text>{@br_next=NEXT}</text>
-				<action function="page">about2</action>
-			</button>
+			<image>
+				<image resource="donate-id"/>
+				<placement x="100" y="%row18_y%"/>
+			</image>
 			
 			<action>
 				<touch key="home"/>
@@ -5412,9 +5093,9 @@
 			
 		</page>
 		
-		<page name="about2">
+		<page name="info">
 			<template name="page"/>
-			
+			<template name="about"/>	
 			<text style="text_l">
 				<placement x="%col1_x_header%" y="%row3_header_y%"/>
 				<text>{@about=about}</text>
@@ -5425,13 +5106,339 @@
 				<text>{@br=Batik Recovery}</text>
 			</text>
 			
-			<text style="text_l">
-				<placement x="%menu_x1%" y="%row2_y%"/>
-				<text>* {@changelog=Changelog}</text>
+			<image>
+				<image resource="navbar"/>
+				<placement x="0" y="%row12a_y%"/>
+			</image>
+			
+			<fill color="%background_color%">
+				<placement x="300" y="%row12_y%" w="480" h="130"/>
+			</fill>
+			
+			<button style="main_button_half_height">
+				<placement x="%center_x%" y="%row13_y%" placement="4"/>
+				<text>{@info=Info}</text>
+			</button>
+			
+			<text style="text_s">
+				<placement x="%menu_x1%" y="%row15_y%"/>
+				<text>{@author=Author}</text>
+			</text>
+			
+			<text style="text_s">
+				<placement x="%info_x2%" y="%row15_y%"/>
+				<text>:   ZHANtech™</text>
+			</text>
+			
+			<text style="text_s">
+				<placement x="%menu_x1%" y="%row16_y%"/>
+				<text>{@contact=Contact}</text>
+			</text>
+			
+			<text style="text_s">
+				<placement x="%info_x2%" y="%row16_y%"/>
+				<text>:   @zhantech (Telegram)</text>
+			</text>
+			
+			<text style="text_s">
+				<placement x="%menu_x1%" y="%row17_y%"/>
+				<text>{@maintainer=Maintainer}</text>
+			</text>
+			
+			<text style="text_s">
+				<placement x="%info_x2%" y="%row17_y%"/>
+				<text>:   %br_maintainer%</text>
 			</text>
 			
 		<listbox style="about">
-			<placement x="%menu_x1%" y="%row3a_y%" w="950" h="450"/>
+			<placement x="%menu_x1%" y="%row18a_y%" w="950" h="210"/>
+				<listitem name="Leader Developer"/>
+				<listitem name="@zhantech"/>
+				<listitem name=""/>
+				<listitem name="Maintainer"/>
+				<listitem name="@trisfaizal - Kenzo, Vince"/>
+				<listitem name="@travarilo - X00TD"/>
+				<listitem name="@zhantech - Other Device"/>
+				<listitem name=""/>
+				<listitem name="Tester"/>
+				<listitem name="@Vyacheslavsky @nTu21 @LostraStoria - Kenzo"/>
+				<listitem name="@muhajaya - Santoni"/>
+				<listitem name="@BackToYourMama @Overbore - Whyred"/>
+				<listitem name="@zhantech_id - Land"/>
+				<listitem name="@RifqiH - Mido"/>
+				<listitem name="@alii_kun - Ido"/>
+				<listitem name="@yudha11221 - Riva"/>
+				<listitem name="@RaCha_RC - Vince"/>
+				<listitem name="@KasoPintu @Ubanss - Beryllium"/>
+				<listitem name="@Zharevnarts @N74rP - Markw"/>
+				<listitem name="@NotRosyBot @BgJheka1301 - Rosy"/>
+				<listitem name="@ExtraAI - Ugglite"/>
+				<listitem name=""/>
+				<listitem name="Donatur"/>
+				<listitem name="-"/>
+				<listitem name=""/>
+				<listitem name="Special Thanks"/>
+				<listitem name="@Reza_Adi_Pangestu @ANDROIABLEDROID"/>
+				<listitem name="@mryacha @DarthJabba9 @ATGDroid	"/>
+		</listbox>
+			
+			<action>
+				<touch key="home"/>
+				<action function="page">main</action>
+			</action>
+			
+			<button>
+				<condition var1="iconstyle" var2="1"/>
+				<condition var1="tw_samsung_navbar" var2="0"/>
+				<fill color="%transparent%"/>
+				<placement x="50" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">main</action>
+			</button>
+			
+			<button>
+				<condition var1="iconstyle" var2="0"/>
+				<condition var1="tw_samsung_navbar" var2="0"/>
+				<fill color="%transparent%"/>
+				<placement x="50" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">advanced2</action>
+			</button>
+	
+			<button>
+				<condition var1="iconstyle" var2="1"/>
+				<condition var1="tw_samsung_navbar" var2="1"/>
+				<fill color="%transparent%"/>
+				<placement x="center_x" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">main</action>
+			</button>
+			
+			<button>
+				<condition var1="iconstyle" var2="0"/>
+				<condition var1="tw_samsung_navbar" var2="1"/>
+				<fill color="%transparent%"/>
+				<placement x="center_x" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">advanced2</action>
+			</button>
+			
+		</page>
+		
+		<page name="credit">
+			<template name="page"/>
+			<template name="about"/>	
+			<text style="text_l">
+				<placement x="%col1_x_header%" y="%row3_header_y%"/>
+				<text>{@about=about}</text>
+			</text>
+			
+			<text style="text_s">
+				<placement x="%col1_x_header%" y="%row4_header_y%"/>
+				<text>{@br=Batik Recovery}</text>
+			</text>
+			
+			<image>
+				<image resource="navbar"/>
+				<placement x="0" y="%row12a_y%"/>
+			</image>
+			
+			<fill color="%background_color%">
+				<placement x="300" y="%row12_y%" w="480" h="130"/>
+			</fill>
+			
+			<button style="main_button_half_height">
+				<placement x="%center_x%" y="%row13_y%" placement="4"/>
+				<text>{@credit=Credit}</text>
+			</button>
+			
+		<listbox style="about">
+			<placement x="%menu_x1%" y="%row15_y%" w="950" h="450"/>
+				<listitem name="Github for source code"/>
+				<listitem name="Teamwin Recovery Project"/>
+				<listitem name="Dark Recovery"/>
+				<listitem name="Pitchblack Recovery Project"/>
+				<listitem name="Orangefox Recovery Project"/>
+				<listitem name="SuperSu by Chainfire"/>
+				<listitem name="Magisk for topjohnwu"/>
+				<listitem name="Lazyflasher by jcadduono"/>
+				<listitem name="Cam2API Enabler(HAL3) by helmiau"/>
+				<listitem name="Password Remover by Magua"/>
+				<listitem name="Aroma File Manager by amarullz"/>
+				<listitem name="App Deleter by THE_pirate_predator"/>
+		</listbox>
+			
+			<action>
+				<touch key="home"/>
+				<action function="page">main</action>
+			</action>
+			
+			<button>
+				<condition var1="iconstyle" var2="1"/>
+				<condition var1="tw_samsung_navbar" var2="0"/>
+				<fill color="%transparent%"/>
+				<placement x="50" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">main</action>
+			</button>
+			
+			<button>
+				<condition var1="iconstyle" var2="0"/>
+				<condition var1="tw_samsung_navbar" var2="0"/>
+				<fill color="%transparent%"/>
+				<placement x="50" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">advanced2</action>
+			</button>
+	
+			<button>
+				<condition var1="iconstyle" var2="1"/>
+				<condition var1="tw_samsung_navbar" var2="1"/>
+				<fill color="%transparent%"/>
+				<placement x="center_x" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">main</action>
+			</button>
+			
+			<button>
+				<condition var1="iconstyle" var2="0"/>
+				<condition var1="tw_samsung_navbar" var2="1"/>
+				<fill color="%transparent%"/>
+				<placement x="center_x" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">advanced2</action>
+			</button>
+			
+		</page>
+		
+		<page name="thanksto">
+			<template name="page"/>
+			<template name="about"/>	
+			<text style="text_l">
+				<placement x="%col1_x_header%" y="%row3_header_y%"/>
+				<text>{@about=about}</text>
+			</text>
+			
+			<text style="text_s">
+				<placement x="%col1_x_header%" y="%row4_header_y%"/>
+				<text>{@br=Batik Recovery}</text>
+			</text>
+			
+			<image>
+				<image resource="navbar"/>
+				<placement x="0" y="%row12a_y%"/>
+			</image>
+			
+			<fill color="%background_color%">
+				<placement x="300" y="%row12_y%" w="480" h="390"/>
+			</fill>
+			
+			<button style="main_button_half_height">
+				<placement x="%center_x%" y="%row13_y%" placement="4"/>
+				<text>{@thanksto=Thanks to}</text>
+			</button>
+			
+		<listbox style="about">
+			<placement x="%menu_x1%" y="%row15_y%" w="950" h="450"/>
+				<listitem name="Allah Ta'ala"/>
+				<listitem name="Rasulullah"/>
+				<listitem name="My Family"/>
+				<listitem name="Dees-Troy"/>
+				<listitem name="Innu Ghifary Dev"/>
+				<listitem name="Helmi Amirudin"/>
+				<listitem name="Santy Safitri"/>
+				<listitem name="Anik Khan"/>
+				<listitem name="Albert I"/>
+				<listitem name="ATG Droid"/>
+				<listitem name="Manish4586"/>
+				<listitem name="Imranpopz"/>
+				<listitem name="Ahmad Sa'id Mabruri"/>
+				<listitem name="Zaeni Loverz"/>
+				<listitem name="Abhishek Aggarwal"/>
+				<listitem name="Louis Lee Encrypted"/>
+				<listitem name="Yashpal Joshi"/>
+				<listitem name="Rajesh Rajput"/>
+				<listitem name="Joker (Whyred)"/>
+				<listitem name="Balo 1000"/>
+				<listitem name="osmOsis"/>
+				<listitem name="Reza Adi"/>
+				<listitem name="Mr Yacha"/>
+				<listitem name="DarthJabba9"/>
+				<listitem name="Tris Faizal"/>
+				<listitem name="Muhajaya"/>
+				<listitem name="Vickry"/>
+				<listitem name="Ahmad-farid007"/>
+				<listitem name="Rivv"/>
+				<listitem name="Rizak"/>
+				<listitem name="#nTu21"/>
+				<listitem name="Costa Nostra"/>
+				<listitem name="ali_tea"/>
+				<listitem name="Sagar Makhar"/>
+				<listitem name="Rizky Benggolo"/>
+				<listitem name="Mohd Faraz"/>	
+				<listitem name="Mifans Indonesia"/>
+		</listbox>
+			
+			<action>
+				<touch key="home"/>
+				<action function="page">main</action>
+			</action>
+			
+			<button>
+				<condition var1="iconstyle" var2="1"/>
+				<condition var1="tw_samsung_navbar" var2="0"/>
+				<fill color="%transparent%"/>
+				<placement x="50" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">main</action>
+			</button>
+			
+			<button>
+				<condition var1="iconstyle" var2="0"/>
+				<condition var1="tw_samsung_navbar" var2="0"/>
+				<fill color="%transparent%"/>
+				<placement x="50" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">advanced2</action>
+			</button>
+	
+			<button>
+				<condition var1="iconstyle" var2="1"/>
+				<condition var1="tw_samsung_navbar" var2="1"/>
+				<fill color="%transparent%"/>
+				<placement x="center_x" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">main</action>
+			</button>
+			
+			<button>
+				<condition var1="iconstyle" var2="0"/>
+				<condition var1="tw_samsung_navbar" var2="1"/>
+				<fill color="%transparent%"/>
+				<placement x="center_x" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">advanced2</action>
+			</button>
+			
+		</page>
+		
+		<page name="changelog">
+			<template name="page"/>
+			<template name="about"/>	
+			<text style="text_l">
+				<placement x="%col1_x_header%" y="%row3_header_y%"/>
+				<text>{@about=about}</text>
+			</text>
+			
+			<text style="text_s">
+				<placement x="%col1_x_header%" y="%row4_header_y%"/>
+				<text>{@br=Batik Recovery}</text>
+			</text>
+			
+			<image>
+				<image resource="navbar"/>
+				<placement x="0" y="%row12a_y%"/>
+			</image>
+			
+			<fill color="%background_color%">
+				<placement x="300" y="%row12_y%" w="480" h="390"/>
+			</fill>
+			
+			<button style="main_button_half_height">
+				<placement x="%center_x%" y="%row13_y%" placement="4"/>
+				<text>{@changelog=Changelog}</text>
+			</button>
+			
+		<listbox style="about">
+			<placement x="%menu_x1%" y="%row15_y%" w="950" h="450"/>
 				<listitem name="~ Alpha-01 ~"/>
 				<listitem name="Initial Build"/>
 				<listitem name=""/>
@@ -5452,46 +5459,231 @@
 				<listitem name="Full Backup / Restore Partition"/>
 				<listitem name="Further ensure TWRP is not replaced by stock recovery"/>
 				<listitem name=""/>
-				<listitem name="~ B 1.3 ~"/>			
+				<listitem name="~ B 1.3 ~"/>
 				<listitem name="Add Square Style, Circle Style Icon"/>
 				<listitem name="Add Change Color Theme (Header & Navbar)"/>
 				<listitem name="Change Themes without Reboot"/>
 				<listitem name="Update Magisk 17.2"/>
 				<listitem name="Add Mount Magisk (Tools)"/>
-				<listitem name="Merge September Security Patch (android-8.1.0_r46)"/>
+				<listitem name="Merge September Security Patch (android-8.1.0_r46)"/>	
 				<listitem name=""/>
 				<listitem name="~ S 1.4 ~"/>			
-				<listitem name="Update Kernel"/>
+				<listitem name="Add Wipe Substratum on Page Wipe"/>
+				<listitem name="Add Automatic Disable DM-Verity"/>
+				<listitem name="Add OTA MIUI Support"/>
 				<listitem name="Update Magisk 17.3"/>
-				<listitem name="Fix Overlay on Menu Reboot"/>
-				<listitem name="Merge October Security Patch (android-8.1.0_r47)"/>	
+				<listitem name="Update October Security Patch"/>
+				<listitem name=""/>
+				<listitem name="~ S 1.4.1 ~"/>			
+				<listitem name="Update Theme"/>
+				<listitem name="Add Regional Language in Indonesia"/>
+				<listitem name="Add Russian, Malay, Turkish, Vietnamese, Portuguese Language"/>
+				<listitem name=""/>
+				<listitem name="~ S 1.4.2 ~"/>
+				<listitem name="Fix Progress Bar"/>
 		</listbox>
-		
-			<text style="text_l">
-				<placement x="%menu_x1%" y="%row12_y%"/>
-				<text>* {@donation=Donation}</text>
-			</text>
 			
-			<image>
-				<image resource="donate-id"/>
-				<placement x="100" y="%row13a_y%"/>
-			</image>
-			
-			<button style="main_button_half_height">
-				<placement x="%indent%" y="%row21_y%"/>
-				<text>{@br_prev=PREV}</text>
-				<action function="page">about</action>
-			</button>			
-
 			<action>
 				<touch key="home"/>
 				<action function="page">main</action>
 			</action>
-
+			
+			<button>
+				<condition var1="iconstyle" var2="1"/>
+				<condition var1="tw_samsung_navbar" var2="0"/>
+				<fill color="%transparent%"/>
+				<placement x="50" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">main</action>
+			</button>
+			
+			<button>
+				<condition var1="iconstyle" var2="0"/>
+				<condition var1="tw_samsung_navbar" var2="0"/>
+				<fill color="%transparent%"/>
+				<placement x="50" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">advanced2</action>
+			</button>
+	
+			<button>
+				<condition var1="iconstyle" var2="1"/>
+				<condition var1="tw_samsung_navbar" var2="1"/>
+				<fill color="%transparent%"/>
+				<placement x="center_x" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">main</action>
+			</button>
+			
+			<button>
+				<condition var1="iconstyle" var2="0"/>
+				<condition var1="tw_samsung_navbar" var2="1"/>
+				<fill color="%transparent%"/>
+				<placement x="center_x" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">advanced2</action>
+			</button>
+			
+		</page>
+		
+		<page name="translator">
+			<template name="page"/>
+			<template name="about"/>	
+			<text style="text_l">
+				<placement x="%col1_x_header%" y="%row3_header_y%"/>
+				<text>{@about=about}</text>
+			</text>
+			
+			<text style="text_s">
+				<placement x="%col1_x_header%" y="%row4_header_y%"/>
+				<text>{@br=Batik Recovery}</text>
+			</text>
+			
+			<image>
+				<image resource="navbar"/>
+				<placement x="0" y="%row12a_y%"/>
+			</image>
+			
+			<fill color="%background_color%">
+				<placement x="300" y="%row12_y%" w="480" h="390"/>
+			</fill>
+			
+			<button style="main_button_half_height">
+				<placement x="%center_x%" y="%row13_y%" placement="4"/>
+				<text>{@translator=translator}</text>
+			</button>
+			
+		<listbox style="about">
+			<placement x="%menu_x1%" y="%row15_y%" w="950" h="450"/>
+				<listitem name="Indonesia"/>
+				<listitem name="Vickry, Febri Sutomo, DexGus, Jovan Ferryal"/>
+				<listitem name="M Fikri Khrisna, Muhammad Mauli Mubassari,"/>
+				<listitem name="user-ilang, Adrao Apxan, RDP77,"/>
+				<listitem name="Reza Luthfan, TS Faizal,"/>
+				<listitem name="Kirishima Touka Ayato RaCha"/>
+				<listitem name=""/>
+				<listitem name="Aceh"/>
+				<listitem name="Rỉshan Qurrataa'yun, D Dy,"/>
+				<listitem name="Kirishima Touka Ayato RaCha,"/>
+				<listitem name="Rozaki Suharta, Pobri Rahmat,"/>
+				<listitem name="Raid Naufal, Jarvis"/>
+				<listitem name=""/>
+				<listitem name="Banjar"/>
+				<listitem name="Khalish Al Banjari, Maulana Ishak,"/>
+				<listitem name="Ramadhan, ZeeCell, Dwi Prianto,"/>
+				<listitem name="Muhammad Mauli Mubassari,"/>
+				<listitem name="tim vakult, Abi Afifa, Muhammad Jumri"/>
+				<listitem name=""/>
+				<listitem name="Banyumasan"/>
+				<listitem name="Febri Sutomo, Kukuh Wibowo,"/>
+				<listitem name="Vickry, TS Faizal, Alii Akbar,"/>
+				<listitem name="kangfauzane, TwJee V N, qod,"/>
+				<listitem name="Apoet Interista, Nagato"/>
+				<listitem name="Prawiro Hutomo"/>
+				<listitem name=""/>
+				<listitem name="Betawi"/>
+				<listitem name="Muhamad Fajar2002, Sukalaper,"/>
+				<listitem name="Achmad Sopian, Febri Sutomo,"/>
+				<listitem name="Firman Hadi, Zambri Bin Zainal"/>
+				<listitem name=""/>
+				<listitem name="Japanese"/>
+				<listitem name="Vickry, Randalf®, Dika Pradito,"/>
+				<listitem name="Saktibimantara"/>
+				<listitem name=""/>
+				<listitem name="Javanese"/>
+				<listitem name="Ulya1234, Venelovy Land,"/>
+				<listitem name="Vickry, Robi Irham Az-Zuhriy,"/>
+				<listitem name="Alfathalif Dewa, Rifal,"/>
+				<listitem name="ju wahir, Ayub Syaifullah,"/>
+				<listitem name="akoeb, Nadhal Adam, tony®ananta,"/>
+				<listitem name="Adi Permana, Nasikhin, Ariel Quindoza,"/>
+				<listitem name="Arief Risak Sono, TS Faizal,"/>
+				<listitem name="Iwan Wawan, Jovan Ferryal E. F.,"/>
+				<listitem name="Saktibimantara, Endarto Yahya,"/>
+				<listitem name="Fikry Ahmad SyaRief,T-REX,"/>
+				<listitem name="ahmad sholimin, Aris Nadlfy,"/>
+				<listitem name="X-Nightwar24 GAmiNG, Ardian Syah,"/>
+				<listitem name="RDP77, dhysp, Ariel Quindoza,"/>
+				<listitem name="Muhammad Naswan Izzudin Akmal,"/>
+				<listitem name="daniella wicaksono, Muhammad Farid,"/>
+				<listitem name="Muhammad Izal Nasrullah,"/>
+				<listitem name="Amsterdam Pratama, Naufal Fatihussalam,"/>
+				<listitem name="Arya Ramadhan, Adi Permana, Angga Djaya,"/>
+				<listitem name="Zainal Abi Din, CSH 17,"/>
+				<listitem name="Yusril Febriyanto, D Fanatic, admksm,"/>
+				<listitem name="Erlan22, Ajun, Akhsan Nur Huda"/>
+				<listitem name="Zulfikarbot, Ahmad Thoriq Najahi,"/>
+				<listitem name=""/>
+				<listitem name="Malay"/>
+				<listitem name="abdullah ahmad, Zambri Bin Zainal,"/>
+				<listitem name="Kirishima Touka Ayato RaCha"/>
+				<listitem name="Utsman bin Ahmad, TS Faizal"/>
+				<listitem name="Kirishima Touka Ayato RaCha"/>
+				<listitem name=""/>
+				<listitem name="Minang"/>
+				<listitem name="ridho.fs, M Fikri Khrisna, Boel_Nauri,"/>
+				<listitem name="Muhammad Iqbal Shidiq, kontsky"/>
+				<listitem name="Angga, Rahmat Hidhayat'z"/>
+				<listitem name=""/>
+				<listitem name="Portuguese"/>
+				<listitem name="Tio Careca,"/>
+				<listitem name=""/>
+				<listitem name="Russian"/>
+				<listitem name="spoin, D STAMBULOV, sergeykoval2000,"/>
+				<listitem name="MrYacha, b4d-user, WhiteApfel"/>
+				<listitem name=""/>
+				<listitem name="Sundanese"/>
+				<listitem name="Muhajaya, ceplafz, MZülfikarr,"/>
+				<listitem name="Sayid Almahdy, Jengkel Tuda,"/>
+				<listitem name="MUHAMAD TAUPIK, Febri Sutomo,"/>
+				<listitem name="BujangGilaTapakSakti, user-ilang,"/>
+				<listitem name="Wiro Sableng, Zamzam Bm, Rizal Mutaqin,"/>
+				<listitem name="Andrile, Vicky Ryūtarō, Zherevnart Zha"/>
+				<listitem name="Dede Yusup, nadinsylva"/>
+				<listitem name=""/>
+				<listitem name="Tidore"/>
+				<listitem name="Ryan Cnrs"/>
+				<listitem name=""/>
+				<listitem name="Turkish"/>
+				<listitem name="İsa Samet Türkmen"/>
+				<listitem name=""/>
+				<listitem name="Vietnamese"/>
+				<listitem name="Vickry, Anonymous1298, Thành Nguyễn"/>
+		</listbox>
+			
 			<action>
-				<touch key="back"/>
-				<action function="page">about</action>
+				<touch key="home"/>
+				<action function="page">main</action>
 			</action>
+			
+			<button>
+				<condition var1="iconstyle" var2="1"/>
+				<condition var1="tw_samsung_navbar" var2="0"/>
+				<fill color="%transparent%"/>
+				<placement x="50" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">main</action>
+			</button>
+			
+			<button>
+				<condition var1="iconstyle" var2="0"/>
+				<condition var1="tw_samsung_navbar" var2="0"/>
+				<fill color="%transparent%"/>
+				<placement x="50" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">advanced2</action>
+			</button>
+	
+			<button>
+				<condition var1="iconstyle" var2="1"/>
+				<condition var1="tw_samsung_navbar" var2="1"/>
+				<fill color="%transparent%"/>
+				<placement x="center_x" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">main</action>
+			</button>
+			
+			<button>
+				<condition var1="iconstyle" var2="0"/>
+				<condition var1="tw_samsung_navbar" var2="1"/>
+				<fill color="%transparent%"/>
+				<placement x="center_x" y="%navbar_y1%" w="450" h="150" placement="4"/>
+				<action function="page">advanced2</action>
+			</button>
+			
 		</page>
 
 		<page name="htcdumlock">
@@ -5572,7 +5764,7 @@
 			<text color="%text_color%">
 				<font resource="font_s"/>
 				<placement x="%center_x%" y="%row11a_y%" placement="4"/>
-				<text>CPU: %tw_cpu_temp% °C   -   Battery: %tw_battery%</text>
+				<text>{@cpu_temp=CPU: %tw_cpu_temp% °C}   -    {@battery_pct=Battery: %tw_battery%}</text>
 			</text>
 
 			<image>
@@ -6536,7 +6728,7 @@
 			</text>
 
 			<console>
-				<placement x="%indent%" y="%row1a_y%" w="%content_width%" h="%slideout_height%"/>
+				<placement x="%indent%" y="%row2a_y%" w="%content_width%" h="%slideout_height%"/>
 			</console>
 			
 			<action>
