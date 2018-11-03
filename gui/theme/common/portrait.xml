@@ -5153,12 +5153,22 @@
 		<listbox style="about">
 			<placement x="%menu_x1%" y="%row18a_y%" w="950" h="210"/>
 				<listitem name="Leader Developer"/>
-				<listitem name="@zhantech"/>
+				<listitem name="ZHANtech"/>
 				<listitem name=""/>
 				<listitem name="Maintainer"/>
-				<listitem name="@trisfaizal - Kenzo, Vince"/>
-				<listitem name="@travarilo - X00TD"/>
-				<listitem name="@zhantech - Other Device"/>
+				<listitem name=""/>
+				<listitem name="Tris Faizal"/>
+				<listitem name="Kenzo (Xiaomi Redmi Note 3 Pro"/>
+				<listitem name="Vince (Xiaomi Redmi 5 Plus)"/>
+				<listitem name=""/>
+				<listitem name="Travarilo"/>
+				<listitem name="X00TD (Asus Zenfone Max Pro M1)"/>
+				<listitem name=""/>
+				<listitem name="ReversedPosix"/>
+				<listitem name="Sumire (Sony Xperia Z5)"/>
+				<listitem name=""/>
+				<listitem name="ZHANtech"/>
+				<listitem name="Other Device"/>
 				<listitem name=""/>
 				<listitem name="Tester"/>
 				<listitem name="@Vyacheslavsky @nTu21 @LostraStoria - Kenzo"/>
