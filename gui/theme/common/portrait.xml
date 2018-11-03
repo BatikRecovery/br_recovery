@@ -5158,7 +5158,7 @@
 				<listitem name="Maintainer"/>
 				<listitem name=""/>
 				<listitem name="Tris Faizal"/>
-				<listitem name="Kenzo (Xiaomi Redmi Note 3 Pro"/>
+				<listitem name="Kenzo (Xiaomi Redmi Note 3 Pro)"/>
 				<listitem name="Vince (Xiaomi Redmi 5 Plus)"/>
 				<listitem name=""/>
 				<listitem name="Travarilo"/>
@@ -5491,7 +5491,6 @@
 				<listitem name=""/>
 				<listitem name="~ S 1.4.2 ~"/>
 				<listitem name="Fix Progress Bar"/>
-				<listitem name="Delete Auto Reboot to Recovery"/>
 		</listbox>
 			
 			<action>
