@@ -5577,6 +5577,7 @@
 				<listitem name=""/>
 				<listitem name="~ S 1.4.2 ~"/>
 				<listitem name="Fix Progress Bar"/>
+				<listitem name="Delete Auto Reboot to Recovery"/>
 		</listbox>
 			
 			<action>
