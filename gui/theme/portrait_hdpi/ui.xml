@@ -57,7 +57,6 @@
 		<image name="bn_ramdisk" filename="bn_ramdisk" retainaspect="1"/>
 		<image name="bn_appdelete" filename="bn_appdelete" retainaspect="1"/>
 		<image name="bn_delsubs" filename="bn_delsubs" retainaspect="1"/>
-		<image name="bn_lazyflasher" filename="bn_lazyflasher" retainaspect="1"/>
 		<image name="bn_decrypt" filename="bn_decrypt" retainaspect="1"/>
 		<image name="bn_reset_pass" filename="bn_reset_pass" retainaspect="1"/>
 		<image name="bn_d_hal3" filename="bn_d_hal3" retainaspect="1"/>
