@@ -1646,7 +1646,10 @@ bool TWFunc::Patch_DM_Verity() {
 			{
 				if (TWFunc::Exec_Cmd(command + " " + path, null) == 0)
 					if(null.empty())
+					{
+						command="";
 						status=true;
+					}
 			}
 				
 		}
@@ -1715,7 +1718,10 @@ bool TWFunc::Patch_DM_Verity() {
 				{
 					if (TWFunc::Exec_Cmd(command + " " + path, null) == 0)
 						if(null.empty())
+						{
+							command="";
 							status=true;
+						}
 				}
 
 			}
@@ -1796,12 +1802,14 @@ bool TWFunc::Patch_Forced_Encryption()
 			}
 			if (!status)
 			{
-			       if ((TWFunc::CheckWord(path, "forceencrypt")) || (TWFunc::CheckWord(path, "forcefdeorfbe"))|| (TWFunc::CheckWord(path, "fileencryption")))
-					status = true;
-			}
-			TWFunc::Replace_Word_In_File(path, "forcefdeorfbe=;forceencrypt=;", "encryptable=");
-	    		TWFunc::Replace_Word_In_File(path, "fileencryption=ice;", "encryptable=footer");
-		}   
+				if (TWFunc::Exec_Cmd(command + " " + path, null) == 0)
+					if(null.empty())
+					{
+						command="";
+						status = true;
+					}
+			};
+		}
 	}
 	closedir (d);
 	if (stat == 0)
@@ -1847,7 +1855,10 @@ bool TWFunc::Patch_Forced_Encryption()
 				{
 					if (TWFunc::Exec_Cmd(command + " " + path, null) == 0)
 						if(null.empty())
+						{
+							command="";
 							status = true;
+						}
 				}
 		       }
 	        }
