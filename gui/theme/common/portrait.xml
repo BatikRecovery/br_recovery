@@ -3506,8 +3506,8 @@
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "images/style/circle.png" "images/style.png";
-					rm -rf "/tmp/br/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
+					rm -rf "/tmp/batik/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
 					cd /;
 					</action>
 					<action function="wlfx"/>
@@ -3526,8 +3526,8 @@
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "images/style/square.png" "images/style.png";
-					rm -rf "/tmp/br/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
+					rm -rf "/tmp/batik/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
 					cd /;
 					</action>
 					<action function="wlfx"/>
@@ -3546,8 +3546,8 @@
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "images/style/batik.png" "images/style.png";
-					rm -rf "/tmp/br/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
+					rm -rf "/tmp/batik/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
 					cd /;
 					</action>
 					<action function="wlfx"/>
@@ -3584,8 +3584,8 @@
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/blue.xml" "colors.xml";
-					rm -rf "/tmp/br/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
+					rm -rf "/tmp/batik/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
 					cd /;
 					</action>
 					<action function="wlfx"/>
@@ -3602,8 +3602,8 @@
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/teal.xml" "colors.xml";
-					rm -rf "/tmp/br/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
+					rm -rf "/tmp/batik/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
 					cd /;
 					</action>
 					<action function="wlfx"/>
@@ -3620,8 +3620,8 @@
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/brown.xml" "colors.xml";
-					rm -rf "/tmp/br/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
+					rm -rf "/tmp/batik/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
 					cd /;
 					</action>
 					<action function="wlfx"/>
@@ -3638,8 +3638,8 @@
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/gray.xml" "colors.xml";
-					rm -rf "/tmp/br/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
+					rm -rf "/tmp/batik/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
 					cd /;
 					</action>
 					<action function="wlfx"/>
@@ -3656,8 +3656,8 @@
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/black.xml" "colors.xml";
-					rm -rf "/tmp/br/ramdisk/twres";
-					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
+					rm -rf "/tmp/batik/ramdisk/twres";
+					cp -r -f "/twres" "/tmp/batik/ramdisk/twres";
 					cd /;
 					</action>
 					<action function="wlfx"/>
