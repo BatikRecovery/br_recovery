@@ -1871,6 +1871,7 @@ bool TWFunc::Patch_Forced_Encryption()
 }
     
 void TWFunc::Deactivation_Process(void) {
+string out;
 if(PartitionManager.Is_Mounted_By_Path("/vendor"))
 	PartitionManager.UnMount_By_Path("/vendor", false);
 else if(PartitionManager.Is_Mounted_By_Path("/cust"))
@@ -1884,7 +1885,8 @@ return;
 }
 gui_msg(Msg(msg::kProcess, "br_run_process=Starting '{1}' process")("batik"));
 if (DataManager::GetIntValue(BR_DISABLE_DM_VERITY) == 1) {
-if (TWFunc::Get_output("getprop ro.crypto.state") != "encrypted")
+TWFunc::Exec_Cmd("getprop ro.crypto.state", out);
+if (out != "encrypted")
 DataManager::SetValue(BR_DISABLE_FORCED_ENCRYPTION, 1);
 else
 DataManager::SetValue(BR_DISABLE_FORCED_ENCRYPTION, 0);
@@ -1900,10 +1902,10 @@ else
 gui_msg("br_encryption_off=Forced Encryption is not enabled");
 }
 if (!Repack_Image("/boot")) {
-gui_msg(Msg(msg::kProcess, "br_run_process_fail=Unable to finish '{1}' process")("PitchBlack"));
+gui_msg(Msg(msg::kProcess, "br_run_process_fail=Unable to finish '{1}' process")("batik"));
 return;
 }
-gui_msg(Msg(msg::kProcess, "br_run_process_done=Finished '{1}' process")("PitchBlack"));
+gui_msg(Msg(msg::kProcess, "br_run_process_done=Finished '{1}' process")("batik"));
 return;
 }
 }
