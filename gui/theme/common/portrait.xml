@@ -3502,7 +3502,7 @@
 				<actions>
 					<action function="set">iconstyle=1</action>
 					<action function="set">tw_busy=1</action>
-					<action function="unpack"/>
+					<action function="wlfw"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "images/style/circle.png" "images/style.png";
@@ -3510,7 +3510,7 @@
 					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="repack"/>
+					<action function="wlfx"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3522,7 +3522,7 @@
 				<actions>
 					<action function="set">iconstyle=1</action>
 					<action function="set">tw_busy=1</action>
-					<action function="unpack"/>
+					<action function="wlfw"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "images/style/square.png" "images/style.png";
@@ -3530,7 +3530,7 @@
 					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="repack"/>
+					<action function="wlfx"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3542,7 +3542,7 @@
 				<actions>
 					<action function="set">iconstyle=1</action>
 					<action function="set">tw_busy=1</action>
-					<action function="unpack"/>
+					<action function="wlfw"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "images/style/batik.png" "images/style.png";
@@ -3550,7 +3550,7 @@
 					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="repack"/>
+					<action function="wlfx"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3580,7 +3580,7 @@
 				<placement x="60" y="%row17a_y%" w="150" h="75"/>
 				<actions>
 					<action function="set">tw_busy=1</action>
-					<action function="unpack"/>
+					<action function="wlfw"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/blue.xml" "colors.xml";
@@ -3588,7 +3588,7 @@
 					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="repack"/>
+					<action function="wlfx"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3598,7 +3598,7 @@
 				<placement x="260" y="%row17a_y%" w="150" h="75"/>
 				<actions>
 					<action function="set">tw_busy=1</action>
-					<action function="unpack"/>
+					<action function="wlfw"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/teal.xml" "colors.xml";
@@ -3606,7 +3606,7 @@
 					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="repack"/>
+					<action function="wlfx"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3616,7 +3616,7 @@
 				<placement x="460" y="%row17a_y%" w="150" h="75"/>
 				<actions>
 					<action function="set">tw_busy=1</action>
-					<action function="unpack"/>
+					<action function="wlfw"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/brown.xml" "colors.xml";
@@ -3624,7 +3624,7 @@
 					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="repack"/>
+					<action function="wlfx"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3634,7 +3634,7 @@
 				<placement x="660" y="%row17a_y%" w="150" h="75"/>
 				<actions>
 					<action function="set">tw_busy=1</action>
-					<action function="unpack"/>
+					<action function="wlfw"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/gray.xml" "colors.xml";
@@ -3642,7 +3642,7 @@
 					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="repack"/>
+					<action function="wlfx"/>
 					<action function="reload"/>
 				</actions>
 			</button>
@@ -3652,7 +3652,7 @@
 				<placement x="860" y="%row17a_y%" w="150" h="75"/>
 				<actions>
 					<action function="set">tw_busy=1</action>
-					<action function="unpack"/>
+					<action function="wlfw"/>
 					<action function="cmd"> 
 					cd "/twres";
 					cp -r "colors/black.xml" "colors.xml";
@@ -3660,7 +3660,7 @@
 					cp -r -f "/twres" "/tmp/br/ramdisk/twres";
 					cd /;
 					</action>
-					<action function="repack"/>
+					<action function="wlfx"/>
 					<action function="reload"/>
 				</actions>
 			</button>
