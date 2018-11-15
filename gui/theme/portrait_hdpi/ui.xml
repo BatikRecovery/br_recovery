@@ -29,7 +29,6 @@
 		<image name="overlay" filename="overlay"/>
 		<image name="navbar" filename="navbar" retainaspect="1"/>
 		<image name="header" filename="header" retainaspect="1"/>
-		<image name="ota" filename="ota" retainaspect="1"/>
 		<image name="donate-id" filename="donate-id" retainaspect="1"/>
 		<image name="logo" filename="logo" retainaspect="1"/>
 		<image name="main_button" filename="main_button" retainaspect="1"/>
@@ -358,12 +357,7 @@
 			<text style="text_s">
 				<placement x="%col1_x_header%" y="%row4_header_y%"/>
 				<text>%br_version%</text>
-			</text>
-			
-			<button style="ota">
-				<placement x="800" y="120"/>
-				<action function="page">ota</action>
-			</button>						
+			</text>					
 
 			<image>
 				<image resource="style"/>
