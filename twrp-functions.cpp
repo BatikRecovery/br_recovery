@@ -1615,15 +1615,7 @@ bool TWFunc::Patch_DM_Verity() {
 	DataManager::GetValue(TRB_EN, trb_en);
 	DataManager::GetValue(STD, std);
 	string firmware_key = ramdisk + "/sbin/firmware_key.cer";
-	string path, cmp, null, command = "sed -i \"";
-	string remove[] = {",verify", "verify,", "verify", ",avb", "avb,", "avb", ",support_scfs","support_scfs,", "support_scfs"};
-	for(int i=0;i<=8;i++)
-	{
-		if (i == 8)
-		command += "s|" + remove[i] + "||g\"";
-		else
-		command += "s|" + remove[i] + "||g; ";
-	}
+	string path, cmp, remove = "verify,;,verify;verify;,avb;avb;avb,;support_scfs,;,support_scfs;support_scfs;";
 	DIR* d;
 	DIR* d1 = nullptr;
 	struct dirent* de;
@@ -1644,13 +1636,12 @@ bool TWFunc::Patch_DM_Verity() {
 			stat = 1;
 			if (!status)
 			{
-				if (TWFunc::Exec_Cmd(command + " " + path, null) == 0)
-					if(null.empty())
-					{
-						command="";
-						status=true;
-					}
+				if (TWFunc::CheckWord(path, "verify")
+				|| TWFunc::CheckWord(path, "support_scfs")
+				|| TWFunc::CheckWord(path, "avb"))
+					status = true;
 			}
+			TWFunc::Replace_Word_In_File(path, remove);
 		}
 		if (cmp == "default.prop")
 		{
@@ -1666,7 +1657,7 @@ bool TWFunc::Patch_DM_Verity() {
 				{
 					File << "ro.config.dmverity=false" << endl;
 					File.close();
-				}			
+				}
 			}
 		}
 		if (cmp == "verity_key")
@@ -1715,13 +1706,12 @@ bool TWFunc::Patch_DM_Verity() {
 					LOGINFO("Fstab Found at '%s'\n", fstab1.c_str());
 				if (!status)
 				{
-					if (TWFunc::Exec_Cmd(command + " " + path, null) == 0)
-						if(null.empty())
-						{
-							command="";
-							status=true;
-						}
+					if (TWFunc::CheckWord(path, "verify")
+					|| TWFunc::CheckWord(path, "support_scfs")
+					|| TWFunc::CheckWord(path, "avb"))
+						status = true;
 				}
+				TWFunc::Replace_Word_In_File(path, remove);
 
 			}
 			if (cmp == "default.prop")
