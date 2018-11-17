@@ -4,6 +4,12 @@
 	
 	Copyright 2018 ATG Droid  
 	This file is part of RWRP/RedWolf Recovery Project
+	
+	Copyright 2018 
+	This file is part of Orangefox Recovery Project
+
+	Copyright 2018 
+	This file is part of PitchBlack Recovery Project
 
 	TWRP is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by

@@ -1,6 +1,8 @@
 /*
  * Copyright (C) 2007 The Android Open Source Project
  * Copyright (C) 2018 ATG Droid
+ * Copyright 2018 This file is part of Orangefox Recovery Project
+ * Copyright 2018 This file is part of PitchBlack Recovery Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
