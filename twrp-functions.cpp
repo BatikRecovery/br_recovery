@@ -1671,14 +1671,14 @@ bool TWFunc::Patch_DM_Verity() {
 	{
 		if(std == 2 || trb_en == 1)
 		{
-			if(PartitionManager.Mount_By_Path("/vendor", false))
-				d1 = opendir(fstab2.c_str());
+			PartitionManager.Mount_By_Path("/vendor", false);
+			d1 = opendir(fstab2.c_str());
 			stat = 2;
 		}
 		else
 		{
-			if(PartitionManager.Mount_By_Path(PartitionManager.Get_Android_Root_Path(), false))
-				d1 = opendir(fstab1.c_str());
+			PartitionManager.Mount_By_Path(PartitionManager.Get_Android_Root_Path(), false);
+			d1 = opendir(fstab1.c_str());
 			stat = 1;
 		}
 		if (d1 == NULL)
@@ -1749,7 +1749,7 @@ bool TWFunc::Patch_DM_Verity() {
 bool TWFunc::Patch_Forced_Encryption()
 {
 	string path, null, cmp, command = "";
-	command += command + "sed -i \"";
+	command = "sed -i \"";
 	int stat = 0, std, trb_en;
 	string remove[] = {"forceencrypt=", "forcefdeorfbe=", "fileencryption=",
 				"discard,", "errors=panic"};
@@ -1804,14 +1804,14 @@ bool TWFunc::Patch_Forced_Encryption()
 	{
 		if(std == 2 || trb_en == 1)
 		{
-			if(PartitionManager.Mount_By_Path("/vendor", false))
-				d1 = opendir(fstab2.c_str());
+			PartitionManager.Mount_By_Path("/vendor", false);
+			d1 = opendir(fstab2.c_str());
 			stat = 2;
 		}
 		else
 		{
-			if(PartitionManager.Mount_By_Path(PartitionManager.Get_Android_Root_Path(), false))
-				d1 = opendir(fstab1.c_str());
+			PartitionManager.Mount_By_Path(PartitionManager.Get_Android_Root_Path(), false);
+			d1 = opendir(fstab1.c_str());
 			stat = 1;
 		}
 		if (d1 == NULL)
@@ -1880,13 +1880,13 @@ DataManager::SetValue(BR_DISABLE_FORCED_ENCRYPTION, 0);
 if (Patch_DM_Verity())
 gui_process("br_dm_verity=Successfully patched DM-Verity");
 else
-gui_msg("br_dm_verity_off=DM-Verity is not enabled");
+gui_print_color("warning", "br_dm_verity_off=DM-Verity is not enabled");
 }
 if (DataManager::GetIntValue(BR_DISABLE_FORCED_ENCRYPTION) == 1) {
 if (Patch_Forced_Encryption())
 gui_process("br_encryption=Successfully patched forced encryption");
 else
-gui_msg("br_encryption_off=Forced Encryption is not enabled");
+gui_print_color("warning", "br_encryption_off=Forced Encryption is not enabled");
 }
 else {
 if (DataManager::GetIntValue(TW_IS_ENCRYPTED) != 0)
