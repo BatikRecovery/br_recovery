@@ -1611,12 +1611,12 @@ return true;
 
 
 bool TWFunc::Patch_DM_Verity() {
-	bool status = false;
-	int stat = 0;
-	//DataManager::GetValue(TRB_EN, trb_en);
+	bool status = false, def = false;
+	int stat = 0, trb_en;
+	DataManager::GetValue(TRB_EN, trb_en);
 	//DataManager::GetValue(STD, std);
 	string firmware_key = ramdisk + "/sbin/firmware_key.cer";
-	string path, cmp, remove = "verify,;,verify;verify;,avb;avb;avb,;support_scfs,;,support_scfs;support_scfs;";
+	string path, fstab = "", cmp, remove = "verify,;,verify;verify;,avb;avb;avb,;support_scfs,;,support_scfs;support_scfs;";
 	DIR* d;
 	DIR* d1 = nullptr;
 	struct dirent* de;
@@ -1656,6 +1656,7 @@ bool TWFunc::Patch_DM_Verity() {
 				ofstream File(path.c_str(), ios_base::app | ios_base::out);  
 				if (File.is_open())
 				{
+					def = true;
 					File << "ro.config.dmverity=false" << endl;
 					File.close();
 				}
@@ -1671,7 +1672,7 @@ bool TWFunc::Patch_DM_Verity() {
 	closedir (d);
 	if (stat == 0)
 	{
-		if(PartitionManager.Mount_By_Path("/vendor", false))
+		if(trb_en || PartitionManager.Mount_By_Path("/vendor", false))
 		{
 			//PartitionManager.Mount_By_Path("/vendor", false);
 			d1 = opendir(fstab2.c_str());
@@ -1700,6 +1701,7 @@ bool TWFunc::Patch_DM_Verity() {
 				path = fstab1 + "/" + cmp;
 			if (cmp.find("fstab.") != string::npos)
 			{
+				fstab = cmp;
 				gui_msg(Msg("br_fstab=Detected fstab: '{1}'")(cmp));
 				if (stat == 2)
 					LOGINFO("Fstab Found at '%s'\n", fstab2.c_str());
@@ -1717,6 +1719,7 @@ bool TWFunc::Patch_DM_Verity() {
 			}
 			if (cmp == "default.prop")
 			{
+				def = true;
 				if (TWFunc::CheckWord(path, "ro.config.dmverity="))
 				{
 					if (TWFunc::CheckWord(path, "ro.config.dmverity=true"))
@@ -1734,7 +1737,29 @@ bool TWFunc::Patch_DM_Verity() {
 			}
 		}
 	        closedir (d1);
-		chmod(path.c_str(), 0644);
+		chmod(fstab.c_str(), 0644);
+		//additional check for default.prop
+		if(!def) {
+			if (PartitionManager.Is_Mounted_By_Path("/vendor")) 
+				path = fstab2 + "/default.prop" ;
+			else
+				path = fstab1 + "/default.prop";
+			if (TWFunc::CheckWord(path, "ro.config.dmverity="))
+			{
+				if (TWFunc::CheckWord(path, "ro.config.dmverity=true"))
+					TWFunc::Replace_Word_In_File(path, "ro.config.dmverity=true;", "ro.config.dmverity=false");
+			}
+			else
+			{
+				ofstream File(path.c_str(), ios_base::app | ios_base::out);  
+				if (File.is_open())
+				{
+					File << "ro.config.dmverity=false" << endl;
+					File.close();
+				}			
+			}
+		}
+		//end
 		if (PartitionManager.Is_Mounted_By_Path(PartitionManager.Get_Android_Root_Path()))
 			PartitionManager.UnMount_By_Path(PartitionManager.Get_Android_Root_Path(), false);
 		if (PartitionManager.Is_Mounted_By_Path("/vendor"))
@@ -1751,10 +1776,10 @@ bool TWFunc::Patch_DM_Verity() {
 
 bool TWFunc::Patch_Forced_Encryption()
 {
-	string path, null, null1, cmp, command = "", command_p;
+	string path, null, null1, fstab = "", cmp, command = "", command_p;
 	command = "sed -i \"";
 	command_p = command;
-	int stat = 0;
+	int stat = 0, trb_en;
 	string remove[] = {"forceencrypt=", "forcefdeorfbe=", "fileencryption="};
 	for(int i=0;i<=2;i++)
 	{
@@ -1765,9 +1790,9 @@ bool TWFunc::Patch_Forced_Encryption()
 	}
 	
 	//for additional kernel panic replacements
-	command_p += "s|discard,||g; s|errors=panic||g;\"";
+	command_p += "s|discard,||g; s|,errors=panic||g;\"";
 	
-	//DataManager::GetValue(TRB_EN, trb_en);
+	DataManager::GetValue(TRB_EN, trb_en);
 	//DataManager::GetValue(STD, std);
 	bool status = false;
 	int encryption;
@@ -1809,7 +1834,7 @@ bool TWFunc::Patch_Forced_Encryption()
 	closedir (d);
 	if (stat == 0)
 	{
-		if(PartitionManager.Mount_By_Path("/vendor", false))
+		if(trb_en == 1 || PartitionManager.Mount_By_Path("/vendor", false))
 		{
 			//PartitionManager.Mount_By_Path("/vendor", false);
 			d1 = opendir(fstab2.c_str());
@@ -1838,6 +1863,7 @@ bool TWFunc::Patch_Forced_Encryption()
 				path = fstab1 + "/" + cmp;
 			if (cmp.find("fstab.") != string::npos)
 			{
+				fstab = cmp;
 			        if (encryption != 1)
 				{
 					gui_msg(Msg("br_fstab=Detected fstab: '{1}'")(cmp));
@@ -1859,7 +1885,7 @@ bool TWFunc::Patch_Forced_Encryption()
 		       }
 	        }
 	        closedir (d1);
-		chmod(path.c_str(), 0644);
+		chmod(fstab.c_str(), 0644);
 		if (PartitionManager.Is_Mounted_By_Path(PartitionManager.Get_Android_Root_Path()))
 			PartitionManager.UnMount_By_Path(PartitionManager.Get_Android_Root_Path(), false);
 		if (PartitionManager.Is_Mounted_By_Path("/vendor"))
