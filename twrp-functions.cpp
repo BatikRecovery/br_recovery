@@ -1940,7 +1940,7 @@ gui_msg(Msg(msg::kProcess, "br_run_process=Starting '{1}' process")("batik"));
 DataManager::GetValue(TRB_EN, trb_en);
 if (DataManager::GetIntValue(BR_DISABLE_DM_VERITY) == 1) {
 TWFunc::Exec_Cmd("getprop ro.crypto.state", out);
-if (out.empty())
+if (strncmp((char *)out.c_str(), "e", 1) != 0)
 DataManager::SetValue(BR_DISABLE_FORCED_ENCRYPTION, 1);
 else
 DataManager::SetValue(BR_DISABLE_FORCED_ENCRYPTION, 0);
@@ -1959,6 +1959,7 @@ else {
 if (!out.empty())
 gui_msg("br_ecryption_leave=Device Encrypted Leaving Forceencrypt");
 }
+out="";
 if (!Repack_Image("/boot")) {
 gui_msg(Msg(msg::kProcess, "br_run_process_fail=Unable to finish '{1}' process")("batik"));
 return;
