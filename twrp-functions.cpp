@@ -1956,7 +1956,7 @@ else
 gui_print_color("warning", "Forced Encryption is not enabled");
 }
 else {
-if (out.empty())
+if (!out.empty())
 gui_msg("br_ecryption_leave=Device Encrypted Leaving Forceencrypt");
 }
 if (!Repack_Image("/boot")) {
