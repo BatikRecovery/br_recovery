@@ -1363,7 +1363,12 @@ return true;
 bool TWFunc::Symlink(string src, string dest)
 {
 	string null;
-	if(TWFunc::Path_Exists(src))
+	if (TWFunc::Path_Exists(dest + "/" + TWFunc::Get_Filename(src)))
+	{
+		LOGINFO("Symlink Exists : '%s'\n", (dest + "/" + TWFunc::Get_Filename(src)).c_str());
+		return false;
+	}
+	if (TWFunc::Path_Exists(src))
 	{
 		if(TWFunc::Path_Exists(dest) || TWFunc::Recursive_Mkdir(dest))
 		{
