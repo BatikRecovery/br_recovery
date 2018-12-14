@@ -1300,7 +1300,7 @@ File.close();
 }
 return line;
 }
-  
+
 bool TWFunc::Unpack_Image(string mount_point) {
 string null;
 TWFunc::Symlink("/sbin/linker64", "/system/bin");
@@ -1317,7 +1317,7 @@ LOGERR("TWFunc::Unpack_Image: Partition don't exist or isn't emmc");
 return false;
 }
 Read_Write_Specific_Partition("/tmp/br/boot.img", mount_point, true);
-string Command = "cd " + split_img + " && /sbin/magiskboot --unpack /tmp/br/boot.img";
+string ram="", Command = "cd " + split_img + " && /sbin/magiskboot --unpack /tmp/br/boot.img";
 if (TWFunc::Exec_Cmd(Command, null) != 0) {
 TWFunc::removeDir(tmp, false);
 return false;
@@ -1330,10 +1330,18 @@ while((der = readdir(dir)) != NULL)
 	Command = der->d_name;
 	if (Command.find("extra") != string::npos)
 	{
-			dtb = split_img + "/" + Command;
+		dtb = split_img + "/" + Command;
+	}
+	if (Command.find("ramdisk") != string::npos)
+	{
+		ram = split_img + "/" + Command;
 	}
 }
 closedir (dir);
+if (TWFunc::Exec_Cmd("cd " + ramdisk + "; cpio -i < " + ram, null) == 0)
+	unlink(ram.c_str());
+else
+	return false;
 return true;
 }
 
@@ -1349,7 +1357,13 @@ if (dir == NULL)
 	return false;
 }
 closedir(dir);
+Exec_Cmd("cd " + ramdisk + "; find | cpio -o -H newc > " + split_img + "/ramdisk.cpio", null);
 Command = "cd " + split_img + " && /sbin/magiskboot --repack /tmp/pb/boot.img";
+if (!Path_Exists(split_img + "/ramdisk.cpio"))
+{
+	LOGINFO("Failed to backup Cpio");
+	return false;
+}
 if (TWFunc::Exec_Cmd(Command, null) != 0)
 {
 	TWFunc::removeDir(tmp, false);
