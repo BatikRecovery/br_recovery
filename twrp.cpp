@@ -178,7 +178,9 @@ int main(int argc, char **argv) {
   	gui_msg(Msg("batik_msg4=[BUILD]: {1}") (BR_BUILD));
 	gui_msg("batik_msg5=**************************");
 	string null;
-	TWFunc::Exec_Cmd("getprop ro.omni.version > /tmp/prop.info && mv /tmp/prop.info /sdcard/batik/prop.info", null);
+	TWFunc::Symlink("/sbin/linker", "/system/bin");
+	TWFunc::Symlink("/sbin/linker64", "/system/bin");
+	TWFunc::Exec_Cmd("getprop ro.omni.version > /tmp/prop.info && mv /tmp/prop.info /sdcard/batik/pbrp.info", null);
 	if(!null.empty())
 	LOGERR("Failed To Copy prop.info");
 

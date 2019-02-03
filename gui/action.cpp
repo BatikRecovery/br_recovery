@@ -1052,15 +1052,19 @@ int GUIAction::flash(std::string arg)
 		gui_msg("zip_wipe_cache=One or more zip requested a cache wipe -- Wiping cache now.");
 		PartitionManager.Wipe_By_Path("/cache");
 	}
-		if (DataManager::GetIntValue(BR_INSTALL_PREBUILT_ZIP) != 1) {
-                 if (DataManager::GetIntValue(BR_CALL_DEACTIVATION) != 0) {
-		 TWFunc::Deactivation_Process();
-			}
-		DataManager::SetValue(BR_CALL_DEACTIVATION, 0);
-		}
 
          reinject_after_flash();
 	PartitionManager.Update_System_Details();
+
+	if (DataManager::GetIntValue(BR_INSTALL_PREBUILT_ZIP) != 1)
+	{
+		if (DataManager::GetIntValue(BR_CALL_DEACTIVATION) != 0 && ret_val != 1)//get to know whether everything is ok or not
+		{
+			TWFunc::Deactivation_Process();
+		}
+		DataManager::SetValue(BR_CALL_DEACTIVATION, 0);
+	}
+	DataManager::SetValue(TRB_EN, 0); //Reset At end
 	operation_end(ret_val);
 	// This needs to be after the operation_end call so we change pages before we change variables that we display on the screen
 	DataManager::SetValue(TW_ZIP_QUEUE_COUNT, zip_queue_index);
