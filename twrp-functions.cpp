@@ -1238,8 +1238,9 @@ void TWFunc::Replace_Word_In_File(std::string file_path, std::string search) {
       new_file << contents_of_file << '\n';
   }
   unlink(renamed.c_str());
-  chmod(file_path.c_str(), 0640);
+  chmod(file_path.c_str(), 0640);  
 }
+
 
 void TWFunc::Replace_Word_In_File(string file_path, string search, string word) {
   std::string renamed = file_path + ".wlfx";
@@ -1868,6 +1869,7 @@ bool TWFunc::Patch_Forced_Encryption()
 }
     
 void TWFunc::Deactivation_Process(void) {
+string out;
 if(PartitionManager.Is_Mounted_By_Path("/vendor"))
 	PartitionManager.UnMount_By_Path("/vendor", false);
 else if(PartitionManager.Is_Mounted_By_Path("/cust"))
@@ -1883,7 +1885,8 @@ return;
 gui_msg(Msg(msg::kProcess, "br_run_process=Starting '{1}' process")("batik"));
 DataManager::GetValue(TRB_EN, trb_en);
 if (DataManager::GetIntValue(BR_DISABLE_DM_VERITY) == 1) {
-if (DataManager::GetIntValue(TW_IS_ENCRYPTED) == 0)
+TWFunc::Exec_Cmd("getprop ro.crypto.state", out);
+if (out.empty())
 DataManager::SetValue(BR_DISABLE_FORCED_ENCRYPTION, 1);
 else
 DataManager::SetValue(BR_DISABLE_FORCED_ENCRYPTION, 0);
@@ -1899,7 +1902,7 @@ else
 gui_print_color("warning", "Forced Encryption is not enabled");
 }
 else {
-if (DataManager::GetIntValue(TW_IS_ENCRYPTED) != 0)
+if (out.empty())
 gui_msg("br_ecryption_leave=Device Encrypted Leaving Forceencrypt");
 }
 if (!Repack_Image("/boot")) {
