@@ -1876,20 +1876,24 @@ return;
 gui_msg(Msg(msg::kProcess, "br_run_process=Starting '{1}' process")("batik"));
 if (DataManager::GetIntValue(BR_DISABLE_DM_VERITY) == 1) {
 TWFunc::Exec_Cmd("getprop ro.crypto.state", out);
-if (out != "encrypted")
+if (out.compare("encrypted") != 0)
 DataManager::SetValue(BR_DISABLE_FORCED_ENCRYPTION, 1);
 else
 DataManager::SetValue(BR_DISABLE_FORCED_ENCRYPTION, 0);
 if (Patch_DM_Verity())
-gui_msg("br_dm_verity=Successfully patched DM-Verity");
+gui_process("br_dm_verity=Successfully patched DM-Verity");
 else
 gui_msg("br_dm_verity_off=DM-Verity is not enabled");
 }
 if (DataManager::GetIntValue(BR_DISABLE_FORCED_ENCRYPTION) == 1) {
 if (Patch_Forced_Encryption())
-gui_msg("br_encryption=Successfully patched forced encryption");
+gui_process("br_encryption=Successfully patched forced encryption");
 else
 gui_msg("br_encryption_off=Forced Encryption is not enabled");
+}
+else {
+if (out.compare("encrypted") == 0)
+gui_msg("br_ecryption_leave=Device Encrypted Leaving Forceencrypt");
 }
 if (!Repack_Image("/boot")) {
 gui_msg(Msg(msg::kProcess, "br_run_process_fail=Unable to finish '{1}' process")("batik"));

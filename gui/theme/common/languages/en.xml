@@ -791,7 +791,7 @@
 		<string name="br_install_detecting">Detecting Current Package</string>
 		<string name="br_install_standard_detected">- Detected Standard Package</string>
 		<string name="br_install_miui_detected">- Detected MIUI Update Package</string>
-        <string name="br_install_miui_oreo_detected">- Detected Treble MIUI Update Package</string>
+                <string name="br_install_miui_oreo_detected">- Detected Treble MIUI Update Package</string>
 		<string name="br_install_miui_10_detected">- Detected MIUI 10 Non-Treble Update Package</string>
 		<string name="br_install_patch_detected">- Detected Either a Patch or Fix Package</string>
 		<string name="br_disable_boot_chk">Disable boot check</string>
@@ -815,7 +815,8 @@
 		<string name="br_run_process_fail">Unable to finish '{1}' process</string>
 		<string name="br_run_process_done">Finished '{1}' process</string>
 		<string name="br_encryption">Successfully patched forced encryption</string>
-		<string name="br_encryption_off">Forced Encryption is not enabled</string>
+	        <string name="br_ecryption_leave">Device Encrypted Leaving Forceencrypt</string>
+         	<string name="br_encryption_off">Forced Encryption is not enabled</string>
 		<string name="br_fstab">Detected fstab: '{1}'</string>
 		<string name="br_dm_verity">Successfully patched DM-Verity</string>
 		<string name="br_dm_verity_off">DM-Verity is not enabled</string>
