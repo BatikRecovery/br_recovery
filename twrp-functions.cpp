@@ -1,4 +1,3 @@
-
 /*
 	Copyright 2012 bigbiff/Dees_Troy TeamWin
 	This file is part of TWRP/TeamWin Recovery Project.
@@ -1482,7 +1481,7 @@ bool TWFunc::Patch_DM_Verity() {
 	else
 		LOGINFO("Verity not found in DTB\n");
 	//rename("/sbin_tmp", "/sbin");
-	if (DataManager::GetIntValue(PB_DISABLE_FORCED_ENCRYPTION) == 1)
+	if (DataManager::GetIntValue(BR_DISABLE_FORCED_ENCRYPTION) == 1)
 		TWFunc::Exec_Cmd("cd /tmp/pb/split_img && /sbin/magiskboot --cpio ramdisk.cpio \"patch true true\"", null);
 	else
 		TWFunc::Exec_Cmd("cd /tmp/pb/split_img && /sbin/magiskboot --cpio ramdisk.cpio \"patch true false\"", null);
