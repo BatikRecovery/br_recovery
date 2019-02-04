@@ -177,7 +177,7 @@
 #define BR_DISABLE_DM_VERITY           "br_reboot_dm_verity_check"
 #define BR_SURVIVAL_FOLDER_VAR      "br_survival_backup_folder_path"
 #define BR_TMP_SCRIPT_DIR       "br_tmp_script_directory"
-#define BR_COMPATIBILITY_DEVICE         "br_compatibility_pb_device"
+#define BR_COMPATIBILITY_DEVICE         "br_compatibility_br_device"
 #define BR_ADVANCED_STOCK_REPLACE           "br_reboot_advanced_stock_recovery_check"
 #define BR_DISABLE_FORCED_ENCRYPTION           "br_reboot_forced_encryption_check"
 #define TRB_EN "0"
