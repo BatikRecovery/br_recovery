@@ -1357,7 +1357,7 @@ if (dir == NULL)
 }
 closedir(dir);
 Exec_Cmd("cd " + ramdisk + "; find | cpio -o -H newc > " + split_img + "/ramdisk.cpio", null);
-Command = "cd " + split_img + " && /sbin/magiskboot --repack /tmp/pb/boot.img";
+Command = "cd " + split_img + " && /sbin/magiskboot --repack /tmp/br/boot.img";
 if (!Path_Exists(split_img + "/ramdisk.cpio"))
 {
 	LOGINFO("Failed to backup Cpio");
@@ -1472,7 +1472,7 @@ bool TWFunc::Patch_DM_Verity() {
 	LOGINFO("DTB Found at '%s'\n", dtb.c_str());
 	TWFunc::Exec_Cmd("mount -o bind /dev/urandom /dev/random", null);
 	//rename("/sbin", "/sbin_tmp");
-	if (TWFunc::Exec_Cmd("cd /tmp/pb/split_img && /sbin/magiskboot --dtb-patch dtb", null) == 1 || TWFunc::Exec_Cmd("cd /tmp/pb/split_img && /sbin/magiskboot --dtb-patch extra", null) == 1)
+	if (TWFunc::Exec_Cmd("cd /tmp/br/split_img && /sbin/magiskboot --dtb-patch dtb", null) == 1 || TWFunc::Exec_Cmd("cd /tmp/br/split_img && /sbin/magiskboot --dtb-patch extra", null) == 1)
 	{
 		LOGINFO("Verity flags detected in DTB\n");
 		if (!status)
@@ -1482,9 +1482,9 @@ bool TWFunc::Patch_DM_Verity() {
 		LOGINFO("Verity not found in DTB\n");
 	//rename("/sbin_tmp", "/sbin");
 	if (DataManager::GetIntValue(BR_DISABLE_FORCED_ENCRYPTION) == 1)
-		TWFunc::Exec_Cmd("cd /tmp/pb/split_img && /sbin/magiskboot --cpio ramdisk.cpio \"patch true true\"", null);
+		TWFunc::Exec_Cmd("cd /tmp/br/split_img && /sbin/magiskboot --cpio ramdisk.cpio \"patch true true\"", null);
 	else
-		TWFunc::Exec_Cmd("cd /tmp/pb/split_img && /sbin/magiskboot --cpio ramdisk.cpio \"patch true false\"", null);
+		TWFunc::Exec_Cmd("cd /tmp/br/split_img && /sbin/magiskboot --cpio ramdisk.cpio \"patch true false\"", null);
 	TWFunc::Exec_Cmd("umount -l /dev/random ", null);
 
 	if (stat == 0)
