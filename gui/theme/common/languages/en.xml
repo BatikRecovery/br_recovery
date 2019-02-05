@@ -811,6 +811,7 @@
 		<string name="br_reboot_dont_disable_stock_recovery_chk">Don't disable stock recovery replace</string>
 		<string name="br_dmverity_chk">Disable DM-Verity</string>
 		<string name="br_forced_encryption_chk">Disable Forced Encryption</string>
+		<string name="br_disable_reboot_ota_check">Disable Rebooting after OTA</string>
 		<string name="br_run_process">Starting '{1}' process</string>
 		<string name="br_run_process_fail">Unable to finish '{1}' process</string>
 		<string name="br_run_process_done">Finished '{1}' process</string>

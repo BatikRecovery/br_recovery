@@ -180,6 +180,7 @@
 #define BR_COMPATIBILITY_DEVICE         "br_compatibility_br_device"
 #define BR_ADVANCED_STOCK_REPLACE           "br_reboot_advanced_stock_recovery_check"
 #define BR_DISABLE_FORCED_ENCRYPTION           "br_reboot_forced_encryption_check"
+#define BR_DISABLE_REBOOT_OTA	"br_disable_reboot_ota"
 #define TRB_EN "0"
 #define STD "0"
 #define NON_STD "0"
