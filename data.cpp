@@ -745,13 +745,14 @@ void DataManager::SetDefaultValues()
 	mPersist.SetValue(BR_DO_SYSTEM_ON_OTA, "1");
 	mPersist.SetValue("br_verify_incremental_ota_signature", "1");
 	mPersist.SetValue(BR_INCREMENTAL_PACKAGE, "0");
-	mPersist.SetValue(BR_DISABLE_FORCED_ENCRYPTION, "0");  
+	mPersist.SetValue(BR_DISABLE_FORCED_ENCRYPTION, "0");
 	mPersist.SetValue(BR_DISABLE_DM_VERITY, "1");
+	mPersist.SetValue(BR_DISABLE_REBOOT_OTA, "0");
 	mConst.SetValue(BR_SURVIVAL_FOLDER_VAR, BR_SURVIVAL_FOLDER);
      	mConst.SetValue(BR_SURVIVAL_BACKUP_NAME, BR_SURVIVAL_BACKUP);
      	mConst.SetValue(BR_ACTUAL_BUILD_VAR, BR_BUILD);
-    	mConst.SetValue(BR_TMP_SCRIPT_DIR, "/tmp/br");  
-	mConst.SetValue(BR_COMPATIBILITY_DEVICE, BR_DEVICE); 
+    	mConst.SetValue(BR_TMP_SCRIPT_DIR, "/tmp/br");
+	mConst.SetValue(BR_COMPATIBILITY_DEVICE, BR_DEVICE);
 	mData.SetValue(BR_INSTALL_PREBUILT_ZIP, "0");
 	mData.SetValue(BR_CALL_DEACTIVATION, "0");
 	mPersist.SetValue(BR_DISABLE_SECURE_BOOT, "0");

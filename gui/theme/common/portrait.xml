@@ -4282,6 +4282,9 @@
 				<listitem name="{@br_dmverity_chk=Zip signature verification}">
 					<data variable="br_reboot_dm_verity_check"/>
 				</listitem>
+				<listitem name="{@br_disable_reboot_ota_check=Disable Rebooting After OTA}">
+                                       <data variable="br_disable_reboot_ota"/>
+                                </listitem>
 			</listbox>
 			
 			<listbox style="about">
