@@ -4283,12 +4283,68 @@
 					<data variable="br_reboot_dm_verity_check"/>
 				</listitem>
 				<listitem name="{@br_disable_reboot_ota_check=Disable Rebooting After OTA}">
-                                       <data variable="br_disable_reboot_ota"/>
-                                </listitem>
+                    <data variable="br_disable_reboot_ota"/>
+                </listitem>
 			</listbox>
 			
+			<button style="main_button_half_height">
+				<placement x="%indent%" y="%row12_y%"/>
+				<text>Enable MIUI OTA</text>
+				<actions>
+					<action function="set">br_verify_incremental_ota_signature=1</action>
+					<action function="set">br_include_system_survival=1</action>
+					<action function="set">br_support_miui_ota=1</action>
+					<action function="set">br_reboot_advanced_stock_recovery_check=1</action>
+					<action function="set">br_reboot_dm_verity_check=1</action>
+					<action function="set">br_disable_reboot_ota=1</action>
+				</actions>
+			</button>
+			
+			<button style="main_button_half_height">
+				<placement x="%center_x%" y="%row12_y%"/>
+				<text>Disable MIUI OTA</text>
+				<actions>
+					<action function="set">br_verify_incremental_ota_signature=0</action>
+					<action function="set">br_include_system_survival=0</action>
+					<action function="set">br_support_miui_ota=0</action>
+					<action function="set">br_reboot_advanced_stock_recovery_check=1</action>
+					<action function="set">br_reboot_dm_verity_check=1</action>
+					<action function="set">br_disable_reboot_ota=0</action>
+				</actions>
+			</button>
+			
+			<button style="main_button_half_height_full_width">
+				<placement x="%indent%" y="%row14a_y%"/>
+				<text>Intruction MIUI OTA Support</text>
+				<action function="page">ota2</action>
+			</button>
+			
+			<action>
+				<touch key="back"/>
+				<action function="page">main</action>
+			</action>
+
+			<action>
+				<touch key="home"/>
+				<action function="page">main</action>
+			</action>
+		</page>
+		
+		<page name="ota2">
+			<template name="page"/>
+			
+			<text style="text_l">
+				<placement x="%col1_x_header%" y="%row3_header_y%"/>
+				<text>MIUI OTA</text>
+			</text>
+			
+			<text style="text_s">
+				<placement x="%col1_x_header%" y="%row4_header_y%"/>
+				<text>Batik Recovery</text>
+			</text>
+			
 			<listbox style="about">
-				<placement x="%indent%" y="%row11_y%" w="%content_width%" h="680"/>
+				<placement x="%indent%" y="%row2a_y%" w="%content_width%" h="1300"/>
 				<listitem name="{@ota_1=*   Please make your internal space 5GB}"/>
 				<listitem name=""/>
 				<listitem name="{@ota_2=*   Reboot to BATIK then Checklist incremental}"/>
@@ -4323,14 +4379,14 @@
 			
 			<action>
 				<touch key="back"/>
-				<action function="page">main</action>
+				<action function="page">ota</action>
 			</action>
 
 			<action>
 				<touch key="home"/>
 				<action function="page">main</action>
 			</action>
-		</page>
+</page>
 		
 		<page name="tools">
 			<template name="page"/>
