@@ -64,7 +64,9 @@
 		<image name="bn_d_navbar" filename="bn_d_navbar" retainaspect="1"/>
 		<image name="bn_e_navbar" filename="bn_e_navbar" retainaspect="1"/>
 		<image name="bn_i_magisk" filename="bn_i_magisk" retainaspect="1"/>
-		<image name="bn_u_magisk" filename="bn_u_magisk" retainaspect="1"/>		
+		<image name="bn_u_magisk" filename="bn_u_magisk" retainaspect="1"/>	
+		<image name="bn_d_miui" filename="bn_d_miui" retainaspect="1"/>
+		<image name="bn_adblock" filename="bn_adblock" retainaspect="1"/>			
 		<image name="main_button_half_height" filename="main_button_half_height"/>
 		<image name="main_button_half_height_full_width" filename="main_button_half_height_full_width"/>
 		<image name="fab_selectfolder" filename="fab_selectfolder" retainaspect="1"/>

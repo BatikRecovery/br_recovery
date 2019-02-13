@@ -241,6 +241,16 @@
 			<highlight color="%highlight_color%"/>
 			<image resource="bn_u_magisk"/>
 		</style>
+		
+		<style name="bn_d_miui">
+			<highlight color="%highlight_color%"/>
+			<image resource="bn_d_miui"/>
+		</style>
+		
+		<style name="bn_adblock">
+			<highlight color="%highlight_color%"/>
+			<image resource="bn_adblock"/>
+		</style>
 
 		<style name="main_button_half_height">
 			<highlight color="%highlight_color%"/>
@@ -4404,78 +4414,90 @@
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row3_y%"/>
+				<placement x="%bn_x1%" y="%row2a_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row3_y%"/>
+				<placement x="%bn_x2%" y="%row2a_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row3_y%"/>
+				<placement x="%bn_x3%" y="%row2a_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row7a_y%"/>
+				<placement x="%bn_x1%" y="%row7_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row7a_y%"/>
+				<placement x="%bn_x2%" y="%row7_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row7a_y%"/>
+				<placement x="%bn_x3%" y="%row7_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row12_y%"/>
+				<placement x="%bn_x1%" y="%row11a_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row12_y%"/>
+				<placement x="%bn_x2%" y="%row11a_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row12_y%"/>
+				<placement x="%bn_x3%" y="%row11a_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row16a_y%"/>
+				<placement x="%bn_x1%" y="%row16_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row16a_y%"/>
+				<placement x="%bn_x2%" y="%row16_y%"/>
 			</image>
 			
 			<image>
 				<image resource="style"/>
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row16a_y%"/>
+				<placement x="%bn_x3%" y="%row16_y%"/>
+			</image>
+			
+			<image>
+				<image resource="style"/>
+				<condition var1="iconstyle" var2="1"/>
+				<placement x="%bn_x1%" y="%row20a_y%"/>
+			</image>
+			
+			<image>
+				<image resource="style"/>
+				<condition var1="iconstyle" var2="1"/>
+				<placement x="%bn_x2%" y="%row20a_y%"/>
 			</image>
 
 			<button style="bn_ramdisk">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row3_y%"/>
+				<placement x="%bn_x1%" y="%row2a_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/ramdiskcleaner.zip</action>
@@ -4492,7 +4514,7 @@
 
 			<button style="bn_e_hal3">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row3_y%"/>
+				<placement x="%bn_x2%" y="%row2a_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/enablehal3.zip</action>
@@ -4509,7 +4531,7 @@
 
 			<button style="bn_d_hal3">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row3_y%"/>
+				<placement x="%bn_x3%" y="%row2a_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/disablehal3.zip</action>
@@ -4526,7 +4548,7 @@
 
 			<button style="bn_appdelete">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row7a_y%"/>
+				<placement x="%bn_x1%" y="%row7_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/appdel.zip</action>
@@ -4543,7 +4565,7 @@
 
 			<button style="bn_e_navbar">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row7a_y%"/>
+				<placement x="%bn_x2%" y="%row7_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/nb.zip</action>
@@ -4560,7 +4582,7 @@
 
 			<button style="bn_d_navbar">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row7a_y%"/>
+				<placement x="%bn_x3%" y="%row7_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/unnb.zip</action>
@@ -4577,7 +4599,7 @@
 
 			<button style="bn_delsubs">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row12_y%"/>
+				<placement x="%bn_x1%" y="%row11a_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/subs.zip</action>
@@ -4594,7 +4616,7 @@
 
 			<button style="bn_lazyflasher">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row12_y%"/>
+				<placement x="%bn_x2%" y="%row11a_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/lazyflasher.zip</action>
@@ -4611,7 +4633,7 @@
 			
 			<button style="bn_reset_pass">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row12_y%"/>
+				<placement x="%bn_x3%" y="%row11a_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/rmpass.zip</action>
@@ -4628,7 +4650,7 @@
 
 			<button style="bn_i_magisk">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x1%" y="%row16a_y%"/>
+				<placement x="%bn_x1%" y="%row16_y%"/>
 					<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/magisk.zip</action>
@@ -4645,7 +4667,7 @@
 			
 			<button style="bn_u_magisk">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x2%" y="%row16a_y%"/>
+				<placement x="%bn_x2%" y="%row16_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/unrootmagisk.zip</action>
@@ -4662,7 +4684,7 @@
 			
 			<button style="bn_i_magisk">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%bn_x3%" y="%row16a_y%"/>
+				<placement x="%bn_x3%" y="%row16_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
 					<action function="set">tw_filename=/sdcard/batik/tools/mountmagisk.zip</action>
@@ -4677,76 +4699,122 @@
 				</actions>
 			</button>
 			
+			<button style="bn_d_miui">
+				<condition var1="iconstyle" var2="1"/>
+				<placement x="%bn_x1%" y="%row20a_y%"/>
+				<actions>
+					<action function="set">tw_back=tools</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/dmiui.zip</action>
+					<action function="set">tw_action=queuezip</action>
+					<action function="set">tw_has_action2=1</action>
+					<action function="set">tw_action2=flash</action>
+					<action function="set">tw_action2_param=flash_zip</action>
+					<action function="set">tw_text1=Miui OTA Disabler</action>
+					<action function="set">tw_text2=Confirm Miui OTA Disabler</action>
+					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
+					<action function="page">confirm_action</action>
+				</actions>
+			</button>
+			
+			<button style="bn_adblock">
+				<condition var1="iconstyle" var2="1"/>
+				<placement x="%bn_x2%" y="%row20a_y%"/>
+				<actions>
+					<action function="set">tw_back=tools</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/adblock.zip</action>
+					<action function="set">tw_action=queuezip</action>
+					<action function="set">tw_has_action2=1</action>
+					<action function="set">tw_action2=flash</action>
+					<action function="set">tw_action2_param=flash_zip</action>
+					<action function="set">tw_text1=Adblock v2</action>
+					<action function="set">tw_text2=Confirm Adblock v2</action>
+					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
+					<action function="page">confirm_action</action>
+				</actions>
+			</button>
+			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x1%" y="%row6_y%"/>
+				<placement x="%tx_x1%" y="%row5a_y%"/>
 				<text>{@Ramdisk_Cleaner_btn=Ramdisk Cleaner}</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x2%" y="%row6_y%"/>
+				<placement x="%tx_x2%" y="%row5a_y%"/>
 				<text>{@Enable_HAL3_btn=Enabled HAL3}</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x3%" y="%row6_y%"/>
+				<placement x="%tx_x3%" y="%row5a_y%"/>
 				<text>Disable HAL3</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x1%" y="%row10a_y%"/>
+				<placement x="%tx_x1%" y="%row10_y%"/>
 				<text>{@App_Delete_btn=App Delete}</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x2%" y="%row10a_y%"/>
+				<placement x="%tx_x2%" y="%row10_y%"/>
 				<text>Enable Navbar</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x3%" y="%row10a_y%"/>
+				<placement x="%tx_x3%" y="%row10_y%"/>
 				<text>Disable Navbar</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x1%" y="%row15_y%"/>
+				<placement x="%tx_x1%" y="%row14a_y%"/>
 				<text>Del Subs Overlay</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x2%" y="%row15_y%"/>
+				<placement x="%tx_x2%" y="%row14a_y%"/>
 				<text>{@Lazy_Flasher_btn=Lazy Flasher}</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x3%" y="%row15_y%"/>
+				<placement x="%tx_x3%" y="%row14a_y%"/>
 				<text>{@Reset_Password_btn=Reset Password}</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x1%" y="%row19a_y%"/>
+				<placement x="%tx_x1%" y="%row19_y%"/>
 				<text>Root Magisk</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x2%" y="%row19a_y%"/>
+				<placement x="%tx_x2%" y="%row19_y%"/>
 				<text>{@Unroot_Magisk_btn=Unroot Magisk}</text>
 			</button>
 			
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
-				<placement x="%tx_x3%" y="%row19a_y%"/>
+				<placement x="%tx_x3%" y="%row19_y%"/>
 				<text>Mount Magisk</text>
+			</button>
+			
+			<button style="text_tx">
+				<condition var1="iconstyle" var2="1"/>
+				<placement x="%tx_x1%" y="%row23a_y%"/>
+				<text>Miui OTA Disabler</text>
+			</button>
+			
+			<button style="text_tx">
+				<condition var1="iconstyle" var2="1"/>
+				<placement x="%tx_x2%" y="%row23a_y%"/>
+				<text>Adblock</text>
 			</button>
 			
 
@@ -5416,10 +5484,11 @@
 				<listitem name="SuperSu by Chainfire"/>
 				<listitem name="Magisk for topjohnwu"/>
 				<listitem name="Lazyflasher by jcadduono"/>
-				<listitem name="Cam2API Enabler(HAL3) by helmiau"/>
+				<listitem name="Cam2API Enabler(HAL3) by manolorey"/>
 				<listitem name="Password Remover by Magua"/>
 				<listitem name="Aroma File Manager by amarullz"/>
 				<listitem name="App Deleter by THE_pirate_predator"/>
+				<listitem name="Adblock and MIUI OTA disabler by helmiau"/>
 		</listbox>
 			
 			<action>
@@ -5639,6 +5708,15 @@
 				<listitem name=""/>
 				<listitem name="~ S 1.4.2 ~"/>
 				<listitem name="Fix Progress Bar"/>
+				<listitem name=""/>
+				<listitem name="~ S 1.4.5 ~"/>
+				<listitem name="Update Februari Security Patch (android-8.1.0_r61)"/>	
+				<listitem name="New Brand Logo"/>
+				<listitem name="New Splash with New Brand Logo"/>
+				<listitem name="Update Flashable Camera2API Compatible with Oreo/Pie"/>
+				<listitem name="Update DFE and DM-Verity in Source Batik"/>
+				<listitem name="Update Flashable Magisk 18.2 e5940168"/>
+				<listitem name="Add Tools : Adblock and MIUI OTA disabler"/>
 		</listbox>
 			
 			<action>
