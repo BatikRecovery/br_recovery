@@ -5415,7 +5415,10 @@
 				<listitem name="Sumire (Sony Xperia Z5)"/>
 				<listitem name=""/>
 				<listitem name="ManoloRey"/>
-				<listitem name="Platina (MI8 Lite)"/>
+				<listitem name="Platina (Xiaomi MI8 Lite)"/>
+				<listitem name=""/>
+				<listitem name="Ramakun"/>
+				<listitem name="Tulip (Xiaomi Redmi Note 6 Pro)"/>
 				<listitem name=""/>
 				<listitem name="ZHANtech"/>
 				<listitem name="Other Device"/>
@@ -5749,7 +5752,7 @@
 				<listitem name="New Splash with New Brand Logo"/>
 				<listitem name="Update Flashable Camera2API Compatible with Oreo/Pie"/>
 				<listitem name="Update DFE and DM-Verity in Source Batik"/>
-				<listitem name="Update Flashable Magisk 18.2 e5940168"/>
+				<listitem name="Update Flashable Magisk Stable 18.1"/>
 				<listitem name="Add Tools : Adblock, MIUI OTA disabler and Asus Decrypt"/>
 		</listbox>
 			
