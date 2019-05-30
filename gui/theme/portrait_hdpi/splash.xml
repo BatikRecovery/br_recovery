@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<recovery>
+	<details>
+		<resolution width="1080" height="1920"/>
+		<author>TeamWin</author>
+		<title>TWRP</title>
+		<description>splash screen</description>
+		<themeversion>3</themeversion>
+	</details>
+
+	<resources>
+		<font name="splashtext1" filename="RobotoCondensed-Regular.ttf" size="70"/>
+		<font name="splashtext2" filename="RobotoCondensed-Regular.ttf" size="100"/>
+		<font name="splashtext3" filename="RobotoCondensed-Regular.ttf" size="40"/>
+		<image name="BH1" filename="BH1" retainaspect="1"/>
+		<image name="splashteamwin" filename="splashteamwin" retainaspect="1"/>
+	</resources>
+
+	<variables>
+		<variable name="center_x" value="540"/>
+		<variable name="screen_width" value="1080"/>
+		<variable name="screen_height" value="1920"/>
+		<variable name="background_color" value="#222222"/>
+		<variable name="header_color" value="#555555"/>
+		<variable name="accent_color" value="#0090CA"/>
+		<variable name="text" value="#EEEEEE"/>
+	</variables>
+
+	<pages>
+		<page name="splash">
+			<background color="%background_color%"/>
+			
+			<text color="%text%">
+				<font resource="splashtext2"/>
+				<placement x="%center_x%" y="150" placement="5"/>
+				<text>BATIK RECOVERY</text>
+			</text>
+			
+			<text color="%text%">
+				<font resource="splashtext1"/>
+				<placement x="%center_x%" y="1590" placement="5"/>
+				<text>%br_version%</text>
+			</text>
+			
+			<image>
+				<image resource="BH1"/>
+				<placement x="190" y="600"/>
+			</image>
+			
+		</page>
+	</pages>
+</recovery>
+
