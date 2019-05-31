@@ -20,6 +20,17 @@
 #define TW_MAIN_VERSION_STR       "3.3.1"
 #define TW_VERSION_STR TW_MAIN_VERSION_STR TW_DEVICE_VERSION
 
+#ifdef BR_OFFICIAL
+#define TW_DEVICE_VERSION	   "OFFICIAL"
+#endif
+
+#define BR_BUILD                "S-1.5.0"
+#define BR_VERSION_VAR          "br_version"
+#define BR_DEVICE               BR_DEVICE_MODEL
+#define BR_MAINTAINER_STR       "br_maintainer"
+#define BR_ACTUAL_BUILD_VAR     "br_actual_build"
+
+
 #define TW_USE_COMPRESSION_VAR      "tw_use_compression"
 #define TW_FILENAME                 "tw_filename"
 #define TW_ZIP_INDEX                "tw_zip_index"
@@ -140,6 +151,20 @@
 #define TW_MILITARY_TIME            "tw_military_time"
 #define TW_USE_SHA2                 "tw_use_sha2"
 #define TW_NO_SHA2                  "tw_no_sha2"
+
+// BATIK RECOVERY
+#define ICONSTYLE                   "iconstyle"
+#define AROMAFM                     "aromafm"
+#define DISABLE_DM_VERITY           "dm_verity_check"
+
+// *** BATIK - Variables ** //
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+#include <unistd.h>
+static const std::string batik_Tmp = "/tmp";
+static const std::string batik_tmp_dir = batik_Tmp + "/batik";
+static const std::string epoch_drift_file = "/persist/.batik_epoch_drift.cfg"; // to cater for any saved epoch_drifts
 
 // Also used:
 //   tw_boot_is_mountable

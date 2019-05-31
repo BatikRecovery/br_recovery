@@ -234,6 +234,8 @@ GUIAction::GUIAction(xml_node<>* node)
 		ADD_ACTION(uninstalltwrpsystemapp);
 		ADD_ACTION(repackimage);
 		ADD_ACTION(fixabrecoverybootloop);
+                ADD_ACTION(unpack);
+                ADD_ACTION(repack);
 	}
 
 	// First, get the action
@@ -2185,5 +2187,29 @@ int GUIAction::fixabrecoverybootloop(std::string arg __unused)
 	op_status = 0;
 exit:
 	operation_end(op_status);
+	return 0;
+}
+
+int GUIAction::unpack(std::string arg __unused)
+{
+	operation_start("Prepartion to unpack");
+	if (simulate) {
+        simulate_progress_bar();
+         } else {
+		TWFunc::Unpack_Image("/recovery");
+	}
+	operation_end(0);
+	return 0;
+}
+
+int GUIAction::repack(std::string arg __unused)
+{
+	operation_start("Repacking done");
+	if (simulate) {
+        simulate_progress_bar();
+         } else {
+		TWFunc::Repack_Image("/recovery");
+	}
+	operation_end(0);
 	return 0;
 }

@@ -535,7 +535,7 @@ void DataManager::SetBackupFolder()
 {
 	string str = GetCurrentStoragePath();
 	TWPartition* partition = PartitionManager.Find_Partition_By_Path(str);
-	str += "/TWRP/BACKUPS/";
+	str += "/batik/BACKUPS/";
 
 	string dev_id;
 	GetValue("device_id", dev_id);
@@ -586,7 +586,10 @@ void DataManager::SetDefaultValues()
 	mConst.SetValue("true", "1");
 	mConst.SetValue("false", "0");
 
-	mConst.SetValue(TW_VERSION_VAR, TW_VERSION_STR);
+	mConst.SetValue(BR_VERSION_VAR, TW_VERSION_STR);
+	mConst.SetValue(BR_ACTUAL_BUILD_VAR, BR_BUILD);
+	mConst.SetValue(BR_MAINTAINER_STR, BR_MAINTAINER);
+	mConst.SetValue(TW_VERSION_VAR, TW_MAIN_VERSION_STR);
 
 #ifndef TW_NO_HAPTICS
 	mPersist.SetValue("tw_button_vibrate", "80");
@@ -624,7 +627,7 @@ void DataManager::SetDefaultValues()
 
 	str = GetCurrentStoragePath();
 	mPersist.SetValue(TW_ZIP_LOCATION_VAR, str);
-	str += "/TWRP/BACKUPS/";
+	str += "/batik/BACKUPS/";
 
 	string dev_id;
 	mConst.GetValue("device_id", dev_id);
@@ -780,8 +783,10 @@ void DataManager::SetDefaultValues()
 #ifdef TW_INCLUDE_CRYPTO
 	mPersist.SetValue(TW_USE_SHA2, "1");
 	mPersist.SetValue(TW_NO_SHA2, "0");
+	mConst.SetValue(TW_MILITARY_TIME, "1");
 #else
 	mPersist.SetValue(TW_NO_SHA2, "1");
+	mConst.SetValue(TW_MILITARY_TIME, "0");
 #endif
 
 #ifdef TW_NO_SCREEN_TIMEOUT
