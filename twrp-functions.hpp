@@ -113,6 +113,7 @@ public:
 
 private:
 	static void Copy_Log(string Source, string Destination);
+	static string Load_File(string extension);
 
 };
 
