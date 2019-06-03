@@ -105,7 +105,7 @@ int main(int argc, char **argv) {
 	property_set("ro.twrp.version", TW_VERSION_STR);
 
 	time_t StartupTime = time(NULL);
-	printf("Starting TWRP %s-%s on %s (pid %d)\n", TW_VERSION_STR, TW_GIT_REVISION, ctime(&StartupTime), getpid());
+	printf("Starting TWRP %s-%s on %s (pid %d)\n", TW_VERSION_STR, BR_BUILD TW_GIT_REVISION, ctime(&StartupTime), getpid());
 
 	// Load default values to set DataManager constants and handle ifdefs
 	DataManager::SetDefaultValues();
@@ -269,6 +269,12 @@ int main(int argc, char **argv) {
 	if ((DataManager::GetIntValue(TW_IS_ENCRYPTED) == 0 || SkipDecryption) && (TWFunc::Path_Exists(SCRIPT_FILE_TMP) || TWFunc::Path_Exists(orsFile))) {
 		OpenRecoveryScript::Run_OpenRecoveryScript();
 	}
+	
+	gui_msg("batik_msg1=**************************");
+  	gui_msg("batik_msg2=[BATIK]: Welcome! ^_^");
+  	gui_msg(Msg("batik_msg3=[VERSION]: '{1}'") (TW_MAIN_VERSION_STR));
+  	gui_msg(Msg("batik_msg4=[BUILD]: {1}") (BR_BUILD));
+  	gui_msg("batik_msg5=**************************");
 
 #ifdef TW_HAS_MTP
 	char mtp_crash_check[PROPERTY_VALUE_MAX];
