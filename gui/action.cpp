@@ -855,7 +855,7 @@ int GUIAction::checkpartitionlist(std::string arg)
 		while (end_pos != string::npos && start_pos < List.size()) {
 			part_path = List.substr(start_pos, end_pos - start_pos);
 			LOGINFO("checkpartitionlist part_path '%s'\n", part_path.c_str());
-			if (part_path == "/and-sec" || part_path == "DALVIK" || part_path == "INTERNAL") {
+			if (part_path == "/and-sec" || part_path == "DALVIK" || part_path == "INTERNAL" || part_path == "SUBSTRATUM") {
 				// Do nothing
 			} else {
 				count++;
@@ -884,7 +884,7 @@ int GUIAction::getpartitiondetails(std::string arg)
 		while (end_pos != string::npos && start_pos < List.size()) {
 			part_path = List.substr(start_pos, end_pos - start_pos);
 			LOGINFO("getpartitiondetails part_path '%s'\n", part_path.c_str());
-			if (part_path == "/and-sec" || part_path == "DALVIK" || part_path == "INTERNAL") {
+			if (part_path == "/and-sec" || part_path == "DALVIK" || part_path == "INTERNAL" || part_path == "SUBSTRATUM") {
 				// Do nothing
 			} else {
 				DataManager::SetValue("tw_partition_path", part_path);
@@ -955,7 +955,7 @@ int GUIAction::screenshot(std::string arg __unused)
 
 	const std::string storage = DataManager::GetCurrentStoragePath();
 	if (PartitionManager.Is_Mounted_By_Path(storage)) {
-		snprintf(path, sizeof(path), "%s/Pictures/Screenshots/", storage.c_str());
+		snprintf(path, sizeof(path), "%s/batik/Screenshots/", storage.c_str());
 	} else {
 		strcpy(path, "/tmp/");
 	}
@@ -966,8 +966,8 @@ int GUIAction::screenshot(std::string arg __unused)
 	tm = time(NULL);
 	path_len = strlen(path);
 
-	// Screenshot_2014-01-01-18-21-38.png
-	strftime(path+path_len, sizeof(path)-path_len, "Screenshot_%Y-%m-%d-%H-%M-%S.png", localtime(&tm));
+	// Screenshot_batik_2014-01-01-18-21-38.png
+	strftime(path+path_len, sizeof(path)-path_len, "Screenshot_batik_%Y-%m-%d-%H-%M-%S.png", localtime(&tm));
 
 	int res = gr_save_screenshot(path);
 	if (res == 0) {
@@ -1125,7 +1125,37 @@ int GUIAction::wipe(std::string arg)
 						} else {
 							skip = true;
 						}
-					} else if (wipe_path == "INTERNAL") {
+					
+ 					}
+
+ 					  else if (wipe_path == "SUBSTRATUM")
+
+ 					    {
+
+ 					      if (!PartitionManager.Wipe_Substratum_Overlays())
+
+ 						{
+
+ 						  gui_err
+
+ 						    ("br_substratum_wipe_err=Failed to wipe substratum overlays");
+
+ 						  ret_val = false;
+
+ 						  break;
+
+ 						}
+
+ 					      else
+
+ 						{
+
+ 						  skip = true;
+
+ 						}
+
+ 					    }
+					else if (wipe_path == "INTERNAL") {
 						if (!PartitionManager.Wipe_Media_From_Data()) {
 							ret_val = false;
 							break;
