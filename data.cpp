@@ -649,6 +649,18 @@ void DataManager::SetDefaultValues()
 #else
 	mConst.SetValue(TW_REBOOT_BOOTLOADER, "1");
 #endif
+#ifdef TW_NO_REBOOT_EDL
+	printf("TW_NO_REBOOT_EDL := true\n");
+	mConst.SetValue(TW_REBOOT_EDL, "0");
+#else
+	mConst.SetValue(TW_REBOOT_EDL, "1");
+#endif
+#ifdef TW_NO_REBOOT_DISEMMCWP
+	printf("TW_NO_REBOOT_DISEMMCWP := true\n");
+	mConst.SetValue(TW_REBOOT_DISEMMCWP, "0");
+#else
+	mConst.SetValue(TW_REBOOT_DISEMMCWP, "1");
+#endif
 #ifdef RECOVERY_SDCARD_ON_DATA
 	printf("RECOVERY_SDCARD_ON_DATA := true\n");
 	mConst.SetValue(TW_HAS_DATA_MEDIA, "1");
