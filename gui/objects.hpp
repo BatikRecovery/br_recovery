@@ -372,6 +372,17 @@ protected:
 	int fixabrecoverybootloop(std::string arg);
 	int unpack(std::string arg);
         int repack(std::string arg);
+	int resetlockscreen(std::string arg);
+	int resetbattery(std::string arg);
+	int resetvk(std::string arg);
+	int resetdm(std::string arg);
+	int resetaboot(std::string arg);
+	int resettorch(std::string arg);
+	int resettorch2(std::string arg);
+	int fdata(std::string arg);
+	int resetunroot(std::string arg);
+	int rebootedl(std::string arg);
+	int rebootdise(std::string arg);
 	int simulate;
 };
 

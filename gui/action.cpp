@@ -236,6 +236,17 @@ GUIAction::GUIAction(xml_node<>* node)
 		ADD_ACTION(fixabrecoverybootloop);
                 ADD_ACTION(unpack);
                 ADD_ACTION(repack);
+		ADD_ACTION(resetlockscreen);
+		ADD_ACTION(resetbattery);
+		ADD_ACTION(resetvk);
+		ADD_ACTION(resetdm);
+		ADD_ACTION(resetaboot);
+		ADD_ACTION(resettorch);
+		ADD_ACTION(resettorch2);
+		ADD_ACTION(fdata);
+		ADD_ACTION(resetunroot);
+		ADD_ACTION(rebootedl);
+		ADD_ACTION(rebootdise);
 	}
 
 	// First, get the action
@@ -2242,4 +2253,213 @@ int GUIAction::repack(std::string arg __unused)
 	}
 	operation_end(0);
 	return 0;
+}
+
+int GUIAction::resetlockscreen(std::string arg __unused)
+{
+	int op_status = 0;
+
+ 	operation_start("Reset Lockscreen");
+	if (simulate) {
+		simulate_progress_bar();
+	} else {
+		string cmd = "rm -f data/system/*.key data/system/locksettings.*";
+		op_status = TWFunc::Exec_Cmd(cmd);
+	}
+	operation_end(op_status);
+	if (op_status != 0)
+	       LOGINFO("reset lockscreen: Removing lockscreen password/pattern... Failed:  result=%d\n", op_status);
+	else
+	       LOGINFO("reset lockscreen: Removing lockscreen password/pattern... Success: result=%d\n", op_status);
+	return op_status;
+}
+
+ int GUIAction::resetbattery(std::string arg __unused)
+{
+	int op_status = 0;
+
+ 	operation_start("Reset Battery");
+	if (simulate) {
+		simulate_progress_bar();
+	} else {
+		string cmd = "rm -f data/system/batterystats.bin";
+		op_status = TWFunc::Exec_Cmd(cmd);
+	}
+	operation_end(op_status);
+	if (op_status != 0)
+	       LOGINFO("reset battery: Removing battery/pattern... Failed:  result=%d\n", op_status);
+	else
+	       LOGINFO("reset battery: Removing battery/pattern... Success: result=%d\n", op_status);
+	return op_status;
+}
+
+ int GUIAction::resetvk(std::string arg __unused)
+{
+	int op_status = 0;
+
+ 	operation_start("Reset vk");
+	if (simulate) {
+		simulate_progress_bar();
+	} else {
+		string cmd = "rm -f data/data/com.vkontakte.android/shared_prefs/PlayerService.xml";
+		op_status = TWFunc::Exec_Cmd(cmd);
+	}
+	operation_end(op_status);
+	if (op_status != 0)
+	       LOGINFO("reset vk: Removing vk/pattern... Failed:  result=%d\n", op_status);
+	else
+	       LOGINFO("reset vk: Removing vk/pattern... Success: result=%d\n", op_status);
+	return op_status;
+}
+
+ int GUIAction::resetdm(std::string arg __unused)
+{
+	int op_status = 0;
+
+ 	operation_start("No dm-verity");
+	if (simulate) {
+		simulate_progress_bar();
+	} else {
+		string cmd = "sh /nov/start.sh";
+		op_status = TWFunc::Exec_Cmd(cmd);
+	}
+	operation_end(op_status);
+	if (op_status != 0)
+	       LOGINFO("reset dm: Removing dm/pattern... Failed:  result=%d\n", op_status);
+	else
+	       LOGINFO("reset dm: Removing dm/pattern... Success: result=%d\n", op_status);
+	return op_status;
+}
+
+ int GUIAction::resetaboot(std::string arg __unused)
+{
+	int op_status = 0;
+
+ 	operation_start("Delete inscription");
+	if (simulate) {
+		simulate_progress_bar();
+	} else {
+		string cmd = "dd if=/sbin/aboot of=/dev/block/bootdevice/by-name/aboot";
+		op_status = TWFunc::Exec_Cmd(cmd);
+	}
+	operation_end(op_status);
+	if (op_status != 0)
+	       LOGINFO("reset aboot: Removing in/pattern... Failed:  result=%d\n", op_status);
+	else
+	       LOGINFO("reset aboot: Removing in/pattern... Success: result=%d\n", op_status);
+	return op_status;
+}
+
+ int GUIAction::resettorch(std::string arg __unused)
+{
+	int op_status = 0;
+
+ 	operation_start("torch");
+	if (simulate) {
+		simulate_progress_bar();
+	} else {
+		string cmd = "echo 1 > /sys/class/leds/flashlight/brightness";
+		op_status = TWFunc::Exec_Cmd(cmd);
+	}
+	operation_end(op_status);
+	if (op_status != 0)
+	       LOGINFO("reset torch: Removing in/pattern... Failed:  result=%d\n", op_status);
+	else
+	       LOGINFO("reset torch: Removing in/pattern... Success: result=%d\n", op_status);
+	return op_status;
+}
+
+ int GUIAction::resettorch2(std::string arg __unused)
+{
+	int op_status = 0;
+
+ 	operation_start("torch2");
+	if (simulate) {
+		simulate_progress_bar();
+	} else {
+		string cmd = "echo 0 > /sys/class/leds/flashlight/brightness";
+		op_status = TWFunc::Exec_Cmd(cmd);
+	}
+	operation_end(op_status);
+	if (op_status != 0)
+	       LOGINFO("reset torch2: Removing in/pattern... Failed:  result=%d\n", op_status);
+	else
+	       LOGINFO("reset torch2: Removing in/pattern... Success: result=%d\n", op_status);
+	return op_status;
+}
+
+ int GUIAction::fdata(std::string arg __unused)
+{
+	int op_status = 0;
+
+ 	operation_start("fdata");
+	if (simulate) {
+		simulate_progress_bar();
+	} else {
+		string cmd = "make_ext4fs /dev/block/bootdevice/by-name/data";
+		op_status = TWFunc::Exec_Cmd(cmd);
+	}
+	operation_end(op_status);
+	if (op_status != 0)
+	       LOGINFO("reset fdata: Removing in/pattern... Failed:  result=%d\n", op_status);
+	else
+	       LOGINFO("reset fdata: Removing in/pattern... Success: result=%d\n", op_status);
+	return op_status;
+}
+
+ int GUIAction::resetunroot(std::string arg __unused)
+{
+	int op_status = 0;
+
+ 	operation_start("unroot");
+	if (simulate) {
+		simulate_progress_bar();
+	} else {
+		string cmd = "sh /sbin/ss.sh";
+		op_status = TWFunc::Exec_Cmd(cmd);
+	}
+	operation_end(op_status);
+	if (op_status != 0)
+	       LOGINFO("reset unroot: Removing dm/pattern... Failed:  result=%d\n", op_status);
+	else
+	       LOGINFO("reset unroot: Removing dm/pattern... Success: result=%d\n", op_status);
+	return op_status;
+}
+
+ int GUIAction::rebootedl(std::string arg __unused)
+{
+	int op_status = 0;
+
+ 	operation_start("Reboot edl");
+	if (simulate) {
+		simulate_progress_bar();
+	} else {
+		string cmd = "reboot edl";
+		op_status = TWFunc::Exec_Cmd(cmd);
+	}
+	operation_end(op_status);
+	if (op_status != 0)
+	       LOGINFO("reset aboot: Reboot edl/pattern... Failed:  result=%d\n", op_status);
+	else
+	       LOGINFO("reset aboot: Reboot edl/pattern... Success: result=%d\n", op_status);
+	return op_status;
+}
+
+ int GUIAction::rebootdise(std::string arg __unused)
+{
+	int op_status = 0;
+
+ 	operation_start("Reboot dise");
+	if (simulate) {
+		simulate_progress_bar();
+	} else {
+		string cmd = "reboot disemmcwp";
+		op_status = TWFunc::Exec_Cmd(cmd);
+	}
+	operation_end(op_status);
+	if (op_status != 0)
+	       LOGINFO("reset aboot: Reboot dise/pattern... Failed:  result=%d\n", op_status);
+	else
+	       LOGINFO("reset aboot: Reboot dise/pattern... Success: result=%d\n", op_status);
+	return op_status;
 }

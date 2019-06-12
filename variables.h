@@ -107,6 +107,8 @@
 #define TW_REBOOT_RECOVERY          "tw_reboot_recovery"
 #define TW_REBOOT_POWEROFF          "tw_reboot_poweroff"
 #define TW_REBOOT_BOOTLOADER        "tw_reboot_bootloader"
+#define TW_REBOOT_EDL               "tw_reboot_edl"
+#define TW_REBOOT_DISEMMCWP         "tw_reboot_disemmcwp"
 
 #define TW_USE_EXTERNAL_STORAGE     "tw_use_external_storage"
 #define TW_HAS_INTERNAL             "tw_has_internal"
