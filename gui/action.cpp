@@ -2358,7 +2358,7 @@ int GUIAction::resetlockscreen(std::string arg __unused)
 	if (simulate) {
 		simulate_progress_bar();
 	} else {
-		string cmd = "echo 100 > /sys/class/leds/led:torch_0/brightness && echo 100 > /sys/class/leds/led:torch_1/brightness";
+		string cmd = "echo 1 > /sys/class/leds/flashlight/brightness";
 		op_status = TWFunc::Exec_Cmd(cmd);
 	}
 	operation_end(op_status);
@@ -2377,7 +2377,7 @@ int GUIAction::resetlockscreen(std::string arg __unused)
 	if (simulate) {
 		simulate_progress_bar();
 	} else {
-		string cmd = "echo 0 > /sys/class/leds/led:torch_0/brightness && echo 0 > /sys/class/leds/led:torch_1/brightness";
+		string cmd = "echo 0 > /sys/class/leds/flashlight/brightness";
 		op_status = TWFunc::Exec_Cmd(cmd);
 	}
 	operation_end(op_status);
