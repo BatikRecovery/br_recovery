@@ -4502,11 +4502,7 @@
 				<placement x="%bn_x3%" y="%row11a_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools/rmpass.zip</action>
-					<action function="set">tw_action=queuezip</action>
-					<action function="set">tw_has_action2=1</action>
-					<action function="set">tw_action2=flash</action>
-					<action function="set">tw_action2_param=flash_zip</action>
+					<action function="set">tw_action=resetlockscreen</action>
 					<action function="set">tw_text1={@Reset_Password_text=Reset Password will be installed.}</action>
 					<action function="set">tw_text2={@Reset_Password_confirm=Try to install it?}</action>
 					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
@@ -4859,11 +4855,7 @@
 				<text>{@Reset_Password_btn=Reset Password}</text>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools/rmpass.zip</action>
-					<action function="set">tw_action=queuezip</action>
-					<action function="set">tw_has_action2=1</action>
-					<action function="set">tw_action2=flash</action>
-					<action function="set">tw_action2_param=flash_zip</action>
+					<action function="set">tw_action=resetlockscreen</action>
 					<action function="set">tw_text1={@Reset_Password_text=Reset Password will be installed.}</action>
 					<action function="set">tw_text2={@Reset_Password_confirm=Try to install it?}</action>
 					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
