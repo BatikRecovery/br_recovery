@@ -4553,13 +4553,13 @@
 				<placement x="%bn_x3%" y="%row16_y%"/>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools/mountmagisk.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/mm.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
 					<action function="set">tw_action2_param=flash_zip</action>
-					<action function="set">tw_text1=Mount Magisk</action>
-					<action function="set">tw_text2=Confirm Mount Magisk</action>
+					<action function="set">tw_text1=Magisk Manager for Recovery</action>
+					<action function="set">tw_text2=Confirm Magisk Manager for Recovery</action>
 					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
 					<action function="page">confirm_action</action>
 				</actions>
@@ -4685,7 +4685,7 @@
 			<button style="text_tx">
 				<condition var1="iconstyle" var2="1"/>
 				<placement x="%tx_x3%" y="%row19_y%"/>
-				<text>Mount Magisk</text>
+				<text>Magisk Manager</text>
 			</button>
 			
 			<button style="text_tx">
@@ -4874,16 +4874,16 @@
 			<button style="main_button">
 				<condition var1="iconstyle" var2="0"/>
 				<placement x="%menu_x2%" y="%row16a_y%"/>
-				<text>Mount Magisk</text>
+				<text>Magisk Manager</text>
 				<actions>
 					<action function="set">tw_back=tools</action>
-					<action function="set">tw_filename=/sdcard/batik/tools/mountmagisk.zip</action>
+					<action function="set">tw_filename=/sdcard/batik/tools/mm.zip</action>
 					<action function="set">tw_action=queuezip</action>
 					<action function="set">tw_has_action2=1</action>
 					<action function="set">tw_action2=flash</action>
 					<action function="set">tw_action2_param=flash_zip</action>
-					<action function="set">tw_text1=Mount Magisk</action>
-					<action function="set">tw_text2=Confirm Mount Magisk</action>
+					<action function="set">tw_text1=Magisk Manager for Recovery</action>
+					<action function="set">tw_text2=Confirm Magisk Manager for Recovery</action>
 					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
 					<action function="page">confirm_action</action>
 				</actions>
@@ -5609,6 +5609,14 @@
 				<listitem name="Update DFE and DM-Verity in Source Batik"/>
 				<listitem name="Update Flashable Magisk Stable 18.1"/>
 				<listitem name="Add Tools : Adblock, MIUI OTA disabler and Asus Decrypt"/>
+				<listitem name=""/>
+				<listitem name="~ S 1.5.0 ~"/>
+				<listitem name="Upstremed Base TWRP 3.3.1-0"/>	
+				<listitem name="Update June Security Patch (android-8.1.0_r65)"/>
+				<listitem name="Santoni, Whyred : Update Device Tree base android-9.0"/>
+				<listitem name="Santoni, Whyred : Update June Security Patch (android-9.0_r40)"/>
+				<listitem name="Delete Mount Magisk, change Magisk Manager for Recovery"/>
+				<listitem name="Update Flashable Magisk Stable 19.3"/>
 		</listbox>
 			
 			<action>
