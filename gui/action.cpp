@@ -63,6 +63,7 @@ std::set<string> GUIAction::setActionsRunningInCallerThread;
 static string zip_queue[10];
 static int zip_queue_index;
 pid_t sideload_child_pid;
+extern std::vector<users_struct> Users_List;
 
 static void *ActionThread_work_wrapper(void *data);
 
@@ -382,6 +383,8 @@ int GUIAction::flash_zip(std::string filename, int* wipe_cache)
 	int ret_val = 0;
 
 	DataManager::SetValue("ui_progress", 0);
+	DataManager::SetValue("ui_portion_size", 0);
+	DataManager::SetValue("ui_portion_start", 0);
 
 	if (filename.empty())
 	{
@@ -421,6 +424,8 @@ int GUIAction::flash_zip(std::string filename, int* wipe_cache)
 	// Done
 	DataManager::SetValue("ui_progress", 100);
 	DataManager::SetValue("ui_progress", 0);
+	DataManager::SetValue("ui_portion_size", 0);
+	DataManager::SetValue("ui_portion_start", 0);
 	return ret_val;
 }
 
@@ -503,6 +508,8 @@ void GUIAction::operation_start(const string operation_name)
 	time(&Start);
 	DataManager::SetValue(TW_ACTION_BUSY, 1);
 	DataManager::SetValue("ui_progress", 0);
+	DataManager::SetValue("ui_portion_size", 0);
+	DataManager::SetValue("ui_portion_start", 0);
 	DataManager::SetValue("tw_operation", operation_name);
 	DataManager::SetValue("tw_operation_state", 0);
 	DataManager::SetValue("tw_operation_status", 0);
@@ -987,7 +994,7 @@ int GUIAction::screenshot(std::string arg __unused)
 
 		gui_msg(Msg("screenshot_saved=Screenshot was saved to {1}")(path));
 
-		// blink to notify that the screenshow was taken
+		// blink to notify that the screenshot was taken
 		gr_color(255, 255, 255, 255);
 		gr_fill(0, 0, gr_fb_width(), gr_fb_height());
 		gr_flip();
@@ -1538,12 +1545,31 @@ int GUIAction::decrypt(std::string arg __unused)
 		simulate_progress_bar();
 	} else {
 		string Password;
+		string userID;
 		DataManager::GetValue("tw_crypto_password", Password);
-		op_status = PartitionManager.Decrypt_Device(Password);
+
+		if (DataManager::GetIntValue(TW_IS_FBE)) {  // for FBE
+			DataManager::GetValue("tw_crypto_user_id", userID);
+			if (userID != "") {
+				op_status = PartitionManager.Decrypt_Device(Password, atoi(userID.c_str()));
+				if (userID != "0") {
+					if (op_status != 0)
+						op_status = 1;
+					operation_end(op_status);
+	          		return 0;
+				}
+			} else {
+				LOGINFO("User ID not found\n");
+				op_status = 1;
+			}
+		::sleep(1);
+		} else {  // for FDE
+			op_status = PartitionManager.Decrypt_Device(Password);
+		}
+
 		if (op_status != 0)
 			op_status = 1;
 		else {
-
 			DataManager::SetValue(TW_IS_ENCRYPTED, 0);
 
 			int has_datamedia;
@@ -2075,6 +2101,22 @@ int GUIAction::installapp(std::string arg __unused)
 							LOGERR("setfilecon %s error: %s\n", install_path.c_str(), strerror(errno));
 							goto exit;
 						}
+
+						// System apps require their permissions to be pre-set via an XML file in /etc/permissions
+						string permission_path = base_path + "/etc/permissions/privapp-permissions-twrpapp.xml";
+						if (TWFunc::copy_file("/sbin/privapp-permissions-twrpapp.xml", permission_path, 0644)) {
+							LOGERR("Error copying permission file\n");
+							goto exit;
+						}
+						if (chown(permission_path.c_str(), 1000, 1000)) {
+							LOGERR("chown %s error: %s\n", permission_path.c_str(), strerror(errno));
+							goto exit;
+						}
+						if (setfilecon(permission_path.c_str(), (security_context_t)context.c_str()) < 0) {
+							LOGERR("setfilecon %s error: %s\n", permission_path.c_str(), strerror(errno));
+							goto exit;
+						}
+
 						sync();
 						sync();
 						PartitionManager.UnMount_By_Path(PartitionManager.Get_Android_Root_Path(), true);
@@ -2192,7 +2234,7 @@ int GUIAction::fixabrecoverybootloop(std::string arg __unused)
 			goto exit;
 		DataManager::SetProgress(.25);
 		gui_msg("fixing_recovery_loop_patch=Patching kernel...");
-		std::string command = "cd " REPACK_ORIG_DIR " && /sbin/magiskboot --hexpatch kernel 77616E745F696E697472616D667300 736B69705F696E697472616D667300";
+		std::string command = "cd " REPACK_ORIG_DIR " && /sbin/magiskboot hexpatch kernel 77616E745F696E697472616D667300 736B69705F696E697472616D667300";
 		if (TWFunc::Exec_Cmd(command) != 0) {
 			gui_msg(Msg(msg::kError, "fix_recovery_loop_patch_error=Error patching kernel."));
 			goto exit;
@@ -2208,7 +2250,7 @@ int GUIAction::fixabrecoverybootloop(std::string arg __unused)
 		}
 		DataManager::SetProgress(.5);
 		gui_msg(Msg("repacking_image=Repacking {1}...")(part->Display_Name));
-		command = "cd " REPACK_ORIG_DIR " && /sbin/magiskboot --repack " REPACK_ORIG_DIR "boot.img";
+		command = "cd " REPACK_ORIG_DIR " && /sbin/magiskboot repack " REPACK_ORIG_DIR "boot.img";
 		if (TWFunc::Exec_Cmd(command) != 0) {
 			gui_msg(Msg(msg::kError, "repack_error=Error repacking image."));
 			goto exit;
