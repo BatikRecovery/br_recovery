@@ -10,6 +10,13 @@ LOCAL_SRC_FILES := \
     graphics_utils.cpp \
     events.cpp
 
+ifeq ($(TW_SUPPORT_INPUT_1_2_HAPTICS),true)
+    ifeq ($(shell test $(PLATFORM_SDK_VERSION) -ge 28; echo $$?),0)
+        LOCAL_SHARED_LIBRARIES += android.hardware.vibrator@1.2 libhidlbase
+        LOCAL_CFLAGS += -DUSE_QTI_HAPTICS
+    endif
+endif
+
 ifneq ($(TW_BOARD_CUSTOM_GRAPHICS),)
     $(warning ****************************************************************************)
     $(warning * TW_BOARD_CUSTOM_GRAPHICS support has been deprecated in TWRP.            *)
@@ -141,9 +148,6 @@ ifneq ($(TARGET_RECOVERY_OVERSCAN_PERCENT),)
   LOCAL_CFLAGS += -DOVERSCAN_PERCENT=$(TARGET_RECOVERY_OVERSCAN_PERCENT)
 else
   LOCAL_CFLAGS += -DOVERSCAN_PERCENT=0
-endif
-ifeq ($(TW_SCREEN_BLANK_ON_BOOT), true)
-    LOCAL_CFLAGS += -DTW_SCREEN_BLANK_ON_BOOT
 endif
 ifeq ($(TW_FBIOPAN), true)
     LOCAL_CFLAGS += -DTW_FBIOPAN
